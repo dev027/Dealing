@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Deal.Domain</name>
+    </assembly>
+    <members>
+        <member name="T:Deal.Domain.DomainObjects.Ranks.IRank">
+            <summary>
+            Rank of a Suit.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Ranks.IRank.Id">
+            <summary>
+            Gets the Rank Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Ranks.IRank.Code">
+            <summary>
+            Gets the Rank Code.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Ranks.IRank.Name">
+            <summary>
+            Gets the Rank Name.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Ranks.IRank.SortOrder">
+            <summary>
+            Gets the Sort Order.
+            </summary>
+        </member>
+        <member name="T:Deal.Domain.DomainObjects.Ranks.Rank">
+            <summary>
+            Rank of a card, for example King.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.DomainObjects.Ranks.Rank.#ctor(System.Guid,System.String,System.String,System.Int16)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Domain.DomainObjects.Ranks.Rank"/> class.
+            </summary>
+            <param name="id">Rank Id.</param>
+            <param name="code">Rank Code.</param>
+            <param name="name">Rank Name.</param>
+            <param name="sortOrder">Sort Order.</param>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Ranks.Rank.Id">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Ranks.Rank.Code">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Ranks.Rank.Name">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Ranks.Rank.SortOrder">
+            <inheritdoc/>
+        </member>
+        <member name="T:Deal.Domain.DomainObjects.Suits.ISuit">
+            <summary>
+            Suit of a Card.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Suits.ISuit.Id">
+            <summary>
+            Gets the Suit Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Suits.ISuit.Code">
+            <summary>
+            Gets the Suit Code.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Suits.ISuit.Name">
+            <summary>
+            Gets the Suit Name.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Suits.ISuit.SortOrder">
+            <summary>
+            Gets the Sort Order.
+            </summary>
+        </member>
+        <member name="T:Deal.Domain.DomainObjects.Suits.Suit">
+            <summary>
+            Suit of a Card, for example Spades.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.DomainObjects.Suits.Suit.#ctor(System.Guid,System.String,System.String,System.Int16)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Domain.DomainObjects.Suits.Suit"/> class.
+            </summary>
+            <param name="id">Suit Id.</param>
+            <param name="code">Suit Code.</param>
+            <param name="name">Suit Name.</param>
+            <param name="sortOrder">Sort Order.</param>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Suits.Suit.Id">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Suits.Suit.Code">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Suits.Suit.Name">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Suits.Suit.SortOrder">
+            <inheritdoc />
+        </member>
+        <member name="T:Deal.Domain.Exceptions.IdNotNullException">
+            <summary>
+            IdNotNullException.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Exceptions.IdNotNullException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Domain.Exceptions.IdNotNullException"/> class.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Exceptions.IdNotNullException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Domain.Exceptions.IdNotNullException"/> class.
+            </summary>
+            <param name="message">Message.</param>
+        </member>
+        <member name="M:Deal.Domain.Exceptions.IdNotNullException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Domain.Exceptions.IdNotNullException"/> class.
+            </summary>
+            <param name="message">Message.</param>
+            <param name="innerException">InnerException.</param>
+        </member>
+        <member name="M:Deal.Domain.Exceptions.IdNotNullException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Domain.Exceptions.IdNotNullException"/> class.
+            </summary>
+            <param name="info">Serialization Info.</param>
+            <param name="context">Streaming Context.</param>
+        </member>
+    </members>
+</doc>

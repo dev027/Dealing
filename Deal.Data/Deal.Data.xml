@@ -1,0 +1,1087 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Deal.Data</name>
+    </assembly>
+    <members>
+        <member name="T:Deal.Data.Crud.DealData">
+            <summary>
+            Data access layer - Create methods.
+            </summary>
+            <seealso cref="T:Deal.Data.Crud.IDealData" />
+            <summary>
+            Data access layer.
+            </summary>
+            <seealso cref="T:Deal.Data.Crud.IDealData" />
+            <summary>
+            Check if tables have rows.
+            </summary>
+            <seealso cref="T:Deal.Data.Crud.IDealData" />
+        </member>
+        <member name="M:Deal.Data.Crud.DealData.CreateSuit(Deal.Domain.DomainObjects.Suits.ISuit)">
+            <summary>
+            Create Suit.
+            </summary>
+            <param name="suit">Suit.</param>
+            <exception cref="T:Microsoft.EntityFrameworkCore.DbUpdateException">
+            An error occurred sending updates to the database.
+            </exception>
+            <exception cref="T:Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException">
+            A database command did not affect the expected number of rows.
+            This usually indicates an optimistic concurrency violation;
+            that is, a row has been changed in the database since it was queried.
+            </exception>
+            <exception cref="T:System.ApplicationException">
+            Failed to create exactly one row.
+            </exception>
+        </member>
+        <member name="M:Deal.Data.Crud.DealData.CreateRank(Deal.Domain.DomainObjects.Ranks.IRank)">
+            <summary>
+            Create Rank.
+            </summary>
+            <param name="rank">Rank.</param>
+            <exception cref="T:Microsoft.EntityFrameworkCore.DbUpdateException">
+            An error occurred sending updates to the database.
+            </exception>
+            <exception cref="T:Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException">
+            A database command did not affect the expected number of rows.
+            This usually indicates an optimistic concurrency violation;
+            that is, a row has been changed in the database since it was queried.
+            </exception>
+            <exception cref="T:System.ApplicationException">
+            Failed to create exactly one row.
+            </exception>
+        </member>
+        <member name="F:Deal.Data.Crud.DealData.isDisposed">
+            <summary>
+            Indicates if resources have been disposed.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Crud.DealData.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Crud.DealData"/> class.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Crud.DealData.Finalize">
+            <summary>
+            Finalizes an instance of the <see cref="T:Deal.Data.Crud.DealData"/> class.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Crud.DealData.Context">
+            <summary>
+            Gets or sets the Database Context.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Crud.DealData.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:Deal.Data.Crud.DealData.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:Deal.Data.Crud.DealData.AnySuit">
+            <inheritdoc/>
+        </member>
+        <member name="M:Deal.Data.Crud.DealData.AnyRank">
+            <inheritdoc/>
+        </member>
+        <member name="T:Deal.Data.Crud.ICreate">
+            <summary>
+            Create methods.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Crud.ICreate.CreateSuit(Deal.Domain.DomainObjects.Suits.ISuit)">
+            <summary>
+            Creates the Suit.
+            </summary>
+            <param name="suit">Suit.</param>
+        </member>
+        <member name="M:Deal.Data.Crud.ICreate.CreateRank(Deal.Domain.DomainObjects.Ranks.IRank)">
+            <summary>
+            Creates the Rank.
+            </summary>
+            <param name="rank">Rank.</param>
+        </member>
+        <member name="T:Deal.Data.Crud.IDealData">
+            <summary>
+            Data Access Layer.
+            </summary>
+            <seealso cref="T:Deal.Data.Crud.ICreate" />
+            <seealso cref="T:Deal.Data.Crud.IReadAny" />
+            <seealso cref="T:System.IDisposable" />
+        </member>
+        <member name="T:Deal.Data.Crud.IReadAny">
+            <summary>
+            Check table for contents.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Crud.IReadAny.AnySuit">
+            <summary>
+            Check if Suits has any rows.
+            </summary>
+            <returns>True if Suits has rows; otherwise False.</returns>
+        </member>
+        <member name="M:Deal.Data.Crud.IReadAny.AnyRank">
+            <summary>
+            Check if Ranks has any rows.
+            </summary>
+            <returns>True if Ranks has rows; otherwise False.</returns>
+        </member>
+        <member name="T:Deal.Data.DbContexts.DataContext">
+            <summary>
+            Database Context.
+            </summary>
+            <seealso cref="T:Microsoft.EntityFrameworkCore.DbContext" />
+            <summary>
+            Database Context - DB Sets.
+            </summary>
+            <seealso cref="T:Microsoft.EntityFrameworkCore.DbContext" />
+        </member>
+        <member name="M:Deal.Data.DbContexts.DataContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Data.DbContexts.DataContext.Cards">
+            <summary>
+            Gets or sets the Cards.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.DbContexts.DataContext.Dealers">
+            <summary>
+            Gets or sets the Dealers.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.DbContexts.DataContext.ErrorReasons">
+            <summary>
+            Gets or sets the Error Reasons.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.DbContexts.DataContext.ErrorReasonGroups">
+            <summary>
+            Gets or sets the Error Reason Groups.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.DbContexts.DataContext.Events">
+            <summary>
+            Gets or sets the Events.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.DbContexts.DataContext.EventSets">
+            <summary>
+            Gets or sets the Event Sets.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.DbContexts.DataContext.Organisers">
+            <summary>
+            Gets or sets the Organisers.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.DbContexts.DataContext.Owners">
+            <summary>
+            Gets or sets the Owners.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.DbContexts.DataContext.PackColours">
+            <summary>
+            Gets or sets the Pack Colours.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.DbContexts.DataContext.PackDealErrors">
+            <summary>
+            Gets or sets the Pack Deal Errors.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.DbContexts.DataContext.Packs">
+            <summary>
+            Gets or sets the Packs.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.DbContexts.DataContext.Ranks">
+            <summary>
+            Gets or sets the ranks.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.DbContexts.DataContext.Seasons">
+            <summary>
+            Gets or sets the Seasons dtos.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.DbContexts.DataContext.SetColours">
+            <summary>
+            Gets or sets the Set Colours.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.DbContexts.DataContext.SetDealErrors">
+            <summary>
+            Gets or sets the Set Deal Errors.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.DbContexts.DataContext.Sets">
+            <summary>
+            Gets or sets the Sets.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.DbContexts.DataContext.SetPurposes">
+            <summary>
+            Gets or sets the Set Purposes.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.DbContexts.DataContext.Suits">
+            <summary>
+            Gets or sets the Suits.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Dtos.CardDto">
+            <summary>
+            Card DTO.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.CardDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.CardDto"/> class.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.CardDto.#ctor(System.Guid,System.Guid,System.Guid)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.CardDto"/> class.
+            </summary>
+            <param name="id">Card Id.</param>
+            <param name="suitId">Suit Id.</param>
+            <param name="rankId">Rank Id.</param>
+        </member>
+        <member name="P:Deal.Data.Dtos.CardDto.Id">
+            <summary>
+            Gets the Card Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.CardDto.SuitId">
+            <summary>
+            Gets the Suit Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.CardDto.RankId">
+            <summary>
+            Gets the Rank Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.CardDto.Suit">
+            <summary>
+            Gets the Suit.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.CardDto.Rank">
+            <summary>
+            Gets the Rank.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Dtos.DealerDto">
+            <summary>
+            Dealer DTO.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.DealerDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.DealerDto"/> class.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.DealerDto.#ctor(System.Guid,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.DealerDto"/> class.
+            </summary>
+            <param name="id">Dealer Id.</param>
+            <param name="name">Dealer Name.</param>
+        </member>
+        <member name="P:Deal.Data.Dtos.DealerDto.Id">
+            <summary>
+            Gets the Dealer Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.DealerDto.Name">
+            <summary>
+            Gets the Dealer Name.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Dtos.ErrorReasonDto">
+            <summary>
+            Error Reason DTO.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.ErrorReasonDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.ErrorReasonDto"/> class.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.ErrorReasonDto.#ctor(System.Guid,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.ErrorReasonDto"/> class.
+            </summary>
+            <param name="id">Error Reason Id.</param>
+            <param name="name">Error Reason Name.</param>
+            <param name="code">Error Reason Code.</param>
+        </member>
+        <member name="P:Deal.Data.Dtos.ErrorReasonDto.Id">
+            <summary>
+            Gets the Error Reason Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.ErrorReasonDto.Name">
+            <summary>
+            Gets the Error Reason Name.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.ErrorReasonDto.Code">
+            <summary>
+            Gets the Error Reason Code.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.ErrorReasonDto.ErrorReasonGroupId">
+            <summary>
+            Gets the Error Reason Group Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.ErrorReasonDto.ErrorReasonGroup">
+            <summary>
+            Gets the Error Reason Group.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Dtos.ErrorReasonGroupDto">
+            <summary>
+            Error Reason Group DTO.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.ErrorReasonGroupDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.ErrorReasonGroupDto"/> class.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.ErrorReasonGroupDto.#ctor(System.Guid,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.ErrorReasonGroupDto"/> class.
+            </summary>
+            <param name="id">Error Reason Group Id.</param>
+            <param name="name">Error Reason Group Name.</param>
+        </member>
+        <member name="P:Deal.Data.Dtos.ErrorReasonGroupDto.Id">
+            <summary>
+            Gets the Error Reason Group Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.ErrorReasonGroupDto.Name">
+            <summary>
+            Gets the Error reason Group Name.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Dtos.EventDto">
+            <summary>
+            Event DTO.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.EventDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.EventDto"/> class.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.EventDto.#ctor(System.Guid,System.Guid,System.String,System.String,System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.EventDto"/> class.
+            </summary>
+            <param name="id">Event Id.</param>
+            <param name="seasonId">Season Id.</param>
+            <param name="name">Event Name.</param>
+            <param name="subName">Event Sub-Name.</param>
+            <param name="handCopies">Number of Hand Copies.</param>
+            <param name="isDoubleSidedHandCopies">True if hand copies are double sided; False if single sided.</param>
+        </member>
+        <member name="P:Deal.Data.Dtos.EventDto.Id">
+            <summary>
+            Gets the Event Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.EventDto.SeasonId">
+            <summary>
+            Gets the Season Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.EventDto.Name">
+            <summary>
+            Gets the Event Name.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.EventDto.SubName">
+            <summary>
+            Gets the Event Sub-Name.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.EventDto.HandCopies">
+            <summary>
+            Gets the Number of Hand Copies.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.EventDto.IsDoubleSidedHandCopies">
+            <summary>
+            Gets a value indicating whether this instance is double sided hand copies.
+            </summary>
+            <value>
+              <c>true</c> if this instance is double sided hand copies; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Deal.Data.Dtos.EventDto.Season">
+            <summary>
+            Gets the Season.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Dtos.EventSetDto">
+            <summary>
+            Event Set DTO.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.EventSetDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.EventSetDto"/> class.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.EventSetDto.#ctor(System.Guid,System.Guid,System.Guid,System.Guid,System.DateTime,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.EventSetDto"/> class.
+            </summary>
+            <param name="id">Event Set Id.</param>
+            <param name="eventId">Event Id.</param>
+            <param name="setId">Set Id.</param>
+            <param name="dealerId">Dealer Id.</param>
+            <param name="dealt">Date set was dealt.</param>
+            <param name="isBoardsReturnedOutOfSequence">True if boards returned were out of sequence.</param>
+        </member>
+        <member name="P:Deal.Data.Dtos.EventSetDto.Id">
+            <summary>
+            Gets the Event Set Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.EventSetDto.EventId">
+            <summary>
+            Gets the Event Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.EventSetDto.SetId">
+            <summary>
+            Gets the Set Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.EventSetDto.DealerId">
+            <summary>
+            Gets the dealer identifier.
+            </summary>
+            <value>
+            The dealer identifier.
+            </value>
+        </member>
+        <member name="P:Deal.Data.Dtos.EventSetDto.Dealt">
+            <summary>
+            Gets the Date the boards were Dealt.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.EventSetDto.IsBoardsReturnedOutOfSequence">
+            <summary>
+            Gets a value indicating whether this instance is boards returned out of sequence.
+            </summary>
+            <value>
+              <c>true</c> if this instance is boards returned out of sequence; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Deal.Data.Dtos.EventSetDto.Event">
+            <summary>
+            Gets the Event.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.EventSetDto.Set">
+            <summary>
+            Gets the Set.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.EventSetDto.Dealer">
+            <summary>
+            Gets the Dealer.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Dtos.OrganiserDto">
+            <summary>
+            Organiser DTO.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.OrganiserDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.OrganiserDto"/> class.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.OrganiserDto.#ctor(System.Guid,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.OrganiserDto"/> class.
+            </summary>
+            <param name="id">Organiser Id.</param>
+            <param name="name">Organiser Name.</param>
+        </member>
+        <member name="P:Deal.Data.Dtos.OrganiserDto.Id">
+            <summary>
+            Gets the Organiser Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.OrganiserDto.Name">
+            <summary>
+            Gets the Organiser Name.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Dtos.OwnerDto">
+            <summary>
+            Owner DTO.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.OwnerDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.OwnerDto"/> class.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.OwnerDto.#ctor(System.Guid,System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.OwnerDto"/> class.
+            </summary>
+            <param name="id">Owner Id.</param>
+            <param name="name">Owner Name.</param>
+            <param name="isClub">True if Owner id a Club.</param>
+        </member>
+        <member name="P:Deal.Data.Dtos.OwnerDto.Id">
+            <summary>
+            Gets the Owner Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.OwnerDto.Name">
+            <summary>
+            Gets the Owner Name.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.OwnerDto.IsClub">
+            <summary>
+            Gets a value indicating whether this instance is a club.
+            </summary>
+            <value>
+              <c>true</c> if this instance is club; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Deal.Data.Dtos.PackColourDto">
+            <summary>
+            Pack Colour DTO.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.PackColourDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.PackColourDto"/> class.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.PackColourDto.#ctor(System.Guid,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.PackColourDto"/> class.
+            </summary>
+            <param name="id">Pack Colour Id.</param>
+            <param name="code">Pack Colour Code.</param>
+            <param name="colour">Colour.</param>
+        </member>
+        <member name="P:Deal.Data.Dtos.PackColourDto.Id">
+            <summary>
+            Gets the Pack Colour Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.PackColourDto.Code">
+            <summary>
+            Gets the Pack Colour Code.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.PackColourDto.Colour">
+            <summary>
+            Gets the Colour.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Dtos.PackDealErrorDto">
+            <summary>
+            Pack Deal Error DTo.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.PackDealErrorDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.PackDealErrorDto"/> class.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.PackDealErrorDto.#ctor(System.Guid,System.Guid,System.Guid,System.Guid,System.Guid,System.Nullable{System.Guid})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.PackDealErrorDto"/> class.
+            </summary>
+            <param name="id">Pack Deal Error Id.</param>
+            <param name="eventSetId">Event Set Id.</param>
+            <param name="packId">Pack Id.</param>
+            <param name="errorReasonId">Error Reason Id.</param>
+            <param name="actualCardId">Actual Card Id.</param>
+            <param name="claimedCardId">Claimed Card Id.</param>
+        </member>
+        <member name="P:Deal.Data.Dtos.PackDealErrorDto.Id">
+            <summary>
+            Gets the Pack Deal Error Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.PackDealErrorDto.EventSetId">
+            <summary>
+            Gets the Event Set Identifier.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.PackDealErrorDto.PackId">
+            <summary>
+            Gets the Pack Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.PackDealErrorDto.ErrorReasonId">
+            <summary>
+            Gets the Error Reason Identifier.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.PackDealErrorDto.ActualCardId">
+            <summary>
+            Gets the Actual Card Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.PackDealErrorDto.ClaimedCardId">
+            <summary>
+            Gets the Claimed Card Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.PackDealErrorDto.EventSet">
+            <summary>
+            Gets the Event Set.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.PackDealErrorDto.Pack">
+            <summary>
+            Gets the Pack.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.PackDealErrorDto.ErrorReason">
+            <summary>
+            Gets the Error Reason.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.PackDealErrorDto.ActualCard">
+            <summary>
+            Gets the Actual Card.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.PackDealErrorDto.ClaimedCard">
+            <summary>
+            Gets the Claimed Card.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Dtos.PackDto">
+            <summary>
+            Pack DTO.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.PackDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.PackDto"/> class.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.PackDto.#ctor(System.Guid,System.Guid,System.Guid,System.DateTime,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.PackDto"/> class.
+            </summary>
+            <param name="id">Pack Id.</param>
+            <param name="packColourId">Pack Colour Id.</param>
+            <param name="setId">Set Id.</param>
+            <param name="enteredService">Date Pack Entered Service.</param>
+            <param name="boardNumber">Board Number the Pack is currently in.</param>
+        </member>
+        <member name="P:Deal.Data.Dtos.PackDto.Id">
+            <summary>
+            Gets the Pack Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.PackDto.PackColourId">
+            <summary>
+            Gets the Pack Colour Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.PackDto.SetId">
+            <summary>
+            Gets the Set Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.PackDto.EnteredService">
+            <summary>
+            Gets the Date the Pack Entered Service.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.PackDto.BoardNumber">
+            <summary>
+            Gets the Board Number the Pack is currently in.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.PackDto.PackColour">
+            <summary>
+            Gets the Pack Colour.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.PackDto.Set">
+            <summary>
+            Gets the Set.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Dtos.RankDto">
+            <summary>
+            Rank DTO.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.RankDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.RankDto"/> class.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.RankDto.#ctor(System.Guid,System.String,System.String,System.Int16)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.RankDto"/> class.
+            </summary>
+            <param name="id">Rank Id.</param>
+            <param name="code">Rank Code.</param>
+            <param name="name">Rank Name.</param>
+            <param name="sortOrder">Sort Order.</param>
+        </member>
+        <member name="P:Deal.Data.Dtos.RankDto.Id">
+            <summary>
+            Gets the Rank Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.RankDto.Code">
+            <summary>
+            Gets the Rank Code.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.RankDto.Name">
+            <summary>
+            Gets the Rank Name.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.RankDto.SortOrder">
+            <summary>
+            Gets the Sort Order.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.RankDto.ToDto(Deal.Domain.DomainObjects.Ranks.IRank)">
+            <summary>
+            Converts domain object to DTO.
+            </summary>
+            <param name="rank">Rank.</param>
+            <returns>Rank DTO.</returns>
+        </member>
+        <member name="M:Deal.Data.Dtos.RankDto.ToDomain">
+            <summary>
+            Converts instance to domain object.
+            </summary>
+            <returns>Rank.</returns>
+        </member>
+        <member name="T:Deal.Data.Dtos.SeasonDto">
+            <summary>
+            Season DTO.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.SeasonDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.SeasonDto"/> class.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.SeasonDto.#ctor(System.Guid,System.Guid,System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.SeasonDto"/> class.
+            </summary>
+            <param name="id">Season Id.</param>
+            <param name="organiserId">Organiser Id.</param>
+            <param name="description">Season Description.</param>
+            <param name="startDate">Season Start Date.</param>
+            <param name="endDate">Season End Date.</param>
+        </member>
+        <member name="P:Deal.Data.Dtos.SeasonDto.Id">
+            <summary>
+            Gets the Season Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SeasonDto.OrganiserId">
+            <summary>
+            Gets the Organiser Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SeasonDto.Description">
+            <summary>
+            Gets the Season Description.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SeasonDto.StartDate">
+            <summary>
+            Gets the Season Start Date.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SeasonDto.EndDate">
+            <summary>
+            Gets the Season End Date.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SeasonDto.Organiser">
+            <summary>
+            Gets the Organiser.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Dtos.SetColourDto">
+            <summary>
+            Set Colour DTO.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.SetColourDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.SetColourDto"/> class.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.SetColourDto.#ctor(System.Guid,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.SetColourDto"/> class.
+            </summary>
+            <param name="id">Set Colour DTO.</param>
+            <param name="name">Set Colour Name.</param>
+            <param name="code">Set Colour Code.</param>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetColourDto.Id">
+            <summary>
+            Gets the Set Colour Identifier.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetColourDto.Name">
+            <summary>
+            Gets the Set Colour Name.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetColourDto.Code">
+            <summary>
+            Gets the Set Colour Code.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Dtos.SetDealErrorDto">
+            <summary>
+            Set Deal Errors DTO.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.SetDealErrorDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.SetDealErrorDto"/> class.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.SetDealErrorDto.#ctor(System.Guid,System.Guid,System.Guid,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.SetDealErrorDto"/> class.
+            </summary>
+            <param name="id">Set Deal Error Id.</param>
+            <param name="eventSetId">Event Set Id.</param>
+            <param name="errorReasonId">Error Reason Id.</param>
+            <param name="northCount">Count of the cards in the North hand.</param>
+            <param name="eastCount">Count of the cards in the East hand.</param>
+            <param name="westCount">Count of the cards in the West hand.</param>
+            <param name="southCount">Count of the cards in the South hand.</param>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetDealErrorDto.Id">
+            <summary>
+            Gets the Set Deal Error Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetDealErrorDto.EventSetId">
+            <summary>
+            Gets the Event Set Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetDealErrorDto.ErrorReasonId">
+            <summary>
+            Gets the Error Reason Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetDealErrorDto.NorthCount">
+            <summary>
+            Gets the Count of cards in the North hand.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetDealErrorDto.EastCount">
+            <summary>
+            Gets the Count of cards in the East hand.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetDealErrorDto.WestCount">
+            <summary>
+            Gets the Count of cards in the West hand.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetDealErrorDto.SouthCount">
+            <summary>
+            Gets the Count of cards in the South hand.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetDealErrorDto.EventSet">
+            <summary>
+            Gets the event set.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetDealErrorDto.ErrorReason">
+            <summary>
+            Gets the error reason.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Dtos.SetDto">
+            <summary>
+            Set DTO.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.SetDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.SetDto"/> class.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.SetDto.#ctor(System.Guid,System.Guid,System.Guid,System.Guid,System.Int32,System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.SetDto"/> class.
+            </summary>
+            <param name="id">Set Id.</param>
+            <param name="ownerId">Owner Id.</param>
+            <param name="setPurposeId">Set Purpose Id.</param>
+            <param name="setColourId">Set Colour Id.</param>
+            <param name="lowBoardNumber">Low Board Number.</param>
+            <param name="highBoardNumber">High Board Number.</param>
+            <param name="description">Set Description.</param>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetDto.Id">
+            <summary>
+            Gets the Set Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetDto.OwnerId">
+            <summary>
+            Gets the Owner Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetDto.SetPurposeId">
+            <summary>
+            Gets the Set Purpose Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetDto.SetColourId">
+            <summary>
+            Gets the set colour identifier.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetDto.LowBoardNumber">
+            <summary>
+            Gets the Low Board Number.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetDto.HighBoardNumber">
+            <summary>
+            Gets the High Board Number.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetDto.Description">
+            <summary>
+            Gets the Set Description.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetDto.Owner">
+            <summary>
+            Gets the Owner.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetDto.SetPurpose">
+            <summary>
+            Gets the Set Purpose.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetDto.SetColour">
+            <summary>
+            Gets the Set Colour.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Dtos.SetPurposeDto">
+            <summary>
+            Set Purpose DTO.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.SetPurposeDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.SetPurposeDto"/> class.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.SetPurposeDto.#ctor(System.Guid,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.SetPurposeDto"/> class.
+            </summary>
+            <param name="id">Set Purpose Id.</param>
+            <param name="name">Set Purpose Name.</param>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetPurposeDto.Id">
+            <summary>
+            Gets the Set Purpose Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetPurposeDto.Name">
+            <summary>
+            Gets the Set Purpose Name.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Dtos.SuitDto">
+            <summary>
+            Suit DTO.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.SuitDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.SuitDto"/> class.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.SuitDto.#ctor(System.Guid,System.String,System.String,System.Int16)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Dtos.SuitDto"/> class.
+            </summary>
+            <param name="id">Suit Id.</param>
+            <param name="code">Suit Code.</param>
+            <param name="name">Suit Name.</param>
+            <param name="sortOrder">Sort Order.</param>
+        </member>
+        <member name="P:Deal.Data.Dtos.SuitDto.Id">
+            <summary>
+            Gets the Suit Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SuitDto.Code">
+            <summary>
+            Gets the Suit Code.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SuitDto.Name">
+            <summary>
+            Gets the Suit Name.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SuitDto.SortOrder">
+            <summary>
+            Gets the Sort Order.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.SuitDto.ToDto(Deal.Domain.DomainObjects.Suits.ISuit)">
+            <summary>
+            Converts domain object to DTO.
+            </summary>
+            <param name="suit">The suit.</param>
+            <returns>Suit DTO.</returns>
+        </member>
+        <member name="M:Deal.Data.Dtos.SuitDto.ToDomain">
+            <summary>
+            Converts instance to domain object.
+            </summary>
+            <returns>Suit.</returns>
+        </member>
+    </members>
+</doc>
