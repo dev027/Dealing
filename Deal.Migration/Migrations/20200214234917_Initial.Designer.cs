@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Deal.Migration.Migrations
 {
     [DbContext(typeof(MigrationContext))]
-    [Migration("20200212230927_Initial")]
+    [Migration("20200214234917_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,6 +49,7 @@ namespace Deal.Migration.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -63,12 +64,14 @@ namespace Deal.Migration.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Code")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("ErrorReasonGroupId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -85,6 +88,7 @@ namespace Deal.Migration.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -105,12 +109,14 @@ namespace Deal.Migration.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("SeasonId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("SubName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -159,6 +165,7 @@ namespace Deal.Migration.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -176,6 +183,7 @@ namespace Deal.Migration.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -190,9 +198,11 @@ namespace Deal.Migration.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Code")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Colour")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -270,10 +280,15 @@ namespace Deal.Migration.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Code")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<short>("SortOrder")
+                        .HasColumnType("smallint");
 
                     b.HasKey("Id");
 
@@ -287,6 +302,7 @@ namespace Deal.Migration.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("EndDate")
@@ -311,7 +327,12 @@ namespace Deal.Migration.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -359,6 +380,7 @@ namespace Deal.Migration.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("HighBoardNumber")
@@ -394,6 +416,7 @@ namespace Deal.Migration.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -408,10 +431,15 @@ namespace Deal.Migration.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Code")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<short>("SortOrder")
+                        .HasColumnType("smallint");
 
                     b.HasKey("Id");
 
@@ -423,13 +451,13 @@ namespace Deal.Migration.Migrations
                     b.HasOne("Deal.Data.Dtos.RankDto", "Rank")
                         .WithMany()
                         .HasForeignKey("RankId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Deal.Data.Dtos.SuitDto", "Suit")
                         .WithMany()
                         .HasForeignKey("SuitId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -438,7 +466,7 @@ namespace Deal.Migration.Migrations
                     b.HasOne("Deal.Data.Dtos.ErrorReasonGroupDto", "ErrorReasonGroup")
                         .WithMany()
                         .HasForeignKey("ErrorReasonGroupId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -447,7 +475,7 @@ namespace Deal.Migration.Migrations
                     b.HasOne("Deal.Data.Dtos.SeasonDto", "Season")
                         .WithMany()
                         .HasForeignKey("SeasonId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -456,19 +484,19 @@ namespace Deal.Migration.Migrations
                     b.HasOne("Deal.Data.Dtos.DealerDto", "Dealer")
                         .WithMany()
                         .HasForeignKey("DealerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Deal.Data.Dtos.EventDto", "Event")
                         .WithMany()
                         .HasForeignKey("EventId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Deal.Data.Dtos.SetDto", "Set")
                         .WithMany()
                         .HasForeignKey("SetId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -477,29 +505,30 @@ namespace Deal.Migration.Migrations
                     b.HasOne("Deal.Data.Dtos.CardDto", "ActualCard")
                         .WithMany()
                         .HasForeignKey("ActualCardId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Deal.Data.Dtos.CardDto", "ClaimedCard")
                         .WithMany()
-                        .HasForeignKey("ClaimedCardId");
+                        .HasForeignKey("ClaimedCardId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("Deal.Data.Dtos.ErrorReasonDto", "ErrorReason")
                         .WithMany()
                         .HasForeignKey("ErrorReasonId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Deal.Data.Dtos.EventSetDto", "EventSet")
                         .WithMany()
                         .HasForeignKey("EventSetId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Deal.Data.Dtos.PackDto", "Pack")
                         .WithMany()
                         .HasForeignKey("PackId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -508,13 +537,13 @@ namespace Deal.Migration.Migrations
                     b.HasOne("Deal.Data.Dtos.PackColourDto", "PackColour")
                         .WithMany()
                         .HasForeignKey("PackColourId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Deal.Data.Dtos.SetDto", "Set")
                         .WithMany()
                         .HasForeignKey("SetId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -523,7 +552,7 @@ namespace Deal.Migration.Migrations
                     b.HasOne("Deal.Data.Dtos.OrganiserDto", "Organiser")
                         .WithMany()
                         .HasForeignKey("OrganiserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -532,13 +561,13 @@ namespace Deal.Migration.Migrations
                     b.HasOne("Deal.Data.Dtos.ErrorReasonDto", "ErrorReason")
                         .WithMany()
                         .HasForeignKey("ErrorReasonId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Deal.Data.Dtos.EventSetDto", "EventSet")
                         .WithMany()
                         .HasForeignKey("EventSetId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -547,19 +576,19 @@ namespace Deal.Migration.Migrations
                     b.HasOne("Deal.Data.Dtos.OwnerDto", "Owner")
                         .WithMany()
                         .HasForeignKey("OwnerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Deal.Data.Dtos.SetColourDto", "SetColour")
                         .WithMany()
                         .HasForeignKey("SetColourId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Deal.Data.Dtos.SetPurposeDto", "SetPurpose")
                         .WithMany()
                         .HasForeignKey("SetPurposeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

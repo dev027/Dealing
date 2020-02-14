@@ -12,7 +12,7 @@ namespace Deal.Migration.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>()
                 },
                 constraints: table =>
                 {
@@ -24,7 +24,7 @@ namespace Deal.Migration.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>()
                 },
                 constraints: table =>
                 {
@@ -36,7 +36,7 @@ namespace Deal.Migration.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>()
                 },
                 constraints: table =>
                 {
@@ -48,7 +48,7 @@ namespace Deal.Migration.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(),
-                    Name = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(),
                     IsClub = table.Column<bool>()
                 },
                 constraints: table =>
@@ -61,8 +61,8 @@ namespace Deal.Migration.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(),
-                    Code = table.Column<string>(nullable: true),
-                    Colour = table.Column<string>(nullable: true)
+                    Code = table.Column<string>(),
+                    Colour = table.Column<string>()
                 },
                 constraints: table =>
                 {
@@ -74,8 +74,9 @@ namespace Deal.Migration.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(),
-                    Code = table.Column<string>(nullable: true),
-                    Name = table.Column<string>(nullable: true)
+                    Code = table.Column<string>(),
+                    Name = table.Column<string>(),
+                    SortOrder = table.Column<short>()
                 },
                 constraints: table =>
                 {
@@ -87,7 +88,8 @@ namespace Deal.Migration.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(),
+                    Code = table.Column<string>()
                 },
                 constraints: table =>
                 {
@@ -99,7 +101,7 @@ namespace Deal.Migration.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>()
                 },
                 constraints: table =>
                 {
@@ -111,8 +113,9 @@ namespace Deal.Migration.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(),
-                    Code = table.Column<string>(nullable: true),
-                    Name = table.Column<string>(nullable: true)
+                    Code = table.Column<string>(),
+                    Name = table.Column<string>(),
+                    SortOrder = table.Column<short>()
                 },
                 constraints: table =>
                 {
@@ -124,8 +127,8 @@ namespace Deal.Migration.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(),
-                    Name = table.Column<string>(nullable: true),
-                    Code = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(),
+                    Code = table.Column<string>(),
                     ErrorReasonGroupId = table.Column<Guid>()
                 },
                 constraints: table =>
@@ -145,7 +148,7 @@ namespace Deal.Migration.Migrations
                 {
                     Id = table.Column<Guid>(),
                     OrganiserId = table.Column<Guid>(),
-                    Description = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(),
                     StartDate = table.Column<DateTime>(),
                     EndDate = table.Column<DateTime>()
                 },
@@ -170,7 +173,7 @@ namespace Deal.Migration.Migrations
                     SetColourId = table.Column<Guid>(),
                     LowBoardNumber = table.Column<int>(),
                     HighBoardNumber = table.Column<int>(),
-                    Description = table.Column<string>(nullable: true)
+                    Description = table.Column<string>()
                 },
                 constraints: table =>
                 {
@@ -226,8 +229,8 @@ namespace Deal.Migration.Migrations
                 {
                     Id = table.Column<Guid>(),
                     SeasonId = table.Column<Guid>(),
-                    Name = table.Column<string>(nullable: true),
-                    SubName = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(),
+                    SubName = table.Column<string>(),
                     HandCopies = table.Column<int>(),
                     IsDoubleSidedHandCopies = table.Column<bool>()
                 },
