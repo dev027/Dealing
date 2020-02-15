@@ -10,6 +10,11 @@ namespace Deal.Service.SeedServices
     public interface ISeedService
     {
         /// <summary>
+        /// Seeds the Cards.
+        /// </summary>
+        void Cards();
+
+        /// <summary>
         /// Seed the Ranks.
         /// </summary>
         void Ranks();

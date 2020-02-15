@@ -15,6 +15,7 @@ namespace Deal.Migration
             ISeedService seedService = InstanceFactory.GetInstance<ISeedService>();
             seedService.Suits();
             seedService.Ranks();
+            seedService.Cards();
         }
 
         private static void DependencyInjection()

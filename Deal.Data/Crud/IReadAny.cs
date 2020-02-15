@@ -10,6 +10,12 @@ namespace Deal.Data.Crud
     public interface IReadAny
     {
         /// <summary>
+        /// Check if Cards has any rows.
+        /// </summary>
+        /// <returns>True if Cards has rows; otherwise False.</returns>
+        bool AnyCard();
+
+        /// <summary>
         /// Check if Suits has any rows.
         /// </summary>
         /// <returns>True if Suits has rows; otherwise False.</returns>

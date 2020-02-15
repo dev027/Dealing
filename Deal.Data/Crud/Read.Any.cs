@@ -13,6 +13,12 @@ namespace Deal.Data.Crud
     public partial class DealData
     {
         /// <inheritdoc/>
+        public bool AnyCard()
+        {
+            return this.Context.Cards.Any();
+        }
+
+        /// <inheritdoc/>
         public bool AnySuit()
         {
             return this.Context.Suits.Any();

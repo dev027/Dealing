@@ -17,40 +17,19 @@
             Check if tables have rows.
             </summary>
             <seealso cref="T:Deal.Data.Crud.IDealData" />
+            <summary>
+            Data access layer - Read methods.
+            </summary>
+            <seealso cref="T:Deal.Data.Crud.IDealData" />
+        </member>
+        <member name="M:Deal.Data.Crud.DealData.CreateCard(Deal.Domain.DomainObjects.Cards.ICard)">
+            <inheritdoc/>
         </member>
         <member name="M:Deal.Data.Crud.DealData.CreateSuit(Deal.Domain.DomainObjects.Suits.ISuit)">
-            <summary>
-            Create Suit.
-            </summary>
-            <param name="suit">Suit.</param>
-            <exception cref="T:Microsoft.EntityFrameworkCore.DbUpdateException">
-            An error occurred sending updates to the database.
-            </exception>
-            <exception cref="T:Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException">
-            A database command did not affect the expected number of rows.
-            This usually indicates an optimistic concurrency violation;
-            that is, a row has been changed in the database since it was queried.
-            </exception>
-            <exception cref="T:System.ApplicationException">
-            Failed to create exactly one row.
-            </exception>
+            <inheritdoc/>
         </member>
         <member name="M:Deal.Data.Crud.DealData.CreateRank(Deal.Domain.DomainObjects.Ranks.IRank)">
-            <summary>
-            Create Rank.
-            </summary>
-            <param name="rank">Rank.</param>
-            <exception cref="T:Microsoft.EntityFrameworkCore.DbUpdateException">
-            An error occurred sending updates to the database.
-            </exception>
-            <exception cref="T:Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException">
-            A database command did not affect the expected number of rows.
-            This usually indicates an optimistic concurrency violation;
-            that is, a row has been changed in the database since it was queried.
-            </exception>
-            <exception cref="T:System.ApplicationException">
-            Failed to create exactly one row.
-            </exception>
+            <inheritdoc/>
         </member>
         <member name="F:Deal.Data.Crud.DealData.isDisposed">
             <summary>
@@ -81,16 +60,31 @@
             </summary>
             <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
         </member>
+        <member name="M:Deal.Data.Crud.DealData.AnyCard">
+            <inheritdoc/>
+        </member>
         <member name="M:Deal.Data.Crud.DealData.AnySuit">
             <inheritdoc/>
         </member>
         <member name="M:Deal.Data.Crud.DealData.AnyRank">
             <inheritdoc/>
         </member>
+        <member name="M:Deal.Data.Crud.DealData.ReadAllSuits">
+            <inheritdoc/>
+        </member>
+        <member name="M:Deal.Data.Crud.DealData.ReadAllRanks">
+            <inheritdoc/>
+        </member>
         <member name="T:Deal.Data.Crud.ICreate">
             <summary>
             Create methods.
             </summary>
+        </member>
+        <member name="M:Deal.Data.Crud.ICreate.CreateCard(Deal.Domain.DomainObjects.Cards.ICard)">
+            <summary>
+            Creates the Card.
+            </summary>
+            <param name="card">Card.</param>
         </member>
         <member name="M:Deal.Data.Crud.ICreate.CreateSuit(Deal.Domain.DomainObjects.Suits.ISuit)">
             <summary>
@@ -110,12 +104,36 @@
             </summary>
             <seealso cref="T:Deal.Data.Crud.ICreate" />
             <seealso cref="T:Deal.Data.Crud.IReadAny" />
+            <seealso cref="T:Deal.Data.Crud.IRead" />
             <seealso cref="T:System.IDisposable" />
+        </member>
+        <member name="T:Deal.Data.Crud.IRead">
+            <summary>
+            Read methods.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Crud.IRead.ReadAllSuits">
+            <summary>
+            Reads all Suits.
+            </summary>
+            <returns>List of Suits.</returns>
+        </member>
+        <member name="M:Deal.Data.Crud.IRead.ReadAllRanks">
+            <summary>
+            Reads all Ranks.
+            </summary>
+            <returns>List of Ranks.</returns>
         </member>
         <member name="T:Deal.Data.Crud.IReadAny">
             <summary>
             Check table for contents.
             </summary>
+        </member>
+        <member name="M:Deal.Data.Crud.IReadAny.AnyCard">
+            <summary>
+            Check if Cards has any rows.
+            </summary>
+            <returns>True if Cards has rows; otherwise False.</returns>
         </member>
         <member name="M:Deal.Data.Crud.IReadAny.AnySuit">
             <summary>
@@ -289,6 +307,19 @@
             <summary>
             Gets the Rank.
             </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.CardDto.ToDto(Deal.Domain.DomainObjects.Cards.ICard)">
+            <summary>
+            Converts Card to DTO.
+            </summary>
+            <param name="card">Card.</param>
+            <returns>Card DTO.</returns>
+        </member>
+        <member name="M:Deal.Data.Dtos.CardDto.ToDomain">
+            <summary>
+            Converts instance to domain object.
+            </summary>
+            <returns>Card.</returns>
         </member>
         <member name="T:Deal.Data.Dtos.DealerDto">
             <summary>
@@ -1097,6 +1128,32 @@
             Converts instance to domain object.
             </summary>
             <returns>Suit.</returns>
+        </member>
+        <member name="T:Deal.Data.Resources.ExceptionResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Resources.ExceptionResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Resources.ExceptionResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Resources.ExceptionResource.CannotConvertToICardIfRankIsNull">
+            <summary>
+              Looks up a localized string similar to Cannot convert to ICard if Rank is null.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Resources.ExceptionResource.CannotConvertToICardIfSuitIsNull">
+            <summary>
+              Looks up a localized string similar to Cannot convert to ICard if Suit is null.
+            </summary>
         </member>
     </members>
 </doc>

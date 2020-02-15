@@ -4,9 +4,9 @@
 
 using System;
 using Deal.Data.Dtos;
+using Deal.Domain.DomainObjects.Cards;
 using Deal.Domain.DomainObjects.Ranks;
 using Deal.Domain.DomainObjects.Suits;
-using Microsoft.EntityFrameworkCore;
 
 namespace Deal.Data.Crud
 {
@@ -16,21 +16,20 @@ namespace Deal.Data.Crud
     /// <seealso cref="IDealData" />
     public partial class DealData
     {
-        /// <summary>
-        /// Create Suit.
-        /// </summary>
-        /// <param name="suit">Suit.</param>
-        /// <exception cref="DbUpdateException">
-        /// An error occurred sending updates to the database.
-        /// </exception>
-        /// <exception cref="DbUpdateConcurrencyException">
-        /// A database command did not affect the expected number of rows.
-        /// This usually indicates an optimistic concurrency violation;
-        /// that is, a row has been changed in the database since it was queried.
-        /// </exception>
-        /// <exception cref="ApplicationException">
-        /// Failed to create exactly one row.
-        /// </exception>
+        /// <inheritdoc/>
+        public void CreateCard(ICard card)
+        {
+            CardDto cardDto = CardDto.ToDto(card);
+            this.Context.Cards.Add(cardDto);
+            int count = this.Context.SaveChanges();
+
+            if (count != 1)
+            {
+                throw new ApplicationException($"Unexpectedly created {count} rows");
+            }
+        }
+
+        /// <inheritdoc/>
         public void CreateSuit(ISuit suit)
         {
             SuitDto suitDto = SuitDto.ToDto(suit);
@@ -43,21 +42,7 @@ namespace Deal.Data.Crud
             }
         }
 
-        /// <summary>
-        /// Create Rank.
-        /// </summary>
-        /// <param name="rank">Rank.</param>
-        /// <exception cref="DbUpdateException">
-        /// An error occurred sending updates to the database.
-        /// </exception>
-        /// <exception cref="DbUpdateConcurrencyException">
-        /// A database command did not affect the expected number of rows.
-        /// This usually indicates an optimistic concurrency violation;
-        /// that is, a row has been changed in the database since it was queried.
-        /// </exception>
-        /// <exception cref="ApplicationException">
-        /// Failed to create exactly one row.
-        /// </exception>
+        /// <inheritdoc/>
         public void CreateRank(IRank rank)
         {
             RankDto rankDto = RankDto.ToDto(rank);

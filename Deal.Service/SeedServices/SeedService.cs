@@ -5,8 +5,10 @@
 using System;
 using System.Collections.Generic;
 using Deal.Data.Crud;
+using Deal.Domain.DomainObjects.Cards;
 using Deal.Domain.DomainObjects.Ranks;
 using Deal.Domain.DomainObjects.Suits;
+using Deal.Service.Resources;
 using DoItWright.Library.DependencyInjection;
 
 namespace Deal.Service.SeedServices
@@ -17,9 +19,43 @@ namespace Deal.Service.SeedServices
     /// <seealso cref="ISeedService" />
     public class SeedService : ISeedService
     {
-        /// <summary>
-        /// Seed the Ranks.
-        /// </summary>
+        /// <inheritdoc/>
+        public void Cards()
+        {
+            using IDealData data = InstanceFactory.GetInstance<IDealData>();
+
+            if (data.AnyCard())
+            {
+                return;
+            }
+
+            IList<ISuit> suits = data.ReadAllSuits();
+
+            if (suits.Count == 0)
+            {
+                throw new InvalidOperationException(ExceptionResource.MustSeedSuitsBeforeSeedingCards);
+            }
+
+            IList<IRank> ranks = data.ReadAllRanks();
+
+            if (suits.Count == 0)
+            {
+                throw new InvalidOperationException(ExceptionResource.MustSeedSuitsBeforeSeedingCards);
+            }
+
+            foreach (ISuit suit in suits)
+            {
+                foreach (IRank rank in ranks)
+                {
+                    data.CreateCard(new Card(
+                        id: Guid.NewGuid(),
+                        suit: suit,
+                        rank: rank));
+                }
+            }
+        }
+
+        /// <inheritdoc/>
         public void Ranks()
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
@@ -58,9 +94,7 @@ namespace Deal.Service.SeedServices
             }
         }
 
-        /// <summary>
-        /// Seeds the Suits.
-        /// </summary>
+        /// <inheritdoc/>
         public void Suits()
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();

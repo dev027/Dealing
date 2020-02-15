@@ -4,6 +4,49 @@
         <name>Deal.Domain</name>
     </assembly>
     <members>
+        <member name="T:Deal.Domain.DomainObjects.Cards.Card">
+            <summary>
+            Cards.
+            </summary>
+            <seealso cref="T:Deal.Domain.DomainObjects.Cards.ICard" />
+        </member>
+        <member name="M:Deal.Domain.DomainObjects.Cards.Card.#ctor(System.Guid,Deal.Domain.DomainObjects.Suits.ISuit,Deal.Domain.DomainObjects.Ranks.IRank)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Domain.DomainObjects.Cards.Card"/> class.
+            </summary>
+            <param name="id">Card Id.</param>
+            <param name="suit">Suit.</param>
+            <param name="rank">Rank.</param>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Cards.Card.Id">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Cards.Card.Suit">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Cards.Card.Rank">
+            <inheritdoc/>
+        </member>
+        <member name="T:Deal.Domain.DomainObjects.Cards.ICard">
+            <summary>
+            Card.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Cards.ICard.Id">
+            <summary>
+            Gets the Card Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Cards.ICard.Suit">
+            <summary>
+            Gets the Suit.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Cards.ICard.Rank">
+            <summary>
+            Gets the Rank.
+            </summary>
+        </member>
         <member name="T:Deal.Domain.DomainObjects.Ranks.IRank">
             <summary>
             Rank of a Suit.

@@ -2,6 +2,7 @@
 // Copyright (c) Do It Wright. All rights reserved.
 // </copyright>
 
+using Deal.Domain.DomainObjects.Cards;
 using Deal.Domain.DomainObjects.Ranks;
 using Deal.Domain.DomainObjects.Suits;
 
@@ -12,6 +13,12 @@ namespace Deal.Data.Crud
     /// </summary>
     public interface ICreate
     {
+        /// <summary>
+        /// Creates the Card.
+        /// </summary>
+        /// <param name="card">Card.</param>
+        void CreateCard(ICard card);
+
         /// <summary>
         /// Creates the Suit.
         /// </summary>

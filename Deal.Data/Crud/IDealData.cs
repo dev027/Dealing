@@ -9,11 +9,12 @@ namespace Deal.Data.Crud
     /// <summary>
     /// Data Access Layer.
     /// </summary>
-    /// <seealso cref="Deal.Data.Crud.ICreate" />
-    /// <seealso cref="Deal.Data.Crud.IReadAny" />
-    /// <seealso cref="System.IDisposable" />
+    /// <seealso cref="ICreate" />
+    /// <seealso cref="IReadAny" />
+    /// <seealso cref="IRead" />
+    /// <seealso cref="IDisposable" />
     public interface IDealData
-        : ICreate, IReadAny, IDisposable
+        : ICreate, IReadAny, IRead, IDisposable
     {
     }
 }

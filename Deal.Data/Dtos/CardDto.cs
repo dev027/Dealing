@@ -5,6 +5,8 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using Deal.Data.DbContexts;
+using Deal.Data.Resources;
+using Deal.Domain.DomainObjects.Cards;
 
 namespace Deal.Data.Dtos
 {
@@ -75,5 +77,49 @@ namespace Deal.Data.Dtos
         public RankDto? Rank { get; private set; }
 
         #endregion Parent Properties
+
+        #region Public Methods
+
+        /// <summary>
+        /// Converts Card to DTO.
+        /// </summary>
+        /// <param name="card">Card.</param>
+        /// <returns>Card DTO.</returns>
+        public static CardDto ToDto(ICard card)
+        {
+            if (card == null)
+            {
+                throw new ArgumentNullException(nameof(card));
+            }
+
+            return new CardDto(
+                id: card.Id,
+                suitId: card.Suit.Id,
+                rankId: card.Rank.Id);
+        }
+
+        /// <summary>
+        /// Converts instance to domain object.
+        /// </summary>
+        /// <returns>Card.</returns>
+        public ICard ToDomain()
+        {
+            if (this.Rank == null)
+            {
+                throw new InvalidOperationException(ExceptionResource.CannotConvertToICardIfRankIsNull);
+            }
+
+            if (this.Suit == null)
+            {
+                throw new InvalidOperationException(ExceptionResource.CannotConvertToICardIfSuitIsNull);
+            }
+
+            return new Card(
+                id: this.Id,
+                suit: this.Suit.ToDomain(),
+                rank: this.Rank.ToDomain());
+        }
+
+        #endregion Public Methods
     }
 }
