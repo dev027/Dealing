@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Deal.Service</name>
+    </assembly>
+    <members>
+        <member name="T:Deal.Service.SeedServices.ISeedService">
+            <summary>
+            Seed Service.
+            </summary>
+        </member>
+        <member name="M:Deal.Service.SeedServices.ISeedService.Ranks">
+            <summary>
+            Seed the Ranks.
+            </summary>
+        </member>
+        <member name="M:Deal.Service.SeedServices.ISeedService.Suits">
+            <summary>
+            Seed the Suits.
+            </summary>
+        </member>
+        <member name="T:Deal.Service.SeedServices.SeedService">
+            <summary>
+            Seed Service.
+            </summary>
+            <seealso cref="T:Deal.Service.SeedServices.ISeedService" />
+        </member>
+        <member name="M:Deal.Service.SeedServices.SeedService.Ranks">
+            <summary>
+            Seed the Ranks.
+            </summary>
+        </member>
+        <member name="M:Deal.Service.SeedServices.SeedService.Suits">
+            <summary>
+            Seeds the Suits.
+            </summary>
+        </member>
+    </members>
+</doc>

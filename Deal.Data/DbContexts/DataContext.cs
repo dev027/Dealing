@@ -12,7 +12,7 @@ namespace Deal.Data.DbContexts
     /// <summary>
     /// Database Context.
     /// </summary>
-    /// <seealso cref="Microsoft.EntityFrameworkCore.DbContext" />
+    /// <seealso cref="DbContext" />
     public partial class DataContext : DbContext
     {
         /// <inheritdoc/>

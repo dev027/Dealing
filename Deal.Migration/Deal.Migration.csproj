@@ -13,7 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Deal.Data\Deal.Data.csproj" />
+    <ProjectReference Include="..\..\..\..\Documents\33 Library\DoItWright.Library\DoItWright.Library.csproj" />
+    <ProjectReference Include="..\Deal.Service\Deal.Service.csproj" />
   </ItemGroup>
 
 </Project>
