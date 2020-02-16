@@ -6,6 +6,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Deal.Data.DbContexts;
+using Deal.Domain.DomainObjects.SetColours;
 
 namespace Deal.Data.Dtos
 {
@@ -28,16 +29,16 @@ namespace Deal.Data.Dtos
         /// Initializes a new instance of the <see cref="SetColourDto"/> class.
         /// </summary>
         /// <param name="id">Set Colour DTO.</param>
-        /// <param name="name">Set Colour Name.</param>
         /// <param name="code">Set Colour Code.</param>
+        /// <param name="name">Set Colour Name.</param>
         public SetColourDto(
             Guid id,
             string name,
             string code)
         {
             this.Id = id;
-            this.Name = name;
             this.Code = code;
+            this.Name = name;
         }
 
         #endregion Constructors
@@ -50,17 +51,51 @@ namespace Deal.Data.Dtos
         public Guid Id { get; private set; }
 
         /// <summary>
-        /// Gets the Set Colour Name.
-        /// </summary>
-        [Required]
-        public string Name { get; private set; } = null!;
-
-        /// <summary>
         /// Gets the Set Colour Code.
         /// </summary>
         [Required]
         public string Code { get; private set; } = null!;
 
+        /// <summary>
+        /// Gets the Set Colour Name.
+        /// </summary>
+        [Required]
+        public string Name { get; private set; } = null!;
+
         #endregion Properties
+
+        #region Public Methods
+
+        /// <summary>
+        /// Converts domain object to DTO.
+        /// </summary>
+        /// <param name="setColour">The set colour.</param>
+        /// <returns>Set Colour.</returns>
+        public static SetColourDto ToDto(ISetColour setColour)
+        {
+            if (setColour == null)
+            {
+                throw new ArgumentNullException(nameof(setColour));
+            }
+
+            return new SetColourDto(
+                setColour.Id,
+                setColour.Code,
+                setColour.Name);
+        }
+
+        /// <summary>
+        /// Converts instance to domain object.
+        /// </summary>
+        /// <returns>Set Colour.</returns>
+        public ISetColour ToDomain()
+        {
+            return new SetColour(
+                this.Id,
+                this.Code,
+                this.Name);
+        }
+
+        #endregion Public Methods
     }
 }

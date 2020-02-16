@@ -5,6 +5,7 @@
 using Deal.Domain.DomainObjects.Cards;
 using Deal.Domain.DomainObjects.PackColours;
 using Deal.Domain.DomainObjects.Ranks;
+using Deal.Domain.DomainObjects.SetColours;
 using Deal.Domain.DomainObjects.Suits;
 
 namespace Deal.Data.Crud
@@ -27,15 +28,21 @@ namespace Deal.Data.Crud
         void CreatePackColour(IPackColour packColour);
 
         /// <summary>
-        /// Creates the Suit.
-        /// </summary>
-        /// <param name="suit">Suit.</param>
-        void CreateSuit(ISuit suit);
-
-        /// <summary>
         /// Creates the Rank.
         /// </summary>
         /// <param name="rank">Rank.</param>
         void CreateRank(IRank rank);
+
+        /// <summary>
+        /// Creates the Set Colour.
+        /// </summary>
+        /// <param name="setColour">Set Colour.</param>
+        void CreateSetColour(ISetColour setColour);
+
+        /// <summary>
+        /// Creates the Suit.
+        /// </summary>
+        /// <param name="suit">Suit.</param>
+        void CreateSuit(ISuit suit);
     }
 }

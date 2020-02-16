@@ -141,6 +141,49 @@
         <member name="P:Deal.Domain.DomainObjects.Ranks.Rank.SortOrder">
             <inheritdoc/>
         </member>
+        <member name="T:Deal.Domain.DomainObjects.SetColours.ISetColour">
+            <summary>
+            Set Colour.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.SetColours.ISetColour.Id">
+            <summary>
+            Gets the Ste Colour Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.SetColours.ISetColour.Code">
+            <summary>
+            Gets the Set Colour Code.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.SetColours.ISetColour.Name">
+            <summary>
+            Gets the Set Colour Name.
+            </summary>
+        </member>
+        <member name="T:Deal.Domain.DomainObjects.SetColours.SetColour">
+            <summary>
+            Set Colour.
+            </summary>
+            <seealso cref="T:Deal.Domain.DomainObjects.SetColours.ISetColour" />
+        </member>
+        <member name="M:Deal.Domain.DomainObjects.SetColours.SetColour.#ctor(System.Guid,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Domain.DomainObjects.SetColours.SetColour"/> class.
+            </summary>
+            <param name="id">Set Colour Id.</param>
+            <param name="code">Set Colour Code.</param>
+            <param name="name">Set Colour Name.</param>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.SetColours.SetColour.Id">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.SetColours.SetColour.Code">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.SetColours.SetColour.Name">
+            <inheritdoc/>
+        </member>
         <member name="T:Deal.Domain.DomainObjects.Suits.ISuit">
             <summary>
             Suit of a Card.

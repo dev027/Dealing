@@ -28,10 +28,13 @@
         <member name="M:Deal.Data.Crud.DealData.CreatePackColour(Deal.Domain.DomainObjects.PackColours.IPackColour)">
             <inheritdoc/>
         </member>
-        <member name="M:Deal.Data.Crud.DealData.CreateSuit(Deal.Domain.DomainObjects.Suits.ISuit)">
+        <member name="M:Deal.Data.Crud.DealData.CreateRank(Deal.Domain.DomainObjects.Ranks.IRank)">
             <inheritdoc/>
         </member>
-        <member name="M:Deal.Data.Crud.DealData.CreateRank(Deal.Domain.DomainObjects.Ranks.IRank)">
+        <member name="M:Deal.Data.Crud.DealData.CreateSetColour(Deal.Domain.DomainObjects.SetColours.ISetColour)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Deal.Data.Crud.DealData.CreateSuit(Deal.Domain.DomainObjects.Suits.ISuit)">
             <inheritdoc/>
         </member>
         <member name="F:Deal.Data.Crud.DealData.isDisposed">
@@ -69,10 +72,13 @@
         <member name="M:Deal.Data.Crud.DealData.AnyPackColour">
             <inheritdoc/>
         </member>
-        <member name="M:Deal.Data.Crud.DealData.AnySuit">
+        <member name="M:Deal.Data.Crud.DealData.AnyRank">
             <inheritdoc/>
         </member>
-        <member name="M:Deal.Data.Crud.DealData.AnyRank">
+        <member name="M:Deal.Data.Crud.DealData.AnySetColours">
+            <inheritdoc/>
+        </member>
+        <member name="M:Deal.Data.Crud.DealData.AnySuit">
             <inheritdoc/>
         </member>
         <member name="M:Deal.Data.Crud.DealData.ReadAllSuits">
@@ -98,17 +104,23 @@
             </summary>
             <param name="packColour">Pack Colour.</param>
         </member>
-        <member name="M:Deal.Data.Crud.ICreate.CreateSuit(Deal.Domain.DomainObjects.Suits.ISuit)">
-            <summary>
-            Creates the Suit.
-            </summary>
-            <param name="suit">Suit.</param>
-        </member>
         <member name="M:Deal.Data.Crud.ICreate.CreateRank(Deal.Domain.DomainObjects.Ranks.IRank)">
             <summary>
             Creates the Rank.
             </summary>
             <param name="rank">Rank.</param>
+        </member>
+        <member name="M:Deal.Data.Crud.ICreate.CreateSetColour(Deal.Domain.DomainObjects.SetColours.ISetColour)">
+            <summary>
+            Creates the Set Colour.
+            </summary>
+            <param name="setColour">Set Colour.</param>
+        </member>
+        <member name="M:Deal.Data.Crud.ICreate.CreateSuit(Deal.Domain.DomainObjects.Suits.ISuit)">
+            <summary>
+            Creates the Suit.
+            </summary>
+            <param name="suit">Suit.</param>
         </member>
         <member name="T:Deal.Data.Crud.IDealData">
             <summary>
@@ -153,17 +165,23 @@
             </summary>
             <returns>True if Pack Colours has rows; otherwise False.</returns>
         </member>
-        <member name="M:Deal.Data.Crud.IReadAny.AnySuit">
-            <summary>
-            Check if Suits has any rows.
-            </summary>
-            <returns>True if Suits has rows; otherwise False.</returns>
-        </member>
         <member name="M:Deal.Data.Crud.IReadAny.AnyRank">
             <summary>
             Check if Ranks has any rows.
             </summary>
             <returns>True if Ranks has rows; otherwise False.</returns>
+        </member>
+        <member name="M:Deal.Data.Crud.IReadAny.AnySetColours">
+            <summary>
+            Check if Set Colours has any rows.
+            </summary>
+            <returns>True if Set Colours has rows; otherwise False.</returns>
+        </member>
+        <member name="M:Deal.Data.Crud.IReadAny.AnySuit">
+            <summary>
+            Check if Suits has any rows.
+            </summary>
+            <returns>True if Suits has rows; otherwise False.</returns>
         </member>
         <member name="T:Deal.Data.DbContexts.DataContext">
             <summary>
@@ -924,12 +942,17 @@
             Initializes a new instance of the <see cref="T:Deal.Data.Dtos.SetColourDto"/> class.
             </summary>
             <param name="id">Set Colour DTO.</param>
-            <param name="name">Set Colour Name.</param>
             <param name="code">Set Colour Code.</param>
+            <param name="name">Set Colour Name.</param>
         </member>
         <member name="P:Deal.Data.Dtos.SetColourDto.Id">
             <summary>
             Gets the Set Colour Identifier.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetColourDto.Code">
+            <summary>
+            Gets the Set Colour Code.
             </summary>
         </member>
         <member name="P:Deal.Data.Dtos.SetColourDto.Name">
@@ -937,10 +960,18 @@
             Gets the Set Colour Name.
             </summary>
         </member>
-        <member name="P:Deal.Data.Dtos.SetColourDto.Code">
+        <member name="M:Deal.Data.Dtos.SetColourDto.ToDto(Deal.Domain.DomainObjects.SetColours.ISetColour)">
             <summary>
-            Gets the Set Colour Code.
+            Converts domain object to DTO.
             </summary>
+            <param name="setColour">The set colour.</param>
+            <returns>Set Colour.</returns>
+        </member>
+        <member name="M:Deal.Data.Dtos.SetColourDto.ToDomain">
+            <summary>
+            Converts instance to domain object.
+            </summary>
+            <returns>Set Colour.</returns>
         </member>
         <member name="T:Deal.Data.Dtos.SetDealErrorDto">
             <summary>

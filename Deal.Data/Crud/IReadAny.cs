@@ -22,15 +22,21 @@ namespace Deal.Data.Crud
         bool AnyPackColour();
 
         /// <summary>
-        /// Check if Suits has any rows.
-        /// </summary>
-        /// <returns>True if Suits has rows; otherwise False.</returns>
-        bool AnySuit();
-
-        /// <summary>
         /// Check if Ranks has any rows.
         /// </summary>
         /// <returns>True if Ranks has rows; otherwise False.</returns>
         bool AnyRank();
+
+        /// <summary>
+        /// Check if Set Colours has any rows.
+        /// </summary>
+        /// <returns>True if Set Colours has rows; otherwise False.</returns>
+        bool AnySetColours();
+
+        /// <summary>
+        /// Check if Suits has any rows.
+        /// </summary>
+        /// <returns>True if Suits has rows; otherwise False.</returns>
+        bool AnySuit();
     }
 }

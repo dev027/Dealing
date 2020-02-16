@@ -7,6 +7,7 @@ using Deal.Data.Dtos;
 using Deal.Domain.DomainObjects.Cards;
 using Deal.Domain.DomainObjects.PackColours;
 using Deal.Domain.DomainObjects.Ranks;
+using Deal.Domain.DomainObjects.SetColours;
 using Deal.Domain.DomainObjects.Suits;
 
 namespace Deal.Data.Crud
@@ -44,10 +45,10 @@ namespace Deal.Data.Crud
         }
 
         /// <inheritdoc/>
-        public void CreateSuit(ISuit suit)
+        public void CreateRank(IRank rank)
         {
-            SuitDto suitDto = SuitDto.ToDto(suit);
-            this.Context.Suits.Add(suitDto);
+            RankDto rankDto = RankDto.ToDto(rank);
+            this.Context.Ranks.Add(rankDto);
             int count = this.Context.SaveChanges();
 
             if (count != 1)
@@ -57,10 +58,23 @@ namespace Deal.Data.Crud
         }
 
         /// <inheritdoc/>
-        public void CreateRank(IRank rank)
+        public void CreateSetColour(ISetColour setColour)
         {
-            RankDto rankDto = RankDto.ToDto(rank);
-            this.Context.Ranks.Add(rankDto);
+            SetColourDto setColourDto = SetColourDto.ToDto(setColour);
+            this.Context.SetColours.Add(setColourDto);
+            int count = this.Context.SaveChanges();
+
+            if (count != 1)
+            {
+                throw new ApplicationException($"Unexpectedly created {count} rows");
+            }
+        }
+
+        /// <inheritdoc/>
+        public void CreateSuit(ISuit suit)
+        {
+            SuitDto suitDto = SuitDto.ToDto(suit);
+            this.Context.Suits.Add(suitDto);
             int count = this.Context.SaveChanges();
 
             if (count != 1)

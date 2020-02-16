@@ -8,6 +8,7 @@ using Deal.Data.Crud;
 using Deal.Domain.DomainObjects.Cards;
 using Deal.Domain.DomainObjects.PackColours;
 using Deal.Domain.DomainObjects.Ranks;
+using Deal.Domain.DomainObjects.SetColours;
 using Deal.Domain.DomainObjects.Suits;
 using Deal.Service.Resources;
 using DoItWright.Library.DependencyInjection;
@@ -117,6 +118,39 @@ namespace Deal.Service.SeedServices
                     name: rankDetail.Value,
                     sortOrder: sortOrder++);
                 data.CreateRank(rank);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void SetColours()
+        {
+            using IDealData data = InstanceFactory.GetInstance<IDealData>();
+
+            if (data.AnySetColours())
+            {
+                return;
+            }
+
+            IDictionary<string, string> setColourDetails = new Dictionary<string, string>
+            {
+                { "DK-BLUE", "Dark Blue" },
+                { "DK-GREEN", "Dark Green" },
+                { "LT-BLUE", "Light Blue" },
+                { "LT-GREEN", "Light Green" },
+                { "WHITE", "Off White" },
+                { "ORANGE", "Orange" },
+                { "PINK", "Pink" },
+                { "RED", "Red" },
+                { "YELLOW", "Yellow" }
+            };
+
+            foreach (KeyValuePair<string, string> setColourDetail in setColourDetails)
+            {
+                ISetColour setColour = new SetColour(
+                    id: Guid.NewGuid(),
+                    code: setColourDetail.Key,
+                    name: setColourDetail.Value);
+                data.CreateSetColour(setColour);
             }
         }
 

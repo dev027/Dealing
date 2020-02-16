@@ -25,15 +25,21 @@ namespace Deal.Data.Crud
         }
 
         /// <inheritdoc/>
-        public bool AnySuit()
-        {
-            return this.Context.Suits.Any();
-        }
-
-        /// <inheritdoc/>
         public bool AnyRank()
         {
             return this.Context.Ranks.Any();
+        }
+
+        /// <inheritdoc/>
+        public bool AnySetColours()
+        {
+            return this.Context.SetColours.Any();
+        }
+
+        /// <inheritdoc/>
+        public bool AnySuit()
+        {
+            return this.Context.Suits.Any();
         }
     }
 }
