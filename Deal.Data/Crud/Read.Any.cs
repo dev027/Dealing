@@ -18,6 +18,12 @@ namespace Deal.Data.Crud
             return this.Context.Cards.Any();
         }
 
+        /// <inheritdoc />
+        public bool AnyErrorReasonGroup()
+        {
+            return this.Context.ErrorReasonGroups.Any();
+        }
+
         /// <inheritdoc/>
         public bool AnyPackColour()
         {

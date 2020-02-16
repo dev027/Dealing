@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using Deal.Data.Crud;
 using Deal.Domain.DomainObjects.Cards;
+using Deal.Domain.DomainObjects.ErrorReasonGroups;
 using Deal.Domain.DomainObjects.PackColours;
 using Deal.Domain.DomainObjects.Ranks;
 using Deal.Domain.DomainObjects.SetColours;
@@ -54,6 +55,32 @@ namespace Deal.Service.SeedServices
                         suit: suit,
                         rank: rank));
                 }
+            }
+        }
+
+        /// <inheritdoc />
+        public void ErrorReasonGroups()
+        {
+            using IDealData data = InstanceFactory.GetInstance<IDealData>();
+
+            if (data.AnyErrorReasonGroup())
+            {
+                return;
+            }
+
+            IDictionary<string, string> errorReasonGroupDetails = new Dictionary<string, string>
+            {
+                { "SET", "Set" },
+                { "PACK", "Pack" }
+            };
+
+            foreach (KeyValuePair<string, string> errorReasonGroupDetail in errorReasonGroupDetails)
+            {
+                IErrorReasonGroup errorReasonGroup = new ErrorReasonGroup(
+                    id: Guid.NewGuid(),
+                    code: errorReasonGroupDetail.Key,
+                    name: errorReasonGroupDetail.Value);
+                data.CreateErrorReasonGroup(errorReasonGroup);
             }
         }
 

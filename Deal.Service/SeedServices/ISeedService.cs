@@ -15,6 +15,11 @@ namespace Deal.Service.SeedServices
         void Cards();
 
         /// <summary>
+        /// Seeds the Error Reason Groups.
+        /// </summary>
+        void ErrorReasonGroups();
+
+        /// <summary>
         /// Seeds the Pack Colours.
         /// </summary>
         void PackColours();

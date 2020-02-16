@@ -28,6 +28,9 @@
         <member name="M:Deal.Data.Crud.DealData.CreatePackColour(Deal.Domain.DomainObjects.PackColours.IPackColour)">
             <inheritdoc/>
         </member>
+        <member name="M:Deal.Data.Crud.DealData.CreateErrorReasonGroup(Deal.Domain.DomainObjects.ErrorReasonGroups.IErrorReasonGroup)">
+            <inheritdoc/>
+        </member>
         <member name="M:Deal.Data.Crud.DealData.CreateRank(Deal.Domain.DomainObjects.Ranks.IRank)">
             <inheritdoc/>
         </member>
@@ -69,6 +72,9 @@
         <member name="M:Deal.Data.Crud.DealData.AnyCard">
             <inheritdoc/>
         </member>
+        <member name="M:Deal.Data.Crud.DealData.AnyErrorReasonGroup">
+            <inheritdoc />
+        </member>
         <member name="M:Deal.Data.Crud.DealData.AnyPackColour">
             <inheritdoc/>
         </member>
@@ -103,6 +109,12 @@
             Creates the Pack Colour.
             </summary>
             <param name="packColour">Pack Colour.</param>
+        </member>
+        <member name="M:Deal.Data.Crud.ICreate.CreateErrorReasonGroup(Deal.Domain.DomainObjects.ErrorReasonGroups.IErrorReasonGroup)">
+            <summary>
+            Creates the Error Reason Group.
+            </summary>
+            <param name="errorReasonGroup">Error Reason Group.</param>
         </member>
         <member name="M:Deal.Data.Crud.ICreate.CreateRank(Deal.Domain.DomainObjects.Ranks.IRank)">
             <summary>
@@ -158,6 +170,12 @@
             Check if Cards has any rows.
             </summary>
             <returns>True if Cards has rows; otherwise False.</returns>
+        </member>
+        <member name="M:Deal.Data.Crud.IReadAny.AnyErrorReasonGroup">
+            <summary>
+            Check if Error reason Groups has any rows.
+            </summary>
+            <returns>True if Error reason Groups has rows; otherwise False.</returns>
         </member>
         <member name="M:Deal.Data.Crud.IReadAny.AnyPackColour">
             <summary>
@@ -399,22 +417,22 @@
             Initializes a new instance of the <see cref="T:Deal.Data.Dtos.ErrorReasonDto"/> class.
             </summary>
             <param name="id">Error Reason Id.</param>
-            <param name="name">Error Reason Name.</param>
             <param name="code">Error Reason Code.</param>
+            <param name="name">Error Reason Name.</param>
         </member>
         <member name="P:Deal.Data.Dtos.ErrorReasonDto.Id">
             <summary>
             Gets the Error Reason Id.
             </summary>
         </member>
-        <member name="P:Deal.Data.Dtos.ErrorReasonDto.Name">
-            <summary>
-            Gets the Error Reason Name.
-            </summary>
-        </member>
         <member name="P:Deal.Data.Dtos.ErrorReasonDto.Code">
             <summary>
             Gets the Error Reason Code.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.ErrorReasonDto.Name">
+            <summary>
+            Gets the Error Reason Name.
             </summary>
         </member>
         <member name="P:Deal.Data.Dtos.ErrorReasonDto.ErrorReasonGroupId">
@@ -459,6 +477,19 @@
             <summary>
             Gets the Error reason Group Name.
             </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.ErrorReasonGroupDto.ToDto(Deal.Domain.DomainObjects.ErrorReasonGroups.IErrorReasonGroup)">
+            <summary>
+            Converts domain object to dto.
+            </summary>
+            <param name="errorReasonGroup">The error reason group.</param>
+            <returns>Error Reason Group DTO.</returns>
+        </member>
+        <member name="M:Deal.Data.Dtos.ErrorReasonGroupDto.ToDomain">
+            <summary>
+            Converts this instance to domain object.
+            </summary>
+            <returns>Error Reason Group.</returns>
         </member>
         <member name="T:Deal.Data.Dtos.EventDto">
             <summary>

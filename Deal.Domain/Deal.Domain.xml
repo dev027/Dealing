@@ -47,6 +47,49 @@
             Gets the Rank.
             </summary>
         </member>
+        <member name="T:Deal.Domain.DomainObjects.ErrorReasonGroups.ErrorReasonGroup">
+            <summary>
+            Error Reason Group.
+            </summary>
+            <seealso cref="T:Deal.Domain.DomainObjects.ErrorReasonGroups.IErrorReasonGroup" />
+        </member>
+        <member name="M:Deal.Domain.DomainObjects.ErrorReasonGroups.ErrorReasonGroup.#ctor(System.Guid,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Domain.DomainObjects.ErrorReasonGroups.ErrorReasonGroup"/> class.
+            </summary>
+            <param name="id">Error Reason Group Id.</param>
+            <param name="code">Error Reason Group Code.</param>
+            <param name="name">Error Reason Group Name.</param>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.ErrorReasonGroups.ErrorReasonGroup.Id">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.ErrorReasonGroups.ErrorReasonGroup.Code">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.ErrorReasonGroups.ErrorReasonGroup.Name">
+            <inheritdoc/>
+        </member>
+        <member name="T:Deal.Domain.DomainObjects.ErrorReasonGroups.IErrorReasonGroup">
+            <summary>
+            Error Reason Group.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.ErrorReasonGroups.IErrorReasonGroup.Id">
+            <summary>
+            Gets the Error Reason GroupCode.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.ErrorReasonGroups.IErrorReasonGroup.Code">
+            <summary>
+            Gets the Error Reason GroupCode.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.ErrorReasonGroups.IErrorReasonGroup.Name">
+            <summary>
+            Gets the Error Reason Group Name.
+            </summary>
+        </member>
         <member name="T:Deal.Domain.DomainObjects.PackColours.IPackColour">
             <summary>
             Pack Colour.

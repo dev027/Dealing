@@ -28,12 +28,12 @@ namespace Deal.Data.Dtos
         /// Initializes a new instance of the <see cref="ErrorReasonDto"/> class.
         /// </summary>
         /// <param name="id">Error Reason Id.</param>
-        /// <param name="name">Error Reason Name.</param>
         /// <param name="code">Error Reason Code.</param>
+        /// <param name="name">Error Reason Name.</param>
         public ErrorReasonDto(
-            Guid id,
-            string name,
-            string code)
+             Guid id,
+             string code,
+             string name)
         {
             this.Id = id;
             this.Name = name;
@@ -50,16 +50,16 @@ namespace Deal.Data.Dtos
         public Guid Id { get; private set; }
 
         /// <summary>
-        /// Gets the Error Reason Name.
-        /// </summary>
-        [Required]
-        public string Name { get; private set; } = null!;
-
-        /// <summary>
         /// Gets the Error Reason Code.
         /// </summary>
         [Required]
         public string Code { get; private set; } = null!;
+
+        /// <summary>
+        /// Gets the Error Reason Name.
+        /// </summary>
+        [Required]
+        public string Name { get; private set; } = null!;
 
         /// <summary>
         /// Gets the Error Reason Group Id.

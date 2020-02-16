@@ -6,6 +6,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Deal.Data.DbContexts;
+using Deal.Domain.DomainObjects.ErrorReasonGroups;
 
 namespace Deal.Data.Dtos
 {
@@ -62,5 +63,39 @@ namespace Deal.Data.Dtos
         public string Name { get; private set; } = null!;
 
         #endregion Properties
+
+        #region Public Properties
+
+        /// <summary>
+        /// Converts domain object to dto.
+        /// </summary>
+        /// <param name="errorReasonGroup">The error reason group.</param>
+        /// <returns>Error Reason Group DTO.</returns>
+        public static ErrorReasonGroupDto ToDto(IErrorReasonGroup errorReasonGroup)
+        {
+            if (errorReasonGroup == null)
+            {
+                throw new ArgumentNullException(nameof(errorReasonGroup));
+            }
+
+            return new ErrorReasonGroupDto(
+                id: errorReasonGroup.Id,
+                code: errorReasonGroup.Code,
+                name: errorReasonGroup.Name);
+        }
+
+        /// <summary>
+        /// Converts this instance to domain object.
+        /// </summary>
+        /// <returns>Error Reason Group.</returns>
+        public IErrorReasonGroup ToDomain()
+        {
+            return new ErrorReasonGroup(
+                id: this.Id,
+                code: this.Code,
+                name: this.Name);
+        }
+
+        #endregion Public Properties
     }
 }
