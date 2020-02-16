@@ -3,6 +3,7 @@
 // </copyright>
 
 using Deal.Domain.DomainObjects.Cards;
+using Deal.Domain.DomainObjects.PackColours;
 using Deal.Domain.DomainObjects.Ranks;
 using Deal.Domain.DomainObjects.Suits;
 
@@ -18,6 +19,12 @@ namespace Deal.Data.Crud
         /// </summary>
         /// <param name="card">Card.</param>
         void CreateCard(ICard card);
+
+        /// <summary>
+        /// Creates the Pack Colour.
+        /// </summary>
+        /// <param name="packColour">Pack Colour.</param>
+        void CreatePackColour(IPackColour packColour);
 
         /// <summary>
         /// Creates the Suit.

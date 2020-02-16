@@ -6,6 +6,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Deal.Data.DbContexts;
+using Deal.Domain.DomainObjects.PackColours;
 
 namespace Deal.Data.Dtos
 {
@@ -62,5 +63,39 @@ namespace Deal.Data.Dtos
         public string Colour { get; private set; } = null!;
 
         #endregion Properties
+
+        #region Public Properties
+
+        /// <summary>
+        /// Converts domain object to DTO.
+        /// </summary>
+        /// <param name="packColour">The pack colour.</param>
+        /// <returns>Pack Colour DTO.</returns>
+        public static PackColourDto ToDto(IPackColour packColour)
+        {
+            if (packColour == null)
+            {
+                throw new ArgumentNullException(nameof(packColour));
+            }
+
+            return new PackColourDto(
+                id: packColour.Id,
+                code: packColour.Code,
+                colour: packColour.Colour);
+        }
+
+        /// <summary>
+        /// Converts instance to domain object.
+        /// </summary>
+        /// <returns>Pack Colour.</returns>
+        public IPackColour ToDomain()
+        {
+            return new PackColour(
+                id: this.Id,
+                code: this.Code,
+                colour: this.Colour);
+        }
+
+        #endregion Public Properties
     }
 }

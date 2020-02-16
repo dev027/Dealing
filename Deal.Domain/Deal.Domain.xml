@@ -47,6 +47,49 @@
             Gets the Rank.
             </summary>
         </member>
+        <member name="T:Deal.Domain.DomainObjects.PackColours.IPackColour">
+            <summary>
+            Pack Colour.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.PackColours.IPackColour.Id">
+            <summary>
+            Gets the Pack Colour Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.PackColours.IPackColour.Code">
+            <summary>
+            Gets the Pack Colour Code.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.PackColours.IPackColour.Colour">
+            <summary>
+            Gets the Colour.
+            </summary>
+        </member>
+        <member name="T:Deal.Domain.DomainObjects.PackColours.PackColour">
+            <summary>
+            Pack Colour.
+            </summary>
+            <seealso cref="T:Deal.Domain.DomainObjects.PackColours.IPackColour" />
+        </member>
+        <member name="M:Deal.Domain.DomainObjects.PackColours.PackColour.#ctor(System.Guid,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Domain.DomainObjects.PackColours.PackColour"/> class.
+            </summary>
+            <param name="id">Pack Colour Id.</param>
+            <param name="code">Pack Colour Code.</param>
+            <param name="colour">Colour.</param>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.PackColours.PackColour.Id">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.PackColours.PackColour.Code">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.PackColours.PackColour.Colour">
+            <inheritdoc/>
+        </member>
         <member name="T:Deal.Domain.DomainObjects.Ranks.IRank">
             <summary>
             Rank of a Suit.

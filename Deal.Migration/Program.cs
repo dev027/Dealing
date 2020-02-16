@@ -16,6 +16,7 @@ namespace Deal.Migration
             seedService.Suits();
             seedService.Ranks();
             seedService.Cards();
+            seedService.PackColours();
         }
 
         private static void DependencyInjection()

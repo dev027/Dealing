@@ -25,6 +25,9 @@
         <member name="M:Deal.Data.Crud.DealData.CreateCard(Deal.Domain.DomainObjects.Cards.ICard)">
             <inheritdoc/>
         </member>
+        <member name="M:Deal.Data.Crud.DealData.CreatePackColour(Deal.Domain.DomainObjects.PackColours.IPackColour)">
+            <inheritdoc/>
+        </member>
         <member name="M:Deal.Data.Crud.DealData.CreateSuit(Deal.Domain.DomainObjects.Suits.ISuit)">
             <inheritdoc/>
         </member>
@@ -63,6 +66,9 @@
         <member name="M:Deal.Data.Crud.DealData.AnyCard">
             <inheritdoc/>
         </member>
+        <member name="M:Deal.Data.Crud.DealData.AnyPackColour">
+            <inheritdoc/>
+        </member>
         <member name="M:Deal.Data.Crud.DealData.AnySuit">
             <inheritdoc/>
         </member>
@@ -85,6 +91,12 @@
             Creates the Card.
             </summary>
             <param name="card">Card.</param>
+        </member>
+        <member name="M:Deal.Data.Crud.ICreate.CreatePackColour(Deal.Domain.DomainObjects.PackColours.IPackColour)">
+            <summary>
+            Creates the Pack Colour.
+            </summary>
+            <param name="packColour">Pack Colour.</param>
         </member>
         <member name="M:Deal.Data.Crud.ICreate.CreateSuit(Deal.Domain.DomainObjects.Suits.ISuit)">
             <summary>
@@ -134,6 +146,12 @@
             Check if Cards has any rows.
             </summary>
             <returns>True if Cards has rows; otherwise False.</returns>
+        </member>
+        <member name="M:Deal.Data.Crud.IReadAny.AnyPackColour">
+            <summary>
+            Check if Pack Colours has any rows.
+            </summary>
+            <returns>True if Pack Colours has rows; otherwise False.</returns>
         </member>
         <member name="M:Deal.Data.Crud.IReadAny.AnySuit">
             <summary>
@@ -644,6 +662,19 @@
             <summary>
             Gets the Colour.
             </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.PackColourDto.ToDto(Deal.Domain.DomainObjects.PackColours.IPackColour)">
+            <summary>
+            Converts domain object to DTO.
+            </summary>
+            <param name="packColour">The pack colour.</param>
+            <returns>Pack Colour DTO.</returns>
+        </member>
+        <member name="M:Deal.Data.Dtos.PackColourDto.ToDomain">
+            <summary>
+            Converts instance to domain object.
+            </summary>
+            <returns>Pack Colour.</returns>
         </member>
         <member name="T:Deal.Data.Dtos.PackDealErrorDto">
             <summary>

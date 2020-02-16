@@ -15,6 +15,11 @@ namespace Deal.Service.SeedServices
         void Cards();
 
         /// <summary>
+        /// Seeds the Pack Colours.
+        /// </summary>
+        void PackColours();
+
+        /// <summary>
         /// Seed the Ranks.
         /// </summary>
         void Ranks();

@@ -5,6 +5,7 @@
 using System;
 using Deal.Data.Dtos;
 using Deal.Domain.DomainObjects.Cards;
+using Deal.Domain.DomainObjects.PackColours;
 using Deal.Domain.DomainObjects.Ranks;
 using Deal.Domain.DomainObjects.Suits;
 
@@ -21,6 +22,19 @@ namespace Deal.Data.Crud
         {
             CardDto cardDto = CardDto.ToDto(card);
             this.Context.Cards.Add(cardDto);
+            int count = this.Context.SaveChanges();
+
+            if (count != 1)
+            {
+                throw new ApplicationException($"Unexpectedly created {count} rows");
+            }
+        }
+
+        /// <inheritdoc/>
+        public void CreatePackColour(IPackColour packColour)
+        {
+            PackColourDto packColourDto = PackColourDto.ToDto(packColour);
+            this.Context.PackColours.Add(packColourDto);
             int count = this.Context.SaveChanges();
 
             if (count != 1)

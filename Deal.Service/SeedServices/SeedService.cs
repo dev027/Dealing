@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using Deal.Data.Crud;
 using Deal.Domain.DomainObjects.Cards;
+using Deal.Domain.DomainObjects.PackColours;
 using Deal.Domain.DomainObjects.Ranks;
 using Deal.Domain.DomainObjects.Suits;
 using Deal.Service.Resources;
@@ -52,6 +53,31 @@ namespace Deal.Service.SeedServices
                         suit: suit,
                         rank: rank));
                 }
+            }
+        }
+
+        /// <inheritdoc/>
+        public void PackColours()
+        {
+            using IDealData data = InstanceFactory.GetInstance<IDealData>();
+
+            if (data.AnyPackColour())
+            {
+                return;
+            }
+
+            IList<string> colours = new List<string>
+            {
+                "Red", "Blue"
+            };
+
+            foreach (string colour in colours)
+            {
+                IPackColour packColour = new PackColour(
+                    id: Guid.NewGuid(),
+                    code: colour.Substring(0, 1),
+                    colour: colour);
+                data.CreatePackColour(packColour);
             }
         }
 

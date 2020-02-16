@@ -16,6 +16,12 @@ namespace Deal.Data.Crud
         bool AnyCard();
 
         /// <summary>
+        /// Check if Pack Colours has any rows.
+        /// </summary>
+        /// <returns>True if Pack Colours has rows; otherwise False.</returns>
+        bool AnyPackColour();
+
+        /// <summary>
         /// Check if Suits has any rows.
         /// </summary>
         /// <returns>True if Suits has rows; otherwise False.</returns>

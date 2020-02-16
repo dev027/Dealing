@@ -19,6 +19,12 @@ namespace Deal.Data.Crud
         }
 
         /// <inheritdoc/>
+        public bool AnyPackColour()
+        {
+            return this.Context.PackColours.Any();
+        }
+
+        /// <inheritdoc/>
         public bool AnySuit()
         {
             return this.Context.Suits.Any();

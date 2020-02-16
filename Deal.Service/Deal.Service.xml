@@ -40,6 +40,11 @@
             Seeds the Cards.
             </summary>
         </member>
+        <member name="M:Deal.Service.SeedServices.ISeedService.PackColours">
+            <summary>
+            Seeds the Pack Colours.
+            </summary>
+        </member>
         <member name="M:Deal.Service.SeedServices.ISeedService.Ranks">
             <summary>
             Seed the Ranks.
@@ -57,6 +62,9 @@
             <seealso cref="T:Deal.Service.SeedServices.ISeedService" />
         </member>
         <member name="M:Deal.Service.SeedServices.SeedService.Cards">
+            <inheritdoc/>
+        </member>
+        <member name="M:Deal.Service.SeedServices.SeedService.PackColours">
             <inheritdoc/>
         </member>
         <member name="M:Deal.Service.SeedServices.SeedService.Ranks">
