@@ -26,8 +26,8 @@ namespace Deal.Domain.DomainObjects.Cards
             IRank rank)
         {
             this.Id = id;
-            this.Suit = suit;
-            this.Rank = rank;
+            this.Suit = suit ?? throw new ArgumentNullException(nameof(suit));
+            this.Rank = rank ?? throw new ArgumentNullException(nameof(rank));
         }
 
         /// <inheritdoc/>

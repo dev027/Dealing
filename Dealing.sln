@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deal.Service", "Deal.Servic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoItWright.Library", "..\..\..\Documents\33 Library\DoItWright.Library\DoItWright.Library.csproj", "{1E6F9F7C-1796-45C7-BC16-3629650B6EFE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deal.Domain.Tests", "Tests\Deal.Domain.Tests\Deal.Domain.Tests.csproj", "{7AE3BD82-5F2A-449F-BEB4-470DFB8053B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{1E6F9F7C-1796-45C7-BC16-3629650B6EFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E6F9F7C-1796-45C7-BC16-3629650B6EFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E6F9F7C-1796-45C7-BC16-3629650B6EFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AE3BD82-5F2A-449F-BEB4-470DFB8053B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AE3BD82-5F2A-449F-BEB4-470DFB8053B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AE3BD82-5F2A-449F-BEB4-470DFB8053B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AE3BD82-5F2A-449F-BEB4-470DFB8053B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +65,7 @@ Global
 		{6BCAC877-5569-4DF5-898A-3DCFFB0B4BFA} = {179F03B8-9239-4EC8-8136-ED8E77CB2503}
 		{B714C014-6D8B-43A7-8C3C-8848EA282F78} = {E96EAB54-597B-466F-BBDC-333235E268D5}
 		{1E6F9F7C-1796-45C7-BC16-3629650B6EFE} = {27DF6DFA-2707-4DA1-A632-DEED28100456}
+		{7AE3BD82-5F2A-449F-BEB4-470DFB8053B4} = {179F03B8-9239-4EC8-8136-ED8E77CB2503}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {90AEB392-E992-4DC6-AC51-A93ECE30D2F1}

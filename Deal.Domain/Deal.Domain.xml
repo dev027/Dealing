@@ -192,35 +192,5 @@
         <member name="P:Deal.Domain.DomainObjects.Suits.Suit.SortOrder">
             <inheritdoc />
         </member>
-        <member name="T:Deal.Domain.Exceptions.IdNotNullException">
-            <summary>
-            IdNotNullException.
-            </summary>
-        </member>
-        <member name="M:Deal.Domain.Exceptions.IdNotNullException.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Deal.Domain.Exceptions.IdNotNullException"/> class.
-            </summary>
-        </member>
-        <member name="M:Deal.Domain.Exceptions.IdNotNullException.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Deal.Domain.Exceptions.IdNotNullException"/> class.
-            </summary>
-            <param name="message">Message.</param>
-        </member>
-        <member name="M:Deal.Domain.Exceptions.IdNotNullException.#ctor(System.String,System.Exception)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Deal.Domain.Exceptions.IdNotNullException"/> class.
-            </summary>
-            <param name="message">Message.</param>
-            <param name="innerException">InnerException.</param>
-        </member>
-        <member name="M:Deal.Domain.Exceptions.IdNotNullException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Deal.Domain.Exceptions.IdNotNullException"/> class.
-            </summary>
-            <param name="info">Serialization Info.</param>
-            <param name="context">Streaming Context.</param>
-        </member>
     </members>
 </doc>
