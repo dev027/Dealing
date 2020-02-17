@@ -19,6 +19,7 @@ namespace Deal.Migration
             seedService.PackColours();
             seedService.SetColours();
             seedService.ErrorReasonGroups();
+            seedService.ErrorReasons();
         }
 
         private static void DependencyInjection()

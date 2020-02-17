@@ -90,6 +90,58 @@
             Gets the Error Reason Group Name.
             </summary>
         </member>
+        <member name="T:Deal.Domain.DomainObjects.ErrorReasons.ErrorReason">
+            <summary>
+            Error Reason.
+            </summary>
+            <seealso cref="T:Deal.Domain.DomainObjects.ErrorReasons.IErrorReason" />
+        </member>
+        <member name="M:Deal.Domain.DomainObjects.ErrorReasons.ErrorReason.#ctor(System.Guid,System.String,System.String,Deal.Domain.DomainObjects.ErrorReasonGroups.IErrorReasonGroup)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Domain.DomainObjects.ErrorReasons.ErrorReason"/> class.
+            </summary>
+            <param name="id">Error Reason Id.</param>
+            <param name="code">Error Reason Code.</param>
+            <param name="name">Error Reason Name.</param>
+            <param name="errorReasonGroup">Error Reason  Group.</param>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.ErrorReasons.ErrorReason.Id">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.ErrorReasons.ErrorReason.Code">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.ErrorReasons.ErrorReason.Name">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.ErrorReasons.ErrorReason.ErrorReasonGroup">
+            <inheritdoc/>
+        </member>
+        <member name="T:Deal.Domain.DomainObjects.ErrorReasons.IErrorReason">
+            <summary>
+            Error Reason.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.ErrorReasons.IErrorReason.Id">
+            <summary>
+            Gets the Error Reason Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.ErrorReasons.IErrorReason.Code">
+            <summary>
+            Gets the Error Reason Code.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.ErrorReasons.IErrorReason.Name">
+            <summary>
+            Gets the Error Reason Name.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.ErrorReasons.IErrorReason.ErrorReasonGroup">
+            <summary>
+            Gets the Error Reason Group.
+            </summary>
+        </member>
         <member name="T:Deal.Domain.DomainObjects.PackColours.IPackColour">
             <summary>
             Pack Colour.

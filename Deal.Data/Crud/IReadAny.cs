@@ -16,9 +16,15 @@ namespace Deal.Data.Crud
         bool AnyCard();
 
         /// <summary>
-        /// Check if Error reason Groups has any rows.
+        /// Check if Error reason has any rows.
         /// </summary>
-        /// <returns>True if Error reason Groups has rows; otherwise False.</returns>
+        /// <returns>True if Error Reason has rows; otherwise False.</returns>
+        bool AnyErrorReason();
+
+        /// <summary>
+        /// Check if Error Reason Groups has any rows.
+        /// </summary>
+        /// <returns>True if Error Reason Groups has rows; otherwise False.</returns>
         bool AnyErrorReasonGroup();
 
         /// <summary>

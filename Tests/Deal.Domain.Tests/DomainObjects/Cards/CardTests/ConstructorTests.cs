@@ -50,7 +50,7 @@ namespace Deal.Domain.Tests.DomainObjects.Cards.CardTests
         }
 
         /// <summary>
-        /// Tests the constructor null code throws exception.
+        /// Tests the constructor null suit throws exception.
         /// </summary>
         [ExpectedException(typeof(ArgumentNullException))]
         [TestMethod]

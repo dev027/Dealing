@@ -61,7 +61,7 @@ namespace Deal.Data.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cannot convert to ICard if Rank is null.
+        ///   Looks up a localized string similar to Cannot convert to ICard if Rank is null..
         /// </summary>
         internal static string CannotConvertToICardIfRankIsNull {
             get {
@@ -70,11 +70,20 @@ namespace Deal.Data.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cannot convert to ICard if Suit is null.
+        ///   Looks up a localized string similar to Cannot convert to ICard if Suit is null..
         /// </summary>
         internal static string CannotConvertToICardIfSuitIsNull {
             get {
                 return ResourceManager.GetString("CannotConvertToICardIfSuitIsNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot convert to IErrorReason if ErrorReason is null..
+        /// </summary>
+        internal static string CannotConvertToIErrorReasonIfErrorReasonGroupIsNull {
+            get {
+                return ResourceManager.GetString("CannotConvertToIErrorReasonIfErrorReasonGroupIsNull", resourceCulture);
             }
         }
     }

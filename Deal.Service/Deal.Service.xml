@@ -40,6 +40,11 @@
             Seeds the Cards.
             </summary>
         </member>
+        <member name="M:Deal.Service.SeedServices.ISeedService.ErrorReasons">
+            <summary>
+            Seeds the Error Reasons.
+            </summary>
+        </member>
         <member name="M:Deal.Service.SeedServices.ISeedService.ErrorReasonGroups">
             <summary>
             Seeds the Error Reason Groups.
@@ -76,6 +81,9 @@
         </member>
         <member name="M:Deal.Service.SeedServices.SeedService.ErrorReasonGroups">
             <inheritdoc />
+        </member>
+        <member name="M:Deal.Service.SeedServices.SeedService.ErrorReasons">
+            <inheritdoc/>
         </member>
         <member name="M:Deal.Service.SeedServices.SeedService.PackColours">
             <inheritdoc/>

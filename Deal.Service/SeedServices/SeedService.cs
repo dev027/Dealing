@@ -4,9 +4,11 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Deal.Data.Crud;
 using Deal.Domain.DomainObjects.Cards;
 using Deal.Domain.DomainObjects.ErrorReasonGroups;
+using Deal.Domain.DomainObjects.ErrorReasons;
 using Deal.Domain.DomainObjects.PackColours;
 using Deal.Domain.DomainObjects.Ranks;
 using Deal.Domain.DomainObjects.SetColours;
@@ -81,6 +83,59 @@ namespace Deal.Service.SeedServices
                     code: errorReasonGroupDetail.Key,
                     name: errorReasonGroupDetail.Value);
                 data.CreateErrorReasonGroup(errorReasonGroup);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void ErrorReasons()
+        {
+            using IDealData data = InstanceFactory.GetInstance<IDealData>();
+
+            if (data.AnyErrorReason())
+            {
+                return;
+            }
+
+            IList<IErrorReasonGroup> errorReasonGroups = data.ReadAllErrorReasonGroups();
+
+            IErrorReasonGroup errorReasonGroupSet = errorReasonGroups
+                .Single(erg => erg.Code == "SET");
+            IErrorReasonGroup errorReasonGroupPack = errorReasonGroups
+                .Single(erg => erg.Code == "PACK");
+
+            IDictionary<string, string> errorReasonDetails = new Dictionary<string, string>
+            {
+                { "MULTIJAM", "Multi-card jam" },
+                { "INVERTED", "Inverted card" },
+                { "MISCOUNT", "Wrong number of cards in a hand" },
+                { "MISSING", "Missing card" },
+            };
+
+            foreach (KeyValuePair<string, string> errorReasonGroupDetail in errorReasonDetails)
+            {
+                IErrorReason errorReason = new ErrorReason(
+                    id: Guid.NewGuid(),
+                    code: errorReasonGroupDetail.Key,
+                    name: errorReasonGroupDetail.Value,
+                    errorReasonGroup: errorReasonGroupSet);
+                data.CreateErrorReason(errorReason);
+            }
+
+            errorReasonDetails = new Dictionary<string, string>
+            {
+                { "NOTKNOWN", "Card not recognised" },
+                { "ALREADY-DEALT", "Card already dealt" },
+                { "JAM", "Card jammed" }
+            };
+
+            foreach (KeyValuePair<string, string> errorReasonGroupDetail in errorReasonDetails)
+            {
+                IErrorReason errorReason = new ErrorReason(
+                    id: Guid.NewGuid(),
+                    code: errorReasonGroupDetail.Key,
+                    name: errorReasonGroupDetail.Value,
+                    errorReasonGroup: errorReasonGroupPack);
+                data.CreateErrorReason(errorReason);
             }
         }
 

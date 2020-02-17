@@ -28,6 +28,9 @@
         <member name="M:Deal.Data.Crud.DealData.CreatePackColour(Deal.Domain.DomainObjects.PackColours.IPackColour)">
             <inheritdoc/>
         </member>
+        <member name="M:Deal.Data.Crud.DealData.CreateErrorReason(Deal.Domain.DomainObjects.ErrorReasons.IErrorReason)">
+            <inheritdoc/>
+        </member>
         <member name="M:Deal.Data.Crud.DealData.CreateErrorReasonGroup(Deal.Domain.DomainObjects.ErrorReasonGroups.IErrorReasonGroup)">
             <inheritdoc/>
         </member>
@@ -72,6 +75,9 @@
         <member name="M:Deal.Data.Crud.DealData.AnyCard">
             <inheritdoc/>
         </member>
+        <member name="M:Deal.Data.Crud.DealData.AnyErrorReason">
+            <inheritdoc/>
+        </member>
         <member name="M:Deal.Data.Crud.DealData.AnyErrorReasonGroup">
             <inheritdoc />
         </member>
@@ -87,10 +93,13 @@
         <member name="M:Deal.Data.Crud.DealData.AnySuit">
             <inheritdoc/>
         </member>
-        <member name="M:Deal.Data.Crud.DealData.ReadAllSuits">
+        <member name="M:Deal.Data.Crud.DealData.ReadAllErrorReasonGroups">
             <inheritdoc/>
         </member>
         <member name="M:Deal.Data.Crud.DealData.ReadAllRanks">
+            <inheritdoc/>
+        </member>
+        <member name="M:Deal.Data.Crud.DealData.ReadAllSuits">
             <inheritdoc/>
         </member>
         <member name="T:Deal.Data.Crud.ICreate">
@@ -109,6 +118,12 @@
             Creates the Pack Colour.
             </summary>
             <param name="packColour">Pack Colour.</param>
+        </member>
+        <member name="M:Deal.Data.Crud.ICreate.CreateErrorReason(Deal.Domain.DomainObjects.ErrorReasons.IErrorReason)">
+            <summary>
+            Creates the Error Reason.
+            </summary>
+            <param name="errorReason">Error Reason.</param>
         </member>
         <member name="M:Deal.Data.Crud.ICreate.CreateErrorReasonGroup(Deal.Domain.DomainObjects.ErrorReasonGroups.IErrorReasonGroup)">
             <summary>
@@ -148,17 +163,23 @@
             Read methods.
             </summary>
         </member>
-        <member name="M:Deal.Data.Crud.IRead.ReadAllSuits">
+        <member name="M:Deal.Data.Crud.IRead.ReadAllErrorReasonGroups">
             <summary>
-            Reads all Suits.
+            Reads all Error Reason Groups.
             </summary>
-            <returns>List of Suits.</returns>
+            <returns>List of Error Reason Groups.</returns>
         </member>
         <member name="M:Deal.Data.Crud.IRead.ReadAllRanks">
             <summary>
             Reads all Ranks.
             </summary>
             <returns>List of Ranks.</returns>
+        </member>
+        <member name="M:Deal.Data.Crud.IRead.ReadAllSuits">
+            <summary>
+            Reads all Suits.
+            </summary>
+            <returns>List of Suits.</returns>
         </member>
         <member name="T:Deal.Data.Crud.IReadAny">
             <summary>
@@ -171,11 +192,17 @@
             </summary>
             <returns>True if Cards has rows; otherwise False.</returns>
         </member>
+        <member name="M:Deal.Data.Crud.IReadAny.AnyErrorReason">
+            <summary>
+            Check if Error reason has any rows.
+            </summary>
+            <returns>True if Error Reason has rows; otherwise False.</returns>
+        </member>
         <member name="M:Deal.Data.Crud.IReadAny.AnyErrorReasonGroup">
             <summary>
-            Check if Error reason Groups has any rows.
+            Check if Error Reason Groups has any rows.
             </summary>
-            <returns>True if Error reason Groups has rows; otherwise False.</returns>
+            <returns>True if Error Reason Groups has rows; otherwise False.</returns>
         </member>
         <member name="M:Deal.Data.Crud.IReadAny.AnyPackColour">
             <summary>
@@ -412,13 +439,14 @@
             Initializes a new instance of the <see cref="T:Deal.Data.Dtos.ErrorReasonDto"/> class.
             </summary>
         </member>
-        <member name="M:Deal.Data.Dtos.ErrorReasonDto.#ctor(System.Guid,System.String,System.String)">
+        <member name="M:Deal.Data.Dtos.ErrorReasonDto.#ctor(System.Guid,System.String,System.String,System.Guid)">
             <summary>
             Initializes a new instance of the <see cref="T:Deal.Data.Dtos.ErrorReasonDto"/> class.
             </summary>
             <param name="id">Error Reason Id.</param>
             <param name="code">Error Reason Code.</param>
             <param name="name">Error Reason Name.</param>
+            <param name="errorReasonGroupId">Error Reason Group Id.</param>
         </member>
         <member name="P:Deal.Data.Dtos.ErrorReasonDto.Id">
             <summary>
@@ -444,6 +472,19 @@
             <summary>
             Gets the Error Reason Group.
             </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.ErrorReasonDto.ToDto(Deal.Domain.DomainObjects.ErrorReasons.IErrorReason)">
+            <summary>
+            Convert Error Reason to DTO.
+            </summary>
+            <param name="errorReason">Error Reason.</param>
+            <returns>Error Reason DTO.</returns>
+        </member>
+        <member name="M:Deal.Data.Dtos.ErrorReasonDto.ToDomain">
+            <summary>
+            Converts instance to domain object.
+            </summary>
+            <returns>Error Reason.</returns>
         </member>
         <member name="T:Deal.Data.Dtos.ErrorReasonGroupDto">
             <summary>
@@ -1246,12 +1287,17 @@
         </member>
         <member name="P:Deal.Data.Resources.ExceptionResource.CannotConvertToICardIfRankIsNull">
             <summary>
-              Looks up a localized string similar to Cannot convert to ICard if Rank is null.
+              Looks up a localized string similar to Cannot convert to ICard if Rank is null..
             </summary>
         </member>
         <member name="P:Deal.Data.Resources.ExceptionResource.CannotConvertToICardIfSuitIsNull">
             <summary>
-              Looks up a localized string similar to Cannot convert to ICard if Suit is null.
+              Looks up a localized string similar to Cannot convert to ICard if Suit is null..
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Resources.ExceptionResource.CannotConvertToIErrorReasonIfErrorReasonGroupIsNull">
+            <summary>
+              Looks up a localized string similar to Cannot convert to IErrorReason if ErrorReason is null..
             </summary>
         </member>
     </members>

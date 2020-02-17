@@ -4,6 +4,7 @@
 
 using Deal.Domain.DomainObjects.Cards;
 using Deal.Domain.DomainObjects.ErrorReasonGroups;
+using Deal.Domain.DomainObjects.ErrorReasons;
 using Deal.Domain.DomainObjects.PackColours;
 using Deal.Domain.DomainObjects.Ranks;
 using Deal.Domain.DomainObjects.SetColours;
@@ -27,6 +28,12 @@ namespace Deal.Data.Crud
         /// </summary>
         /// <param name="packColour">Pack Colour.</param>
         void CreatePackColour(IPackColour packColour);
+
+        /// <summary>
+        /// Creates the Error Reason.
+        /// </summary>
+        /// <param name="errorReason">Error Reason.</param>
+        void CreateErrorReason(IErrorReason errorReason);
 
         /// <summary>
         /// Creates the Error Reason Group.

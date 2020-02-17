@@ -118,9 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CannotConvertToICardIfRankIsNull" xml:space="preserve">
-    <value>Cannot convert to ICard if Rank is null</value>
+    <value>Cannot convert to ICard if Rank is null.</value>
   </data>
   <data name="CannotConvertToICardIfSuitIsNull" xml:space="preserve">
-    <value>Cannot convert to ICard if Suit is null</value>
+    <value>Cannot convert to ICard if Suit is null.</value>
+  </data>
+  <data name="CannotConvertToIErrorReasonIfErrorReasonGroupIsNull" xml:space="preserve">
+    <value>Cannot convert to IErrorReason if ErrorReason is null.</value>
   </data>
 </root>

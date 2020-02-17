@@ -4,6 +4,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using Deal.Domain.DomainObjects.ErrorReasonGroups;
 using Deal.Domain.DomainObjects.Ranks;
 using Deal.Domain.DomainObjects.Suits;
 using Microsoft.EntityFrameworkCore;
@@ -17,12 +18,12 @@ namespace Deal.Data.Crud
     public partial class DealData
     {
         /// <inheritdoc/>
-        public IList<ISuit> ReadAllSuits()
+        public IList<IErrorReasonGroup> ReadAllErrorReasonGroups()
         {
-            return this.Context.Suits
+            return this.Context.ErrorReasonGroups
                 .AsNoTracking()
                 .ToList()
-                .Select(s => s.ToDomain())
+                .Select(erg => erg.ToDomain())
                 .ToList();
         }
 
@@ -33,6 +34,16 @@ namespace Deal.Data.Crud
                 .AsNoTracking()
                 .ToList()
                 .Select(r => r.ToDomain())
+                .ToList();
+        }
+
+        /// <inheritdoc/>
+        public IList<ISuit> ReadAllSuits()
+        {
+            return this.Context.Suits
+                .AsNoTracking()
+                .ToList()
+                .Select(s => s.ToDomain())
                 .ToList();
         }
     }

@@ -16,7 +16,7 @@
         </member>
         <member name="M:Deal.Domain.Tests.DomainObjects.Cards.CardTests.ConstructorTests.Test_Constructor_Null_Suit_Throws_Exception">
             <summary>
-            Tests the constructor null code throws exception.
+            Tests the constructor null suit throws exception.
             </summary>
         </member>
         <member name="M:Deal.Domain.Tests.DomainObjects.Cards.CardTests.ConstructorTests.Test_Constructor_Null_Rank_Throws_Exception">
@@ -42,6 +42,31 @@
         <member name="M:Deal.Domain.Tests.DomainObjects.ErrorReasonGroups.ErrorReasonGroupTests.ConstructorTests.Test_Constructor_Null_Name_Throws_Exception">
             <summary>
             Tests the constructor null name throws exception.
+            </summary>
+        </member>
+        <member name="T:Deal.Domain.Tests.DomainObjects.ErrorReasons.ErrorReasonTests.ConstructorTests">
+            <summary>
+            Test the constructor for <see cref="T:Deal.Domain.DomainObjects.ErrorReasons.ErrorReason"/>.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.ErrorReasons.ErrorReasonTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.ErrorReasons.ErrorReasonTests.ConstructorTests.Test_Constructor_Null_Code_Throws_Exception">
+            <summary>
+            Tests the constructor null code throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.ErrorReasons.ErrorReasonTests.ConstructorTests.Test_Constructor_Null_Name_Throws_Exception">
+            <summary>
+            Tests the constructor null name throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.ErrorReasons.ErrorReasonTests.ConstructorTests.Test_Constructor_Null_Error_Reason_Group_Throws_Exception">
+            <summary>
+            Tests the constructor null error reason group throws exception.
             </summary>
         </member>
         <member name="T:Deal.Domain.Tests.DomainObjects.PackColours.PackColourTests.ConstructorTests">
