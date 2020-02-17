@@ -8,6 +8,7 @@ using Deal.Domain.DomainObjects.ErrorReasons;
 using Deal.Domain.DomainObjects.PackColours;
 using Deal.Domain.DomainObjects.Ranks;
 using Deal.Domain.DomainObjects.SetColours;
+using Deal.Domain.DomainObjects.SetPurposes;
 using Deal.Domain.DomainObjects.Suits;
 
 namespace Deal.Data.Crud
@@ -52,6 +53,12 @@ namespace Deal.Data.Crud
         /// </summary>
         /// <param name="setColour">Set Colour.</param>
         void CreateSetColour(ISetColour setColour);
+
+        /// <summary>
+        /// Creates the Set Purpose.
+        /// </summary>
+        /// <param name="setPurpose">Set Purpose.</param>
+        void CreateSetPurpose(ISetPurpose setPurpose);
 
         /// <summary>
         /// Creates the Suit.

@@ -40,6 +40,9 @@
         <member name="M:Deal.Data.Crud.DealData.CreateSetColour(Deal.Domain.DomainObjects.SetColours.ISetColour)">
             <inheritdoc/>
         </member>
+        <member name="M:Deal.Data.Crud.DealData.CreateSetPurpose(Deal.Domain.DomainObjects.SetPurposes.ISetPurpose)">
+            <inheritdoc/>
+        </member>
         <member name="M:Deal.Data.Crud.DealData.CreateSuit(Deal.Domain.DomainObjects.Suits.ISuit)">
             <inheritdoc/>
         </member>
@@ -88,6 +91,9 @@
             <inheritdoc/>
         </member>
         <member name="M:Deal.Data.Crud.DealData.AnySetColours">
+            <inheritdoc/>
+        </member>
+        <member name="M:Deal.Data.Crud.DealData.AnySetPurpose">
             <inheritdoc/>
         </member>
         <member name="M:Deal.Data.Crud.DealData.AnySuit">
@@ -142,6 +148,12 @@
             Creates the Set Colour.
             </summary>
             <param name="setColour">Set Colour.</param>
+        </member>
+        <member name="M:Deal.Data.Crud.ICreate.CreateSetPurpose(Deal.Domain.DomainObjects.SetPurposes.ISetPurpose)">
+            <summary>
+            Creates the Set Purpose.
+            </summary>
+            <param name="setPurpose">Set Purpose.</param>
         </member>
         <member name="M:Deal.Data.Crud.ICreate.CreateSuit(Deal.Domain.DomainObjects.Suits.ISuit)">
             <summary>
@@ -221,6 +233,12 @@
             Check if Set Colours has any rows.
             </summary>
             <returns>True if Set Colours has rows; otherwise False.</returns>
+        </member>
+        <member name="M:Deal.Data.Crud.IReadAny.AnySetPurpose">
+            <summary>
+            Check if Set Purposes has any rows.
+            </summary>
+            <returns>True if Set Purposes has rows; otherwise False.</returns>
         </member>
         <member name="M:Deal.Data.Crud.IReadAny.AnySuit">
             <summary>
@@ -1200,11 +1218,12 @@
             Initializes a new instance of the <see cref="T:Deal.Data.Dtos.SetPurposeDto"/> class.
             </summary>
         </member>
-        <member name="M:Deal.Data.Dtos.SetPurposeDto.#ctor(System.Guid,System.String)">
+        <member name="M:Deal.Data.Dtos.SetPurposeDto.#ctor(System.Guid,System.String,System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:Deal.Data.Dtos.SetPurposeDto"/> class.
             </summary>
             <param name="id">Set Purpose Id.</param>
+            <param name="code">Set Purpose Code.</param>
             <param name="name">Set Purpose Name.</param>
         </member>
         <member name="P:Deal.Data.Dtos.SetPurposeDto.Id">
@@ -1212,10 +1231,28 @@
             Gets the Set Purpose Id.
             </summary>
         </member>
+        <member name="P:Deal.Data.Dtos.SetPurposeDto.Code">
+            <summary>
+            Gets the Set Purpose Code.
+            </summary>
+        </member>
         <member name="P:Deal.Data.Dtos.SetPurposeDto.Name">
             <summary>
             Gets the Set Purpose Name.
             </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.SetPurposeDto.ToDto(Deal.Domain.DomainObjects.SetPurposes.ISetPurpose)">
+            <summary>
+            Converts domain object to dto.
+            </summary>
+            <param name="setPurpose">Set Purpose.</param>
+            <returns>Set Purpose DTO.</returns>
+        </member>
+        <member name="M:Deal.Data.Dtos.SetPurposeDto.ToDomain">
+            <summary>
+            Converts instance to domain object.
+            </summary>
+            <returns>Set Purpose.</returns>
         </member>
         <member name="T:Deal.Data.Dtos.SuitDto">
             <summary>

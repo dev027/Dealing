@@ -12,6 +12,7 @@ using Deal.Domain.DomainObjects.ErrorReasons;
 using Deal.Domain.DomainObjects.PackColours;
 using Deal.Domain.DomainObjects.Ranks;
 using Deal.Domain.DomainObjects.SetColours;
+using Deal.Domain.DomainObjects.SetPurposes;
 using Deal.Domain.DomainObjects.Suits;
 using Deal.Service.Resources;
 using DoItWright.Library.DependencyInjection;
@@ -233,6 +234,32 @@ namespace Deal.Service.SeedServices
                     code: setColourDetail.Key,
                     name: setColourDetail.Value);
                 data.CreateSetColour(setColour);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void SetPurposes()
+        {
+            using IDealData data = InstanceFactory.GetInstance<IDealData>();
+
+            if (data.AnySetPurpose())
+            {
+                return;
+            }
+
+            IDictionary<string, string> setPurposeDetails = new Dictionary<string, string>
+            {
+                { "TEACHING", "Teaching" },
+                { "EVENTS", "Events" }
+            };
+
+            foreach (KeyValuePair<string, string> setPurposeDetail in setPurposeDetails)
+            {
+                ISetPurpose setPurpose = new SetPurpose(
+                    id: Guid.NewGuid(),
+                    code: setPurposeDetail.Key,
+                    name: setPurposeDetail.Value);
+                data.CreateSetPurpose(setPurpose);
             }
         }
 

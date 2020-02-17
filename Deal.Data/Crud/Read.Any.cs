@@ -49,6 +49,12 @@ namespace Deal.Data.Crud
         }
 
         /// <inheritdoc/>
+        public bool AnySetPurpose()
+        {
+            return this.Context.SetPurposes.Any();
+        }
+
+        /// <inheritdoc/>
         public bool AnySuit()
         {
             return this.Context.Suits.Any();

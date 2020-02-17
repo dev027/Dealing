@@ -40,6 +40,11 @@ namespace Deal.Service.SeedServices
         void SetColours();
 
         /// <summary>
+        /// Seed the Set Purposes.
+        /// </summary>
+        void SetPurposes();
+
+        /// <summary>
         /// Seed the Suits.
         /// </summary>
         void Suits();

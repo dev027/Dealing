@@ -65,6 +65,11 @@
             Seed the Set Colours.
             </summary>
         </member>
+        <member name="M:Deal.Service.SeedServices.ISeedService.SetPurposes">
+            <summary>
+            Seed the Set Purposes.
+            </summary>
+        </member>
         <member name="M:Deal.Service.SeedServices.ISeedService.Suits">
             <summary>
             Seed the Suits.
@@ -92,6 +97,9 @@
             <inheritdoc/>
         </member>
         <member name="M:Deal.Service.SeedServices.SeedService.SetColours">
+            <inheritdoc/>
+        </member>
+        <member name="M:Deal.Service.SeedServices.SeedService.SetPurposes">
             <inheritdoc/>
         </member>
         <member name="M:Deal.Service.SeedServices.SeedService.Suits">

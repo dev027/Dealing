@@ -279,6 +279,49 @@
         <member name="P:Deal.Domain.DomainObjects.SetColours.SetColour.Name">
             <inheritdoc/>
         </member>
+        <member name="T:Deal.Domain.DomainObjects.SetPurposes.ISetPurpose">
+            <summary>
+            Set Purpose.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.SetPurposes.ISetPurpose.Id">
+            <summary>
+            Gets the Set Purpose Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.SetPurposes.ISetPurpose.Code">
+            <summary>
+            Gets the Set Purpose Code.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.SetPurposes.ISetPurpose.Name">
+            <summary>
+            Gets the Set Purpose Name.
+            </summary>
+        </member>
+        <member name="T:Deal.Domain.DomainObjects.SetPurposes.SetPurpose">
+            <summary>
+            Set Purpose.
+            </summary>
+            <seealso cref="T:Deal.Domain.DomainObjects.SetPurposes.ISetPurpose" />
+        </member>
+        <member name="M:Deal.Domain.DomainObjects.SetPurposes.SetPurpose.#ctor(System.Guid,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Domain.DomainObjects.SetPurposes.SetPurpose"/> class.
+            </summary>
+            <param name="id">Set Purpose Id.</param>
+            <param name="code">Set Purpose Code.</param>
+            <param name="name">Set Purpose Name.</param>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.SetPurposes.SetPurpose.Id">
+            <inheritdoc />
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.SetPurposes.SetPurpose.Code">
+            <inheritdoc />
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.SetPurposes.SetPurpose.Name">
+            <inheritdoc />
+        </member>
         <member name="T:Deal.Domain.DomainObjects.Suits.ISuit">
             <summary>
             Suit of a Card.

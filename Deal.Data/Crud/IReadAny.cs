@@ -46,6 +46,12 @@ namespace Deal.Data.Crud
         bool AnySetColours();
 
         /// <summary>
+        /// Check if Set Purposes has any rows.
+        /// </summary>
+        /// <returns>True if Set Purposes has rows; otherwise False.</returns>
+        bool AnySetPurpose();
+
+        /// <summary>
         /// Check if Suits has any rows.
         /// </summary>
         /// <returns>True if Suits has rows; otherwise False.</returns>

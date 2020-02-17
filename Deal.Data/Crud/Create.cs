@@ -10,6 +10,7 @@ using Deal.Domain.DomainObjects.ErrorReasons;
 using Deal.Domain.DomainObjects.PackColours;
 using Deal.Domain.DomainObjects.Ranks;
 using Deal.Domain.DomainObjects.SetColours;
+using Deal.Domain.DomainObjects.SetPurposes;
 using Deal.Domain.DomainObjects.Suits;
 
 namespace Deal.Data.Crud
@@ -90,6 +91,19 @@ namespace Deal.Data.Crud
         {
             SetColourDto setColourDto = SetColourDto.ToDto(setColour);
             this.Context.SetColours.Add(setColourDto);
+            int count = this.Context.SaveChanges();
+
+            if (count != 1)
+            {
+                throw new ApplicationException($"Unexpectedly created {count} rows");
+            }
+        }
+
+        /// <inheritdoc/>
+        public void CreateSetPurpose(ISetPurpose setPurpose)
+        {
+            SetPurposeDto setPurposeDto = SetPurposeDto.ToDto(setPurpose);
+            this.Context.SetPurposes.Add(setPurposeDto);
             int count = this.Context.SaveChanges();
 
             if (count != 1)
