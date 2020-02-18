@@ -34,6 +34,9 @@
         <member name="M:Deal.Data.Crud.DealData.CreateErrorReasonGroup(Deal.Domain.DomainObjects.ErrorReasonGroups.IErrorReasonGroup)">
             <inheritdoc/>
         </member>
+        <member name="M:Deal.Data.Crud.DealData.CreateOwner(Deal.Domain.DomainObjects.Owners.IOwner)">
+            <inheritdoc />
+        </member>
         <member name="M:Deal.Data.Crud.DealData.CreateRank(Deal.Domain.DomainObjects.Ranks.IRank)">
             <inheritdoc/>
         </member>
@@ -82,6 +85,9 @@
             <inheritdoc/>
         </member>
         <member name="M:Deal.Data.Crud.DealData.AnyErrorReasonGroup">
+            <inheritdoc />
+        </member>
+        <member name="M:Deal.Data.Crud.DealData.AnyOwner">
             <inheritdoc />
         </member>
         <member name="M:Deal.Data.Crud.DealData.AnyPackColour">
@@ -136,6 +142,12 @@
             Creates the Error Reason Group.
             </summary>
             <param name="errorReasonGroup">Error Reason Group.</param>
+        </member>
+        <member name="M:Deal.Data.Crud.ICreate.CreateOwner(Deal.Domain.DomainObjects.Owners.IOwner)">
+            <summary>
+            Creates the Owner.
+            </summary>
+            <param name="owner">Owner.</param>
         </member>
         <member name="M:Deal.Data.Crud.ICreate.CreateRank(Deal.Domain.DomainObjects.Ranks.IRank)">
             <summary>
@@ -215,6 +227,12 @@
             Check if Error Reason Groups has any rows.
             </summary>
             <returns>True if Error Reason Groups has rows; otherwise False.</returns>
+        </member>
+        <member name="M:Deal.Data.Crud.IReadAny.AnyOwner">
+            <summary>
+            Check if Owners has any rows.
+            </summary>
+            <returns>True if Owners has rows; otherwise False.</returns>
         </member>
         <member name="M:Deal.Data.Crud.IReadAny.AnyPackColour">
             <summary>
@@ -749,6 +767,19 @@
             <value>
               <c>true</c> if this instance is club; otherwise, <c>false</c>.
             </value>
+        </member>
+        <member name="M:Deal.Data.Dtos.OwnerDto.ToDto(Deal.Domain.DomainObjects.Owners.IOwner)">
+            <summary>
+            Converts domain object to DTO.
+            </summary>
+            <param name="owner">Owner.</param>
+            <returns>Owner DTO.</returns>
+        </member>
+        <member name="M:Deal.Data.Dtos.OwnerDto.ToDomain">
+            <summary>
+            Converts instance to domain object.
+            </summary>
+            <returns>Owner.</returns>
         </member>
         <member name="T:Deal.Data.Dtos.PackColourDto">
             <summary>

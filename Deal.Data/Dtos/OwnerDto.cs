@@ -6,6 +6,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Deal.Data.DbContexts;
+using Deal.Domain.DomainObjects.Owners;
 
 namespace Deal.Data.Dtos
 {
@@ -73,5 +74,41 @@ namespace Deal.Data.Dtos
         public bool IsClub { get; private set; }
 
         #endregion Properties
+
+        #region Public Properties
+
+        /// <summary>
+        /// Converts domain object to DTO.
+        /// </summary>
+        /// <param name="owner">Owner.</param>
+        /// <returns>Owner DTO.</returns>
+        public static OwnerDto ToDto(IOwner owner)
+        {
+            if (owner == null)
+            {
+                throw new ArgumentNullException(nameof(owner));
+            }
+
+            return new OwnerDto(
+                id: owner.Id,
+                code: owner.Code,
+                name: owner.Name,
+                isClub: owner.IsClub);
+        }
+
+        /// <summary>
+        /// Converts instance to domain object.
+        /// </summary>
+        /// <returns>Owner.</returns>
+        public IOwner ToDomain()
+        {
+            return new Owner(
+                this.Id,
+                this.Code,
+                this.Name,
+                this.IsClub);
+        }
+
+        #endregion
     }
 }

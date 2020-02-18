@@ -28,6 +28,12 @@ namespace Deal.Data.Crud
         bool AnyErrorReasonGroup();
 
         /// <summary>
+        /// Check if Owners has any rows.
+        /// </summary>
+        /// <returns>True if Owners has rows; otherwise False.</returns>
+        bool AnyOwner();
+
+        /// <summary>
         /// Check if Pack Colours has any rows.
         /// </summary>
         /// <returns>True if Pack Colours has rows; otherwise False.</returns>
