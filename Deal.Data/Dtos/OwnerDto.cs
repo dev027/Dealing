@@ -28,15 +28,18 @@ namespace Deal.Data.Dtos
         /// Initializes a new instance of the <see cref="OwnerDto"/> class.
         /// </summary>
         /// <param name="id">Owner Id.</param>
+        /// <param name="code">Owner Code.</param>
         /// <param name="name">Owner Name.</param>
         /// <param name="isClub">True if Owner id a Club.</param>
         public OwnerDto(
             Guid id,
+            string code,
             string name,
             bool isClub)
         {
             this.Id = id;
-            this.Name = name;
+            this.Code = code ?? throw new ArgumentNullException(nameof(code));
+            this.Name = name ?? throw new ArgumentNullException(nameof(name));
             this.IsClub = isClub;
         }
 
@@ -50,6 +53,12 @@ namespace Deal.Data.Dtos
         public Guid Id { get; private set; }
 
         /// <summary>
+        /// Gets the Owner Code.
+        /// </summary>
+        [Required]
+        public string Code { get; private set; } = null!;
+
+         /// <summary>
         /// Gets the Owner Name.
         /// </summary>
         [Required]

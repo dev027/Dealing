@@ -718,17 +718,23 @@
             Initializes a new instance of the <see cref="T:Deal.Data.Dtos.OwnerDto"/> class.
             </summary>
         </member>
-        <member name="M:Deal.Data.Dtos.OwnerDto.#ctor(System.Guid,System.String,System.Boolean)">
+        <member name="M:Deal.Data.Dtos.OwnerDto.#ctor(System.Guid,System.String,System.String,System.Boolean)">
             <summary>
             Initializes a new instance of the <see cref="T:Deal.Data.Dtos.OwnerDto"/> class.
             </summary>
             <param name="id">Owner Id.</param>
+            <param name="code">Owner Code.</param>
             <param name="name">Owner Name.</param>
             <param name="isClub">True if Owner id a Club.</param>
         </member>
         <member name="P:Deal.Data.Dtos.OwnerDto.Id">
             <summary>
             Gets the Owner Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.OwnerDto.Code">
+            <summary>
+            Gets the Owner Code.
             </summary>
         </member>
         <member name="P:Deal.Data.Dtos.OwnerDto.Name">
