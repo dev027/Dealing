@@ -30,6 +30,12 @@ namespace Deal.Data.Crud
             return this.Context.ErrorReasonGroups.Any();
         }
 
+        /// <inheritdoc />
+        public bool AnyOwner()
+        {
+            return this.Context.Owners.Any();
+        }
+
         /// <inheritdoc/>
         public bool AnyPackColour()
         {

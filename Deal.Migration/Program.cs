@@ -21,6 +21,7 @@ namespace Deal.Migration
             seedService.ErrorReasonGroups();
             seedService.ErrorReasons();
             seedService.SetPurposes();
+            seedService.Owners();
         }
 
         private static void DependencyInjection()

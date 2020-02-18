@@ -9,6 +9,7 @@ using Deal.Data.Crud;
 using Deal.Domain.DomainObjects.Cards;
 using Deal.Domain.DomainObjects.ErrorReasonGroups;
 using Deal.Domain.DomainObjects.ErrorReasons;
+using Deal.Domain.DomainObjects.Owners;
 using Deal.Domain.DomainObjects.PackColours;
 using Deal.Domain.DomainObjects.Ranks;
 using Deal.Domain.DomainObjects.SetColours;
@@ -84,6 +85,51 @@ namespace Deal.Service.SeedServices
                     code: errorReasonGroupDetail.Key,
                     name: errorReasonGroupDetail.Value);
                 data.CreateErrorReasonGroup(errorReasonGroup);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void Owners()
+        {
+            using IDealData data = InstanceFactory.GetInstance<IDealData>();
+
+            if (data.AnyOwner())
+            {
+                return;
+            }
+
+            IDictionary<string, string> ownerDetails = new Dictionary<string, string>
+            {
+                { "LCBA", "LCBA" },
+                { "CBC", "County Bridge Club" },
+                { "BRADGATE", "Bradgate Bridge Club" },
+                { "GLENFIELD", "Glenfield Bridge Club" },
+                { "CBT", "Charwood Bridge Teachers" }
+            };
+
+            foreach (KeyValuePair<string, string> ownerDetail in ownerDetails)
+            {
+                IOwner owner = new Owner(
+                    id: Guid.NewGuid(),
+                    code: ownerDetail.Key,
+                    name: ownerDetail.Value,
+                    isClub: true);
+                data.CreateOwner(owner);
+            }
+
+            ownerDetails = new Dictionary<string, string>
+            {
+                { "WRIGHT", "Steve/Anne Wright" }
+            };
+
+            foreach (KeyValuePair<string, string> ownerDetail in ownerDetails)
+            {
+                IOwner owner = new Owner(
+                    id: Guid.NewGuid(),
+                    code: ownerDetail.Key,
+                    name: ownerDetail.Value,
+                    isClub: false);
+                data.CreateOwner(owner);
             }
         }
 

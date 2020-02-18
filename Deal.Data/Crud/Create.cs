@@ -7,6 +7,7 @@ using Deal.Data.Dtos;
 using Deal.Domain.DomainObjects.Cards;
 using Deal.Domain.DomainObjects.ErrorReasonGroups;
 using Deal.Domain.DomainObjects.ErrorReasons;
+using Deal.Domain.DomainObjects.Owners;
 using Deal.Domain.DomainObjects.PackColours;
 using Deal.Domain.DomainObjects.Ranks;
 using Deal.Domain.DomainObjects.SetColours;
@@ -65,6 +66,19 @@ namespace Deal.Data.Crud
         {
             ErrorReasonGroupDto errorReasonGroupDto = ErrorReasonGroupDto.ToDto(errorReasonGroup);
             this.Context.ErrorReasonGroups.Add(errorReasonGroupDto);
+            int count = this.Context.SaveChanges();
+
+            if (count != 1)
+            {
+                throw new ApplicationException($"Unexpectedly created {count} rows");
+            }
+        }
+
+        /// <inheritdoc />
+        public void CreateOwner(IOwner owner)
+        {
+            OwnerDto ownerDto = OwnerDto.ToDto(owner);
+            this.Context.Owners.Add(ownerDto);
             int count = this.Context.SaveChanges();
 
             if (count != 1)

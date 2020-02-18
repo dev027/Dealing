@@ -4,13 +4,16 @@ using Deal.Migration.DbContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Deal.Migration.Migrations
 {
     [DbContext(typeof(MigrationContext))]
-    public class MigrationContextModelSnapshot : ModelSnapshot
+    [Migration("20200218181620_AddCodeToOwners")]
+    partial class AddCodeToOwners
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

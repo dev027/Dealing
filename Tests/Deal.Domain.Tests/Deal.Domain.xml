@@ -69,6 +69,26 @@
             Tests the constructor null error reason group throws exception.
             </summary>
         </member>
+        <member name="T:Deal.Domain.Tests.DomainObjects.Owners.OwnerTests.ConstructorTests">
+            <summary>
+            Test the constructor for <see cref="T:Deal.Domain.DomainObjects.Owners.Owner"/>.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Owners.OwnerTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Owners.OwnerTests.ConstructorTests.Test_Constructor_Null_Code_Throws_Exception">
+            <summary>
+            Tests the constructor null code throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Owners.OwnerTests.ConstructorTests.Test_Constructor_Null_Name_Throws_Exception">
+            <summary>
+            Tests the constructor null name throws exception.
+            </summary>
+        </member>
         <member name="T:Deal.Domain.Tests.DomainObjects.PackColours.PackColourTests.ConstructorTests">
             <summary>
             Test the constructor for <see cref="T:Deal.Domain.DomainObjects.PackColours.PackColour"/>.

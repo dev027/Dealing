@@ -25,6 +25,11 @@ namespace Deal.Service.SeedServices
         void ErrorReasonGroups();
 
         /// <summary>
+        /// Seeds the Owners.
+        /// </summary>
+        void Owners();
+
+        /// <summary>
         /// Seeds the Pack Colours.
         /// </summary>
         void PackColours();

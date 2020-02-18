@@ -142,6 +142,61 @@
             Gets the Error Reason Group.
             </summary>
         </member>
+        <member name="T:Deal.Domain.DomainObjects.Owners.IOwner">
+            <summary>
+            Owner.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Owners.IOwner.Id">
+            <summary>
+            Gets the Owner Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Owners.IOwner.Code">
+            <summary>
+            Gets the Owner Code.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Owners.IOwner.Name">
+            <summary>
+            Gets the Owner Name.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Owners.IOwner.IsClub">
+            <summary>
+            Gets a value indicating whether this instance is a Club.
+            </summary>
+            <value>
+              <c>true</c> if this instance is a Club; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Deal.Domain.DomainObjects.Owners.Owner">
+            <summary>
+            Owner.
+            </summary>
+            <seealso cref="T:Deal.Domain.DomainObjects.Owners.IOwner" />
+        </member>
+        <member name="M:Deal.Domain.DomainObjects.Owners.Owner.#ctor(System.Guid,System.String,System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Domain.DomainObjects.Owners.Owner"/> class.
+            </summary>
+            <param name="id">Owner Id.</param>
+            <param name="code">Owner Code.</param>
+            <param name="name">Owner Name.</param>
+            <param name="isClub">True if Owner is a Club.</param>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Owners.Owner.Id">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Owners.Owner.Code">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Owners.Owner.Name">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Owners.Owner.IsClub">
+            <inheritdoc />
+        </member>
         <member name="T:Deal.Domain.DomainObjects.PackColours.IPackColour">
             <summary>
             Pack Colour.
