@@ -224,7 +224,8 @@ namespace Deal.Service.SeedServices
                 { "ORANGE", "Orange" },
                 { "PINK", "Pink" },
                 { "RED", "Red" },
-                { "YELLOW", "Yellow" }
+                { "YELLOW", "Yellow" },
+                { "RAINBOW", "Rainbow" }
             };
 
             foreach (KeyValuePair<string, string> setColourDetail in setColourDetails)
