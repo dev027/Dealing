@@ -79,6 +79,40 @@
             Gets the Rank.
             </summary>
         </member>
+        <member name="T:Deal.Domain.DomainObjects.Dealers.Dealer">
+            <summary>
+            Dealer.
+            </summary>
+            <seealso cref="T:Deal.Domain.DomainObjects.Dealers.IDealer" />
+        </member>
+        <member name="M:Deal.Domain.DomainObjects.Dealers.Dealer.#ctor(System.Guid,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Domain.DomainObjects.Dealers.Dealer"/> class.
+            </summary>
+            <param name="id">Dealer id.</param>
+            <param name="name">Dealer Name.</param>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Dealers.Dealer.Id">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Dealers.Dealer.Name">
+            <inheritdoc/>
+        </member>
+        <member name="T:Deal.Domain.DomainObjects.Dealers.IDealer">
+            <summary>
+            Dealer.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Dealers.IDealer.Id">
+            <summary>
+            Gets the Dealer Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Dealers.IDealer.Name">
+            <summary>
+            Gets the Dealer Name.
+            </summary>
+        </member>
         <member name="T:Deal.Domain.DomainObjects.ErrorReasonGroups.ErrorReasonGroup">
             <summary>
             Error Reason Group.
