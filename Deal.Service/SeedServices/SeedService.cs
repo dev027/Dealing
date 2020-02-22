@@ -8,6 +8,7 @@ using System.Linq;
 using Deal.Data.Crud;
 using Deal.Domain.DomainFactories.Sets;
 using Deal.Domain.DomainObjects.Cards;
+using Deal.Domain.DomainObjects.Dealers;
 using Deal.Domain.DomainObjects.ErrorReasonGroups;
 using Deal.Domain.DomainObjects.ErrorReasons;
 using Deal.Domain.DomainObjects.Owners;
@@ -61,6 +62,35 @@ namespace Deal.Service.SeedServices
                         suit: suit,
                         rank: rank));
                 }
+            }
+        }
+
+        /// <inheritdoc/>
+        public void Dealers()
+        {
+            using IDealData data = InstanceFactory.GetInstance<IDealData>();
+
+            IList<IDealer> existingDealers = data.ReadAllDealers();
+
+            IList<string> dealerNames = new List<string>
+            {
+                "Steve",
+                "Anne"
+            };
+
+            foreach (string dealerName in dealerNames)
+            {
+                if (existingDealers.Any(d => d.Name == dealerName))
+                {
+                    continue;
+                }
+
+                IDealer dealer = new Dealer(
+                    id: Guid.NewGuid(),
+                    name: dealerName);
+
+                data.CreateDealer(dealer);
+                Console.WriteLine($@"Seeding Dealer: {dealerName}.");
             }
         }
 
@@ -292,7 +322,7 @@ namespace Deal.Service.SeedServices
                 }
 
                 data.CreateSet(set);
-                Console.WriteLine($@"Seeding {set.Owner.Code} {set.Description}.");
+                Console.WriteLine($@"Seeding Set: {set.Owner.Code} {set.Description}.");
             }
         }
 
