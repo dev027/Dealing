@@ -519,6 +519,19 @@
             Gets the Dealer Name.
             </summary>
         </member>
+        <member name="M:Deal.Data.Dtos.DealerDto.ToDto(Deal.Domain.DomainObjects.Dealers.IDealer)">
+            <summary>
+            Converts domain object to DTO.
+            </summary>
+            <param name="dealer">Dealer.</param>
+            <returns>Dealer DTO.</returns>
+        </member>
+        <member name="M:Deal.Data.Dtos.DealerDto.ToDomain">
+            <summary>
+            Converts instance to domain object.
+            </summary>
+            <returns>Dealer.</returns>
+        </member>
         <member name="T:Deal.Data.Dtos.ErrorReasonDto">
             <summary>
             Error Reason DTO.
