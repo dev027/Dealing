@@ -114,6 +114,9 @@
         <member name="M:Deal.Data.Crud.DealData.AnySuit">
             <inheritdoc/>
         </member>
+        <member name="M:Deal.Data.Crud.DealData.ReadAllDealers">
+            <inheritdoc/>
+        </member>
         <member name="M:Deal.Data.Crud.DealData.ReadAllErrorReasonGroups">
             <inheritdoc/>
         </member>
@@ -219,6 +222,12 @@
             <summary>
             Read methods.
             </summary>
+        </member>
+        <member name="M:Deal.Data.Crud.IRead.ReadAllDealers">
+            <summary>
+            Reads all Dealers.
+            </summary>
+            <returns>List of Dealers.</returns>
         </member>
         <member name="M:Deal.Data.Crud.IRead.ReadAllErrorReasonGroups">
             <summary>
