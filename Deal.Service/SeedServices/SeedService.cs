@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Deal.Data.Crud;
+using Deal.Domain.DomainFactories.Sets;
 using Deal.Domain.DomainObjects.Cards;
 using Deal.Domain.DomainObjects.ErrorReasonGroups;
 using Deal.Domain.DomainObjects.ErrorReasons;
@@ -14,6 +15,7 @@ using Deal.Domain.DomainObjects.PackColours;
 using Deal.Domain.DomainObjects.Ranks;
 using Deal.Domain.DomainObjects.SetColours;
 using Deal.Domain.DomainObjects.SetPurposes;
+using Deal.Domain.DomainObjects.Sets;
 using Deal.Domain.DomainObjects.Suits;
 using Deal.Service.Resources;
 using DoItWright.Library.DependencyInjection;
@@ -247,6 +249,50 @@ namespace Deal.Service.SeedServices
                     name: rankDetail.Value,
                     sortOrder: sortOrder++);
                 data.CreateRank(rank);
+            }
+        }
+
+        /// <inheritdoc />
+        public void Sets()
+        {
+            using IDealData data = InstanceFactory.GetInstance<IDealData>();
+
+            IList<ISet> existingSets = data.ReadAllSets();
+
+            ISetFactory setFactory = new SetFactory(
+                owners: data.ReadAllOwners(),
+                setPurposes: data.ReadAllSetPurposes(),
+                setColours: data.ReadAllSetColours());
+
+            IList<ISet> sets = new List<ISet>
+            {
+                setFactory.Create32BoardSet("BRADGATE", "EVENTS", "LT-BLUE", "Blue"),
+                setFactory.Create32BoardSet("BRADGATE", "EVENTS", "PINK", "Pink"),
+                setFactory.Create32BoardSet("BRADGATE", "EVENTS", "LT-GREEN", "Green"),
+                setFactory.Create32BoardSet("BRADGATE", "EVENTS", "WHITE", "White"),
+                setFactory.Create32BoardSet("GLENFIELD", "EVENTS", "DK-BLUE", "Black"),
+                setFactory.Create32BoardSet("GLENFIELD", "EVENTS", "LT-BLUE", "Blue"),
+                setFactory.Create32BoardSet("GLENFIELD", "EVENTS", "DK-GREEN", "Green"),
+                setFactory.Create32BoardSet("GLENFIELD", "EVENTS", "LT-GREEN", "Lime"),
+                setFactory.Create32BoardSet("LCBA", "EVENTS", "DK-BLUE", "Black"),
+                setFactory.Create32BoardSet("LCBA", "EVENTS", "ORANGE", "Orange"),
+                setFactory.Create32BoardSet("LCBA", "EVENTS", "RED", "Red"),
+                setFactory.Create32BoardSet("LCBA", "EVENTS", "YELLOW", "Yellow"),
+                setFactory.Create32BoardSet("WRIGHT", "EVENTS", "YELLOW", "Yellow"),
+            };
+
+            foreach (ISet set in sets)
+            {
+                if (existingSets.Where(es => es.Owner.Code == set.Owner.Code)
+                    .Where(es => es.SetPurpose.Code == set.SetPurpose.Code)
+                    .Where(es => es.SetColour.Code == set.SetColour.Code)
+                    .Any(es => es.Description == set.Description))
+                {
+                    continue;
+                }
+
+                data.CreateSet(set);
+                Console.WriteLine($@"Seeding {set.Owner.Code} {set.Description}.");
             }
         }
 

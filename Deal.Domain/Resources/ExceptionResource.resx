@@ -117,7 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CannotConvertTo___If___IsNull" xml:space="preserve">
-    <value>Cannot convert to ISet if Set Colour is null.</value>
+  <data name="CannotFind___WithCode___" xml:space="preserve">
+    <value>Cannot find {0} with Code {1}.</value>
+  </data>
+  <data name="LowBoardNumberShouldBeAtLeastOne" xml:space="preserve">
+    <value>Low Board Number should be at least 1.</value>
+  </data>
+  <data name="LowBoardNumberShouldNotBeHigherThanHighBoardNumber" xml:space="preserve">
+    <value>Low Board Number board number should not be higher than High Board Number.</value>
   </data>
 </root>

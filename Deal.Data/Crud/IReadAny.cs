@@ -46,6 +46,12 @@ namespace Deal.Data.Crud
         bool AnyRank();
 
         /// <summary>
+        /// Check if Sets has any rows.
+        /// </summary>
+        /// <returns>True if Sets has rows; otherwise False.</returns>
+        bool AnySets();
+
+        /// <summary>
         /// Check if Set Colours has any rows.
         /// </summary>
         /// <returns>True if Set Colours has rows; otherwise False.</returns>

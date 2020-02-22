@@ -40,6 +40,9 @@
         <member name="M:Deal.Data.Crud.DealData.CreateRank(Deal.Domain.DomainObjects.Ranks.IRank)">
             <inheritdoc/>
         </member>
+        <member name="M:Deal.Data.Crud.DealData.CreateSet(Deal.Domain.DomainObjects.Sets.ISet)">
+            <inheritdoc/>
+        </member>
         <member name="M:Deal.Data.Crud.DealData.CreateSetColour(Deal.Domain.DomainObjects.SetColours.ISetColour)">
             <inheritdoc/>
         </member>
@@ -96,6 +99,9 @@
         <member name="M:Deal.Data.Crud.DealData.AnyRank">
             <inheritdoc/>
         </member>
+        <member name="M:Deal.Data.Crud.DealData.AnySets">
+            <inheritdoc />
+        </member>
         <member name="M:Deal.Data.Crud.DealData.AnySetColours">
             <inheritdoc/>
         </member>
@@ -108,7 +114,19 @@
         <member name="M:Deal.Data.Crud.DealData.ReadAllErrorReasonGroups">
             <inheritdoc/>
         </member>
+        <member name="M:Deal.Data.Crud.DealData.ReadAllOwners">
+            <inheritdoc/>
+        </member>
         <member name="M:Deal.Data.Crud.DealData.ReadAllRanks">
+            <inheritdoc/>
+        </member>
+        <member name="M:Deal.Data.Crud.DealData.ReadAllSets">
+            <inheritdoc/>
+        </member>
+        <member name="M:Deal.Data.Crud.DealData.ReadAllSetPurposes">
+            <inheritdoc/>
+        </member>
+        <member name="M:Deal.Data.Crud.DealData.ReadAllSetColours">
             <inheritdoc/>
         </member>
         <member name="M:Deal.Data.Crud.DealData.ReadAllSuits">
@@ -155,6 +173,12 @@
             </summary>
             <param name="rank">Rank.</param>
         </member>
+        <member name="M:Deal.Data.Crud.ICreate.CreateSet(Deal.Domain.DomainObjects.Sets.ISet)">
+            <summary>
+            Creates the Set.
+            </summary>
+            <param name="set">Set.</param>
+        </member>
         <member name="M:Deal.Data.Crud.ICreate.CreateSetColour(Deal.Domain.DomainObjects.SetColours.ISetColour)">
             <summary>
             Creates the Set Colour.
@@ -193,11 +217,35 @@
             </summary>
             <returns>List of Error Reason Groups.</returns>
         </member>
+        <member name="M:Deal.Data.Crud.IRead.ReadAllOwners">
+            <summary>
+            Reads all Owners.
+            </summary>
+            <returns>List of Owners.</returns>
+        </member>
         <member name="M:Deal.Data.Crud.IRead.ReadAllRanks">
             <summary>
             Reads all Ranks.
             </summary>
             <returns>List of Ranks.</returns>
+        </member>
+        <member name="M:Deal.Data.Crud.IRead.ReadAllSets">
+            <summary>
+            Reads all Sets.
+            </summary>
+            <returns>List of Sets.</returns>
+        </member>
+        <member name="M:Deal.Data.Crud.IRead.ReadAllSetPurposes">
+            <summary>
+            Reads all Set Purposes.
+            </summary>
+            <returns>List of Set Purposes.</returns>
+        </member>
+        <member name="M:Deal.Data.Crud.IRead.ReadAllSetColours">
+            <summary>
+            Reads all Set Colours.
+            </summary>
+            <returns>List of Set Colours.</returns>
         </member>
         <member name="M:Deal.Data.Crud.IRead.ReadAllSuits">
             <summary>
@@ -245,6 +293,12 @@
             Check if Ranks has any rows.
             </summary>
             <returns>True if Ranks has rows; otherwise False.</returns>
+        </member>
+        <member name="M:Deal.Data.Crud.IReadAny.AnySets">
+            <summary>
+            Check if Sets has any rows.
+            </summary>
+            <returns>True if Sets has rows; otherwise False.</returns>
         </member>
         <member name="M:Deal.Data.Crud.IReadAny.AnySetColours">
             <summary>
@@ -1245,6 +1299,19 @@
             Gets the Set Colour.
             </summary>
         </member>
+        <member name="M:Deal.Data.Dtos.SetDto.ToDto(Deal.Domain.DomainObjects.Sets.ISet)">
+            <summary>
+            Converts domain object to DTO.
+            </summary>
+            <param name="set">Set.</param>
+            <returns>Set DTO.</returns>
+        </member>
+        <member name="M:Deal.Data.Dtos.SetDto.ToDomain">
+            <summary>
+            Converts instance to domain object.
+            </summary>
+            <returns>Set.</returns>
+        </member>
         <member name="T:Deal.Data.Dtos.SetPurposeDto">
             <summary>
             Set Purpose DTO.
@@ -1359,19 +1426,9 @@
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="P:Deal.Data.Resources.ExceptionResource.CannotConvertToICardIfRankIsNull">
+        <member name="P:Deal.Data.Resources.ExceptionResource.CannotConvertTo___If___IsNull">
             <summary>
-              Looks up a localized string similar to Cannot convert to ICard if Rank is null..
-            </summary>
-        </member>
-        <member name="P:Deal.Data.Resources.ExceptionResource.CannotConvertToICardIfSuitIsNull">
-            <summary>
-              Looks up a localized string similar to Cannot convert to ICard if Suit is null..
-            </summary>
-        </member>
-        <member name="P:Deal.Data.Resources.ExceptionResource.CannotConvertToIErrorReasonIfErrorReasonGroupIsNull">
-            <summary>
-              Looks up a localized string similar to Cannot convert to IErrorReason if ErrorReason is null..
+              Looks up a localized string similar to Cannot convert to ISet if Set Colour is null..
             </summary>
         </member>
     </members>

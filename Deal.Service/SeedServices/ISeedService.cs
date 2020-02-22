@@ -40,6 +40,11 @@ namespace Deal.Service.SeedServices
         void Ranks();
 
         /// <summary>
+        /// Seeds the Sets.
+        /// </summary>
+        void Sets();
+
+        /// <summary>
         /// Seed the Set Colours.
         /// </summary>
         void SetColours();

@@ -169,6 +169,46 @@
             Tests the constructor null name throws exception.
             </summary>
         </member>
+        <member name="T:Deal.Domain.Tests.DomainObjects.Sets.SetTests.ConstructorTests">
+            <summary>
+            Test the constructor for <see cref="T:Deal.Domain.DomainObjects.Sets.Set"/>.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Sets.SetTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Sets.SetTests.ConstructorTests.Test_Constructor_Zero_Low_Board_Number_Throws_Exception">
+            <summary>
+            Tests the constructor zero low board number throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Sets.SetTests.ConstructorTests.Test_Constructor_Zero_Low_Board_Number_Greater_Than_High_Board_Number_Throws_Exception">
+            <summary>
+            Tests the constructor zero low board number greater than high board number throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Sets.SetTests.ConstructorTests.Test_Constructor_Null_Description_Throws_Exception">
+            <summary>
+            Tests the constructor null description throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Sets.SetTests.ConstructorTests.Test_Constructor_Null_Owner_Throws_Exception">
+            <summary>
+            Tests the constructor null owner throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Sets.SetTests.ConstructorTests.Test_Constructor_Null_Set_Purpose_Throws_Exception">
+            <summary>
+            Tests the constructor null set purpose throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Sets.SetTests.ConstructorTests.Test_Constructor_Null_Set_Colour_Throws_Exception">
+            <summary>
+            Tests the constructor null set colour throws exception.
+            </summary>
+        </member>
         <member name="T:Deal.Domain.Tests.DomainObjects.Suits.SuitTests.ConstructorTests">
             <summary>
             Test the constructor for <see cref="T:Deal.Domain.DomainObjects.Suits.Suit"/>.

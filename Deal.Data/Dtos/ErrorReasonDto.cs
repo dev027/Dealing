@@ -5,6 +5,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 using Deal.Data.DbContexts;
 using Deal.Data.Resources;
 using Deal.Domain.DomainObjects.ErrorReasons;
@@ -112,7 +113,12 @@ namespace Deal.Data.Dtos
         {
             if (this.ErrorReasonGroup == null)
             {
-                throw new InvalidOperationException(ExceptionResource.CannotConvertToIErrorReasonIfErrorReasonGroupIsNull);
+                throw new InvalidOperationException(
+                    string.Format(
+                        CultureInfo.InvariantCulture,
+                        ExceptionResource.CannotConvertTo___If___IsNull,
+                        nameof(IErrorReason),
+                        nameof(this.ErrorReasonGroup)));
             }
 
             return new ErrorReason(

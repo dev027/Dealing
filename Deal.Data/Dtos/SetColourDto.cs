@@ -33,8 +33,8 @@ namespace Deal.Data.Dtos
         /// <param name="name">Set Colour Name.</param>
         public SetColourDto(
             Guid id,
-            string name,
-            string code)
+            string code,
+            string name)
         {
             this.Id = id;
             this.Code = code;
@@ -79,9 +79,9 @@ namespace Deal.Data.Dtos
             }
 
             return new SetColourDto(
-                setColour.Id,
-                setColour.Code,
-                setColour.Name);
+                id: setColour.Id,
+                code: setColour.Code,
+                name: setColour.Name);
         }
 
         /// <summary>
@@ -91,9 +91,9 @@ namespace Deal.Data.Dtos
         public ISetColour ToDomain()
         {
             return new SetColour(
-                this.Id,
-                this.Code,
-                this.Name);
+                id: this.Id,
+                code: this.Code,
+                name: this.Name);
         }
 
         #endregion Public Methods

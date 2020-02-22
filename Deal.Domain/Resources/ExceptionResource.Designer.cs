@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Deal.Data.Resources {
+namespace Deal.Domain.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Deal.Data.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Deal.Data.Resources.ExceptionResource", typeof(ExceptionResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Deal.Domain.Resources.ExceptionResource", typeof(ExceptionResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,11 +61,29 @@ namespace Deal.Data.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cannot convert to ISet if Set Colour is null..
+        ///   Looks up a localized string similar to Cannot find {0} with Code {1}..
         /// </summary>
-        internal static string CannotConvertTo___If___IsNull {
+        internal static string CannotFind___WithCode___ {
             get {
-                return ResourceManager.GetString("CannotConvertTo___If___IsNull", resourceCulture);
+                return ResourceManager.GetString("CannotFind___WithCode___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Low Board Number should be at least 1..
+        /// </summary>
+        internal static string LowBoardNumberShouldBeAtLeastOne {
+            get {
+                return ResourceManager.GetString("LowBoardNumberShouldBeAtLeastOne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Low Board Number board number should not be higher than High Board Number..
+        /// </summary>
+        internal static string LowBoardNumberShouldNotBeHigherThanHighBoardNumber {
+            get {
+                return ResourceManager.GetString("LowBoardNumberShouldNotBeHigherThanHighBoardNumber", resourceCulture);
             }
         }
     }

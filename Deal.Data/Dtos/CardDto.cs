@@ -4,6 +4,7 @@
 
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 using Deal.Data.DbContexts;
 using Deal.Data.Resources;
 using Deal.Domain.DomainObjects.Cards;
@@ -106,12 +107,22 @@ namespace Deal.Data.Dtos
         {
             if (this.Rank == null)
             {
-                throw new InvalidOperationException(ExceptionResource.CannotConvertToICardIfRankIsNull);
+                throw new InvalidOperationException(
+                    string.Format(
+                        CultureInfo.InvariantCulture,
+                        ExceptionResource.CannotConvertTo___If___IsNull,
+                        nameof(ICard),
+                        nameof(this.Rank)));
             }
 
             if (this.Suit == null)
             {
-                throw new InvalidOperationException(ExceptionResource.CannotConvertToICardIfSuitIsNull);
+                throw new InvalidOperationException(
+                    string.Format(
+                        CultureInfo.InvariantCulture,
+                        ExceptionResource.CannotConvertTo___If___IsNull,
+                        nameof(ICard),
+                        nameof(this.Suit)));
             }
 
             return new Card(

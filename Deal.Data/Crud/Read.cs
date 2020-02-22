@@ -5,7 +5,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using Deal.Domain.DomainObjects.ErrorReasonGroups;
+using Deal.Domain.DomainObjects.Owners;
 using Deal.Domain.DomainObjects.Ranks;
+using Deal.Domain.DomainObjects.SetColours;
+using Deal.Domain.DomainObjects.SetPurposes;
+using Deal.Domain.DomainObjects.Sets;
 using Deal.Domain.DomainObjects.Suits;
 using Microsoft.EntityFrameworkCore;
 
@@ -28,12 +32,55 @@ namespace Deal.Data.Crud
         }
 
         /// <inheritdoc/>
+        public IList<IOwner> ReadAllOwners()
+        {
+            return this.Context.Owners
+                .AsNoTracking()
+                .ToList()
+                .Select(o => o.ToDomain())
+                .ToList();
+        }
+
+        /// <inheritdoc/>
         public IList<IRank> ReadAllRanks()
         {
             return this.Context.Ranks
                 .AsNoTracking()
                 .ToList()
                 .Select(r => r.ToDomain())
+                .ToList();
+        }
+
+        /// <inheritdoc/>
+        public IList<ISet> ReadAllSets()
+        {
+            return this.Context.Sets
+                .AsNoTracking()
+                .Include(s => s.Owner)
+                .Include(s => s.SetPurpose)
+                .Include(s => s.SetColour)
+                .ToList()
+                .Select(s => s.ToDomain())
+                .ToList();
+        }
+
+        /// <inheritdoc/>
+        public IList<ISetPurpose> ReadAllSetPurposes()
+        {
+            return this.Context.SetPurposes
+                .AsNoTracking()
+                .ToList()
+                .Select(sp => sp.ToDomain())
+                .ToList();
+        }
+
+        /// <inheritdoc/>
+        public IList<ISetColour> ReadAllSetColours()
+        {
+            return this.Context.SetColours
+                .AsNoTracking()
+                .ToList()
+                .Select(sc => sc.ToDomain())
                 .ToList();
         }
 

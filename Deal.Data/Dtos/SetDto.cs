@@ -5,7 +5,10 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 using Deal.Data.DbContexts;
+using Deal.Data.Resources;
+using Deal.Domain.DomainObjects.Sets;
 
 namespace Deal.Data.Dtos
 {
@@ -115,5 +118,77 @@ namespace Deal.Data.Dtos
         public SetColourDto? SetColour { get; private set; }
 
         #endregion Parent Properties
+
+        #region Public Methods
+
+        /// <summary>
+        /// Converts domain object to DTO.
+        /// </summary>
+        /// <param name="set">Set.</param>
+        /// <returns>Set DTO.</returns>
+        public static SetDto ToDto(ISet set)
+        {
+            if (set == null)
+            {
+                throw new ArgumentNullException(nameof(set));
+            }
+
+            return new SetDto(
+                id: set.Id,
+                ownerId: set.Owner.Id,
+                setPurposeId: set.SetPurpose.Id,
+                setColourId: set.SetColour.Id,
+                lowBoardNumber: set.LowBoardNumber,
+                highBoardNumber: set.HighBoardNumber,
+                description: set.Description);
+        }
+
+        /// <summary>
+        /// Converts instance to domain object.
+        /// </summary>
+        /// <returns>Set.</returns>
+        public ISet ToDomain()
+        {
+            if (this.Owner == null)
+            {
+                throw new InvalidOperationException(
+                    string.Format(
+                        CultureInfo.InvariantCulture,
+                        ExceptionResource.CannotConvertTo___If___IsNull,
+                        nameof(ISet),
+                        nameof(this.Owner)));
+            }
+
+            if (this.SetPurpose == null)
+            {
+                throw new InvalidOperationException(
+                    string.Format(
+                        CultureInfo.InvariantCulture,
+                        ExceptionResource.CannotConvertTo___If___IsNull,
+                        nameof(ISet),
+                        nameof(this.SetPurpose)));
+            }
+
+            if (this.SetColour == null)
+            {
+                throw new InvalidOperationException(
+                    string.Format(
+                        CultureInfo.InvariantCulture,
+                        ExceptionResource.CannotConvertTo___If___IsNull,
+                        nameof(ISet),
+                        nameof(this.SetColour)));
+            }
+
+            return new Set(
+                id: this.Id,
+                lowBoardNumber: this.LowBoardNumber,
+                highBoardNumber: this.HighBoardNumber,
+                description: this.Description,
+                owner: this.Owner.ToDomain(),
+                setPurpose: this.SetPurpose.ToDomain(),
+                setColour: this.SetColour.ToDomain());
+        }
+
+        #endregion
     }
 }

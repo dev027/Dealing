@@ -65,6 +65,11 @@
             Seed the Ranks.
             </summary>
         </member>
+        <member name="M:Deal.Service.SeedServices.ISeedService.Sets">
+            <summary>
+            Seeds the Sets.
+            </summary>
+        </member>
         <member name="M:Deal.Service.SeedServices.ISeedService.SetColours">
             <summary>
             Seed the Set Colours.
@@ -103,6 +108,9 @@
         </member>
         <member name="M:Deal.Service.SeedServices.SeedService.Ranks">
             <inheritdoc/>
+        </member>
+        <member name="M:Deal.Service.SeedServices.SeedService.Sets">
+            <inheritdoc />
         </member>
         <member name="M:Deal.Service.SeedServices.SeedService.SetColours">
             <inheritdoc/>

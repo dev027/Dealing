@@ -48,6 +48,12 @@ namespace Deal.Data.Crud
             return this.Context.Ranks.Any();
         }
 
+        /// <inheritdoc />
+        public bool AnySets()
+        {
+            return this.Context.Sets.Any();
+        }
+
         /// <inheritdoc/>
         public bool AnySetColours()
         {

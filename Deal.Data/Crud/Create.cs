@@ -12,6 +12,7 @@ using Deal.Domain.DomainObjects.PackColours;
 using Deal.Domain.DomainObjects.Ranks;
 using Deal.Domain.DomainObjects.SetColours;
 using Deal.Domain.DomainObjects.SetPurposes;
+using Deal.Domain.DomainObjects.Sets;
 using Deal.Domain.DomainObjects.Suits;
 
 namespace Deal.Data.Crud
@@ -92,6 +93,19 @@ namespace Deal.Data.Crud
         {
             RankDto rankDto = RankDto.ToDto(rank);
             this.Context.Ranks.Add(rankDto);
+            int count = this.Context.SaveChanges();
+
+            if (count != 1)
+            {
+                throw new ApplicationException($"Unexpectedly created {count} rows");
+            }
+        }
+
+        /// <inheritdoc/>
+        public void CreateSet(ISet set)
+        {
+            SetDto setDto = SetDto.ToDto(set);
+            this.Context.Sets.Add(setDto);
             int count = this.Context.SaveChanges();
 
             if (count != 1)
