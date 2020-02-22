@@ -5,6 +5,7 @@
 using System;
 using Deal.Data.Dtos;
 using Deal.Domain.DomainObjects.Cards;
+using Deal.Domain.DomainObjects.Dealers;
 using Deal.Domain.DomainObjects.ErrorReasonGroups;
 using Deal.Domain.DomainObjects.ErrorReasons;
 using Deal.Domain.DomainObjects.Owners;
@@ -37,10 +38,10 @@ namespace Deal.Data.Crud
         }
 
         /// <inheritdoc/>
-        public void CreatePackColour(IPackColour packColour)
+        public void CreateDealer(IDealer dealer)
         {
-            PackColourDto packColourDto = PackColourDto.ToDto(packColour);
-            this.Context.PackColours.Add(packColourDto);
+            DealerDto dealerDto = DealerDto.ToDto(dealer);
+            this.Context.Dealers.Add(dealerDto);
             int count = this.Context.SaveChanges();
 
             if (count != 1)
@@ -80,6 +81,19 @@ namespace Deal.Data.Crud
         {
             OwnerDto ownerDto = OwnerDto.ToDto(owner);
             this.Context.Owners.Add(ownerDto);
+            int count = this.Context.SaveChanges();
+
+            if (count != 1)
+            {
+                throw new ApplicationException($"Unexpectedly created {count} rows");
+            }
+        }
+
+        /// <inheritdoc/>
+        public void CreatePackColour(IPackColour packColour)
+        {
+            PackColourDto packColourDto = PackColourDto.ToDto(packColour);
+            this.Context.PackColours.Add(packColourDto);
             int count = this.Context.SaveChanges();
 
             if (count != 1)
