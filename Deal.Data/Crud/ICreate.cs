@@ -3,6 +3,7 @@
 // </copyright>
 
 using Deal.Domain.DomainObjects.Cards;
+using Deal.Domain.DomainObjects.Dealers;
 using Deal.Domain.DomainObjects.ErrorReasonGroups;
 using Deal.Domain.DomainObjects.ErrorReasons;
 using Deal.Domain.DomainObjects.Owners;
@@ -27,10 +28,10 @@ namespace Deal.Data.Crud
         void CreateCard(ICard card);
 
         /// <summary>
-        /// Creates the Pack Colour.
+        /// Creates the Dealer.
         /// </summary>
-        /// <param name="packColour">Pack Colour.</param>
-        void CreatePackColour(IPackColour packColour);
+        /// <param name="dealer">Dealer.</param>
+        void CreateDealer(IDealer dealer);
 
         /// <summary>
         /// Creates the Error Reason.
@@ -49,6 +50,12 @@ namespace Deal.Data.Crud
         /// </summary>
         /// <param name="owner">Owner.</param>
         void CreateOwner(IOwner owner);
+
+        /// <summary>
+        /// Creates the Pack Colour.
+        /// </summary>
+        /// <param name="packColour">Pack Colour.</param>
+        void CreatePackColour(IPackColour packColour);
 
         /// <summary>
         /// Creates the Rank.

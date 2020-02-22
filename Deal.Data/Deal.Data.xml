@@ -25,7 +25,7 @@
         <member name="M:Deal.Data.Crud.DealData.CreateCard(Deal.Domain.DomainObjects.Cards.ICard)">
             <inheritdoc/>
         </member>
-        <member name="M:Deal.Data.Crud.DealData.CreatePackColour(Deal.Domain.DomainObjects.PackColours.IPackColour)">
+        <member name="M:Deal.Data.Crud.DealData.CreateDealer(Deal.Domain.DomainObjects.Dealers.IDealer)">
             <inheritdoc/>
         </member>
         <member name="M:Deal.Data.Crud.DealData.CreateErrorReason(Deal.Domain.DomainObjects.ErrorReasons.IErrorReason)">
@@ -36,6 +36,9 @@
         </member>
         <member name="M:Deal.Data.Crud.DealData.CreateOwner(Deal.Domain.DomainObjects.Owners.IOwner)">
             <inheritdoc />
+        </member>
+        <member name="M:Deal.Data.Crud.DealData.CreatePackColour(Deal.Domain.DomainObjects.PackColours.IPackColour)">
+            <inheritdoc/>
         </member>
         <member name="M:Deal.Data.Crud.DealData.CreateRank(Deal.Domain.DomainObjects.Ranks.IRank)">
             <inheritdoc/>
@@ -111,6 +114,9 @@
         <member name="M:Deal.Data.Crud.DealData.AnySuit">
             <inheritdoc/>
         </member>
+        <member name="M:Deal.Data.Crud.DealData.ReadAllDealers">
+            <inheritdoc/>
+        </member>
         <member name="M:Deal.Data.Crud.DealData.ReadAllErrorReasonGroups">
             <inheritdoc/>
         </member>
@@ -143,11 +149,11 @@
             </summary>
             <param name="card">Card.</param>
         </member>
-        <member name="M:Deal.Data.Crud.ICreate.CreatePackColour(Deal.Domain.DomainObjects.PackColours.IPackColour)">
+        <member name="M:Deal.Data.Crud.ICreate.CreateDealer(Deal.Domain.DomainObjects.Dealers.IDealer)">
             <summary>
-            Creates the Pack Colour.
+            Creates the Dealer.
             </summary>
-            <param name="packColour">Pack Colour.</param>
+            <param name="dealer">Dealer.</param>
         </member>
         <member name="M:Deal.Data.Crud.ICreate.CreateErrorReason(Deal.Domain.DomainObjects.ErrorReasons.IErrorReason)">
             <summary>
@@ -166,6 +172,12 @@
             Creates the Owner.
             </summary>
             <param name="owner">Owner.</param>
+        </member>
+        <member name="M:Deal.Data.Crud.ICreate.CreatePackColour(Deal.Domain.DomainObjects.PackColours.IPackColour)">
+            <summary>
+            Creates the Pack Colour.
+            </summary>
+            <param name="packColour">Pack Colour.</param>
         </member>
         <member name="M:Deal.Data.Crud.ICreate.CreateRank(Deal.Domain.DomainObjects.Ranks.IRank)">
             <summary>
@@ -210,6 +222,12 @@
             <summary>
             Read methods.
             </summary>
+        </member>
+        <member name="M:Deal.Data.Crud.IRead.ReadAllDealers">
+            <summary>
+            Reads all Dealers.
+            </summary>
+            <returns>List of Dealers.</returns>
         </member>
         <member name="M:Deal.Data.Crud.IRead.ReadAllErrorReasonGroups">
             <summary>
@@ -518,6 +536,19 @@
             <summary>
             Gets the Dealer Name.
             </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.DealerDto.ToDto(Deal.Domain.DomainObjects.Dealers.IDealer)">
+            <summary>
+            Converts domain object to DTO.
+            </summary>
+            <param name="dealer">Dealer.</param>
+            <returns>Dealer DTO.</returns>
+        </member>
+        <member name="M:Deal.Data.Dtos.DealerDto.ToDomain">
+            <summary>
+            Converts instance to domain object.
+            </summary>
+            <returns>Dealer.</returns>
         </member>
         <member name="T:Deal.Data.Dtos.ErrorReasonDto">
             <summary>

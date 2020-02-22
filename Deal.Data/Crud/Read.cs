@@ -4,6 +4,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using Deal.Domain.DomainObjects.Dealers;
 using Deal.Domain.DomainObjects.ErrorReasonGroups;
 using Deal.Domain.DomainObjects.Owners;
 using Deal.Domain.DomainObjects.Ranks;
@@ -21,6 +22,16 @@ namespace Deal.Data.Crud
     /// <seealso cref="IDealData" />
     public partial class DealData
     {
+        /// <inheritdoc/>
+        public IList<IDealer> ReadAllDealers()
+        {
+            return this.Context.Dealers
+                .AsNoTracking()
+                .ToList()
+                .Select(d => d.ToDomain())
+                .ToList();
+        }
+
         /// <inheritdoc/>
         public IList<IErrorReasonGroup> ReadAllErrorReasonGroups()
         {

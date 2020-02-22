@@ -3,6 +3,7 @@
 // </copyright>
 
 using System.Collections.Generic;
+using Deal.Domain.DomainObjects.Dealers;
 using Deal.Domain.DomainObjects.ErrorReasonGroups;
 using Deal.Domain.DomainObjects.Owners;
 using Deal.Domain.DomainObjects.Ranks;
@@ -18,6 +19,12 @@ namespace Deal.Data.Crud
     /// </summary>
     public interface IRead
     {
+        /// <summary>
+        /// Reads all Dealers.
+        /// </summary>
+        /// <returns>List of Dealers.</returns>
+        IList<IDealer> ReadAllDealers();
+
         /// <summary>
         /// Reads all Error Reason Groups.
         /// </summary>

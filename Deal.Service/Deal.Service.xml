@@ -40,6 +40,11 @@
             Seeds the Cards.
             </summary>
         </member>
+        <member name="M:Deal.Service.SeedServices.ISeedService.Dealers">
+            <summary>
+            Seeds the Dealers.
+            </summary>
+        </member>
         <member name="M:Deal.Service.SeedServices.ISeedService.ErrorReasons">
             <summary>
             Seeds the Error Reasons.
@@ -92,6 +97,9 @@
             <seealso cref="T:Deal.Service.SeedServices.ISeedService" />
         </member>
         <member name="M:Deal.Service.SeedServices.SeedService.Cards">
+            <inheritdoc/>
+        </member>
+        <member name="M:Deal.Service.SeedServices.SeedService.Dealers">
             <inheritdoc/>
         </member>
         <member name="M:Deal.Service.SeedServices.SeedService.ErrorReasonGroups">
