@@ -49,10 +49,15 @@ namespace Deal.Domain.DomainObjects.Sets
                     ExceptionResource.LowBoardNumberShouldNotBeHigherThanHighBoardNumber);
             }
 
+            if (string.IsNullOrWhiteSpace(description))
+            {
+                throw new ArgumentNullException(nameof(description));
+            }
+
             this.Id = id;
             this.LowBoardNumber = lowBoardNumber;
             this.HighBoardNumber = highBoardNumber;
-            this.Description = description ?? throw new ArgumentNullException(nameof(description));
+            this.Description = description;
             this.Owner = owner ?? throw new ArgumentNullException(nameof(owner));
             this.SetPurpose = setPurpose ?? throw new ArgumentNullException(nameof(setPurpose));
             this.SetColour = setColour ?? throw new ArgumentNullException(nameof(setColour));

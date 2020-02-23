@@ -191,6 +191,45 @@ namespace Deal.Domain.Tests.DomainObjects.Sets.SetTests
         }
 
         /// <summary>
+        /// Tests the constructor empty description throws exception.
+        /// </summary>
+        [ExpectedException(typeof(ArgumentNullException))]
+        [TestMethod]
+        public void Test_Constructor_Empty_Description_Throws_Exception()
+        {
+            // ARRANGE
+            Guid paramGuid = Guid.NewGuid();
+            const int paramLowBoardNumber = 1;
+            const int paramHighBoardNumber = 32;
+
+            IOwner paramOwner = new Owner(
+                id: Guid.NewGuid(),
+                code: "BRADGATE",
+                name: "Bradgate",
+                isClub: true);
+
+            ISetPurpose paramSetPurpose = new SetPurpose(
+                id: Guid.NewGuid(),
+                code: "EVENT",
+                name: "Events");
+
+            ISetColour paramSetColour = new SetColour(
+                id: Guid.NewGuid(),
+                code: "LT-BLUE",
+                name: "Light Blue");
+
+            // ACT
+            _ = new Set(
+                id: paramGuid,
+                lowBoardNumber: paramLowBoardNumber,
+                highBoardNumber: paramHighBoardNumber,
+                description: string.Empty,
+                owner: paramOwner,
+                setPurpose: paramSetPurpose,
+                setColour: paramSetColour);
+        }
+
+        /// <summary>
         /// Tests the constructor null owner throws exception.
         /// </summary>
         [ExpectedException(typeof(ArgumentNullException))]

@@ -32,9 +32,9 @@ namespace Deal.Domain.DomainFactories.Sets
             IList<ISetPurpose> setPurposes,
             IList<ISetColour> setColours)
         {
-            this.Owners = owners;
-            this.SetPurposes = setPurposes;
-            this.SetColours = setColours;
+            this.Owners = owners ?? throw new ArgumentNullException(nameof(owners));
+            this.SetPurposes = setPurposes ?? throw new ArgumentNullException(nameof(setPurposes));
+            this.SetColours = setColours ?? throw new ArgumentNullException(nameof(setColours));
         }
 
         private IList<IOwner> Owners { get; }
@@ -50,6 +50,21 @@ namespace Deal.Domain.DomainFactories.Sets
             string setColourCode,
             string description)
         {
+            if (ownerCode == null)
+            {
+                throw new ArgumentNullException(nameof(ownerCode));
+            }
+
+            if (setPurposeCode == null)
+            {
+                throw new ArgumentNullException(nameof(setPurposeCode));
+            }
+
+            if (setColourCode == null)
+            {
+                throw new ArgumentNullException(nameof(setColourCode));
+            }
+
             IOwner owner = this.GetOwner(ownerCode);
             ISetPurpose setPurpose = this.GetSetPurpose(setPurposeCode);
             ISetColour setColour = this.GetSetColour(setColourCode);

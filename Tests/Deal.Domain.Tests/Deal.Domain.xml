@@ -4,6 +4,81 @@
         <name>Deal.Domain.Tests</name>
     </assembly>
     <members>
+        <member name="T:Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests.ConstructorTests">
+            <summary>
+            Test the constructor for <see cref="T:Deal.Domain.DomainFactories.Sets.SetFactory"/>.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests.ConstructorTests.Test_Constructor_Null_Owners_Throws_Exception">
+            <summary>
+            Tests the constructor null owners throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests.ConstructorTests.Test_Constructor_Null_SetPurposes_Throws_Exception">
+            <summary>
+            Tests the constructor null set purposes throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests.ConstructorTests.Test_Constructor_Null_SetColours_Throws_Exception">
+            <summary>
+            Tests the constructor null set colours throws exception.
+            </summary>
+        </member>
+        <member name="T:Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests.Create32BoardSetTests">
+            <summary>
+            Test for <see cref="M:Deal.Domain.DomainFactories.Sets.SetFactory.Create32BoardSet(System.String,System.String,System.String,System.String)"/>.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests.Create32BoardSetTests.Test_Create_Set_With_Valid_Details">
+            <summary>
+            Tests the create set with valid details.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests.Create32BoardSetTests.Test_Create_Set_With_Unknown_Owner_Code_Throws_Exception">
+            <summary>
+            Tests the create set with unknown owner code throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests.Create32BoardSetTests.Test_Create_Set_With_Unknown_Set_Purpose_Code_Throws_Exception">
+            <summary>
+            Tests the create set with unknown set purpose code throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests.Create32BoardSetTests.Test_Create_Set_With_Unknown_Set_Colour_Code_Throws_Exception">
+            <summary>
+            Tests the create set with unknown set colour code throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests.Create32BoardSetTests.Test_Create_Set_With_Null_Description_Throws_Exception">
+            <summary>
+            Tests the create set with null description throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests.Create32BoardSetTests.Test_Create_Set_With_Empty_Description_Throws_Exception">
+            <summary>
+            Tests the create set with empty description throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests.Create32BoardSetTests.Test_Create_Set_With_Null_Owner_Code_Throws_Exception">
+            <summary>
+            Tests the create set with null owner code throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests.Create32BoardSetTests.Test_Create_Set_With_Null_Set_Purpose_Code_Throws_Exception">
+            <summary>
+            Tests the create set with null set purpose code throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests.Create32BoardSetTests.Test_Create_Set_With_Null_Set_Colour_Code_Throws_Exception">
+            <summary>
+            Tests the create set with null set colour code throws exception.
+            </summary>
+        </member>
         <member name="T:Deal.Domain.Tests.DomainObjects.Cards.CardTests.ConstructorTests">
             <summary>
             Test the constructor for <see cref="T:Deal.Domain.DomainObjects.Cards.Card"/>.
@@ -207,6 +282,11 @@
         <member name="M:Deal.Domain.Tests.DomainObjects.Sets.SetTests.ConstructorTests.Test_Constructor_Null_Description_Throws_Exception">
             <summary>
             Tests the constructor null description throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Sets.SetTests.ConstructorTests.Test_Constructor_Empty_Description_Throws_Exception">
+            <summary>
+            Tests the constructor empty description throws exception.
             </summary>
         </member>
         <member name="M:Deal.Domain.Tests.DomainObjects.Sets.SetTests.ConstructorTests.Test_Constructor_Null_Owner_Throws_Exception">
