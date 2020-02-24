@@ -3,6 +3,7 @@
 // </copyright>
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Serialization;
 
 namespace Deal.Domain.Exceptions
@@ -44,6 +45,7 @@ namespace Deal.Domain.Exceptions
         /// </summary>
         /// <param name="info">Serialization Info.</param>
         /// <param name="context">Streaming Context.</param>
+        [ExcludeFromCodeCoverage]
         protected SetFactoryException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {

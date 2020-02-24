@@ -324,5 +324,25 @@
             Tests the constructor null name throws exception.
             </summary>
         </member>
+        <member name="T:Deal.Domain.Tests.Exceptions.SetFactoryExceptions.SetFactoryExceptionTests.ConstructorTests">
+            <summary>
+            Test the constructors for <see cref="N:Deal.Domain.Tests.Exceptions.SetFactoryExceptions" />.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.Exceptions.SetFactoryExceptions.SetFactoryExceptionTests.ConstructorTests.Test_Default_Constructor">
+            <summary>
+            Tests the default constructor.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.Exceptions.SetFactoryExceptions.SetFactoryExceptionTests.ConstructorTests.Test_Message_Constructor">
+            <summary>
+            Tests the message constructor.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.Exceptions.SetFactoryExceptions.SetFactoryExceptionTests.ConstructorTests.Test_Message_And_Exception_Constructor">
+            <summary>
+            Tests the message and exception constructor.
+            </summary>
+        </member>
     </members>
 </doc>
