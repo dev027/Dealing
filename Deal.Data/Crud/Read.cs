@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Deal.Domain.DomainObjects.Dealers;
 using Deal.Domain.DomainObjects.ErrorReasonGroups;
+using Deal.Domain.DomainObjects.Organisers;
 using Deal.Domain.DomainObjects.Owners;
 using Deal.Domain.DomainObjects.Ranks;
 using Deal.Domain.DomainObjects.SetColours;
@@ -36,6 +37,16 @@ namespace Deal.Data.Crud
         public IList<IErrorReasonGroup> ReadAllErrorReasonGroups()
         {
             return this.Context.ErrorReasonGroups
+                .AsNoTracking()
+                .ToList()
+                .Select(erg => erg.ToDomain())
+                .ToList();
+        }
+
+        /// <inheritdoc/>
+        public IList<IOrganiser> ReadAllOrganisers()
+        {
+            return this.Context.Organisers
                 .AsNoTracking()
                 .ToList()
                 .Select(erg => erg.ToDomain())

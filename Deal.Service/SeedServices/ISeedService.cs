@@ -30,6 +30,11 @@ namespace Deal.Service.SeedServices
         void ErrorReasonGroups();
 
         /// <summary>
+        /// Seeds the Organisers.
+        /// </summary>
+        void Organisers();
+
+        /// <summary>
         /// Seeds the Owners.
         /// </summary>
         void Owners();

@@ -34,6 +34,9 @@
         <member name="M:Deal.Data.Crud.DealData.CreateErrorReasonGroup(Deal.Domain.DomainObjects.ErrorReasonGroups.IErrorReasonGroup)">
             <inheritdoc/>
         </member>
+        <member name="M:Deal.Data.Crud.DealData.CreateOrganiser(Deal.Domain.DomainObjects.Organisers.IOrganiser)">
+            <inheritdoc/>
+        </member>
         <member name="M:Deal.Data.Crud.DealData.CreateOwner(Deal.Domain.DomainObjects.Owners.IOwner)">
             <inheritdoc />
         </member>
@@ -120,6 +123,9 @@
         <member name="M:Deal.Data.Crud.DealData.ReadAllErrorReasonGroups">
             <inheritdoc/>
         </member>
+        <member name="M:Deal.Data.Crud.DealData.ReadAllOrganisers">
+            <inheritdoc/>
+        </member>
         <member name="M:Deal.Data.Crud.DealData.ReadAllOwners">
             <inheritdoc/>
         </member>
@@ -166,6 +172,12 @@
             Creates the Error Reason Group.
             </summary>
             <param name="errorReasonGroup">Error Reason Group.</param>
+        </member>
+        <member name="M:Deal.Data.Crud.ICreate.CreateOrganiser(Deal.Domain.DomainObjects.Organisers.IOrganiser)">
+            <summary>
+            Creates the Organiser.
+            </summary>
+            <param name="organiser">Organiser.</param>
         </member>
         <member name="M:Deal.Data.Crud.ICreate.CreateOwner(Deal.Domain.DomainObjects.Owners.IOwner)">
             <summary>
@@ -234,6 +246,12 @@
             Reads all Error Reason Groups.
             </summary>
             <returns>List of Error Reason Groups.</returns>
+        </member>
+        <member name="M:Deal.Data.Crud.IRead.ReadAllOrganisers">
+            <summary>
+            Reads all Organisers.
+            </summary>
+            <returns>List of Organisers.</returns>
         </member>
         <member name="M:Deal.Data.Crud.IRead.ReadAllOwners">
             <summary>
@@ -794,11 +812,12 @@
             Initializes a new instance of the <see cref="T:Deal.Data.Dtos.OrganiserDto"/> class.
             </summary>
         </member>
-        <member name="M:Deal.Data.Dtos.OrganiserDto.#ctor(System.Guid,System.String)">
+        <member name="M:Deal.Data.Dtos.OrganiserDto.#ctor(System.Guid,System.String,System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:Deal.Data.Dtos.OrganiserDto"/> class.
             </summary>
             <param name="id">Organiser Id.</param>
+            <param name="code">Organiser Code.</param>
             <param name="name">Organiser Name.</param>
         </member>
         <member name="P:Deal.Data.Dtos.OrganiserDto.Id">
@@ -806,10 +825,28 @@
             Gets the Organiser Id.
             </summary>
         </member>
+        <member name="P:Deal.Data.Dtos.OrganiserDto.Code">
+            <summary>
+            Gets the Organiser Code.
+            </summary>
+        </member>
         <member name="P:Deal.Data.Dtos.OrganiserDto.Name">
             <summary>
             Gets the Organiser Name.
             </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.OrganiserDto.ToDto(Deal.Domain.DomainObjects.Organisers.IOrganiser)">
+            <summary>
+            Converts domain object to DTO.
+            </summary>
+            <param name="organiser">The organiser.</param>
+            <returns>Organiser DTO.</returns>
+        </member>
+        <member name="M:Deal.Data.Dtos.OrganiserDto.ToDomain">
+            <summary>
+            Converts instance to domain object.
+            </summary>
+            <returns>Organiser.</returns>
         </member>
         <member name="T:Deal.Data.Dtos.OwnerDto">
             <summary>

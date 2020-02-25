@@ -208,6 +208,49 @@
             Gets the Error Reason Group.
             </summary>
         </member>
+        <member name="T:Deal.Domain.DomainObjects.Organisers.IOrganiser">
+            <summary>
+            Organiser.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Organisers.IOrganiser.Id">
+            <summary>
+            Gets the Organiser Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Organisers.IOrganiser.Code">
+            <summary>
+            Gets the Organiser Code.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Organisers.IOrganiser.Name">
+            <summary>
+            Gets the Organiser Name.
+            </summary>
+        </member>
+        <member name="T:Deal.Domain.DomainObjects.Organisers.Organiser">
+            <summary>
+            Organiser.
+            </summary>
+            <seealso cref="T:Deal.Domain.DomainObjects.Organisers.IOrganiser" />
+        </member>
+        <member name="M:Deal.Domain.DomainObjects.Organisers.Organiser.#ctor(System.Guid,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Domain.DomainObjects.Organisers.Organiser"/> class.
+            </summary>
+            <param name="id">Organiser Id.</param>
+            <param name="code">Organiser Code.</param>
+            <param name="name">Organiser Name.</param>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Organisers.Organiser.Id">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Organisers.Organiser.Code">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Organisers.Organiser.Name">
+            <inheritdoc/>
+        </member>
         <member name="T:Deal.Domain.DomainObjects.Owners.IOwner">
             <summary>
             Owner.
