@@ -794,16 +794,22 @@
             Initializes a new instance of the <see cref="T:Deal.Data.Dtos.OrganiserDto"/> class.
             </summary>
         </member>
-        <member name="M:Deal.Data.Dtos.OrganiserDto.#ctor(System.Guid,System.String)">
+        <member name="M:Deal.Data.Dtos.OrganiserDto.#ctor(System.Guid,System.String,System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:Deal.Data.Dtos.OrganiserDto"/> class.
             </summary>
             <param name="id">Organiser Id.</param>
+            <param name="code">Organiser Code.</param>
             <param name="name">Organiser Name.</param>
         </member>
         <member name="P:Deal.Data.Dtos.OrganiserDto.Id">
             <summary>
             Gets the Organiser Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.OrganiserDto.Code">
+            <summary>
+            Gets the Organiser Code.
             </summary>
         </member>
         <member name="P:Deal.Data.Dtos.OrganiserDto.Name">
