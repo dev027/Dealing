@@ -8,6 +8,7 @@ using Deal.Domain.DomainObjects.Cards;
 using Deal.Domain.DomainObjects.Dealers;
 using Deal.Domain.DomainObjects.ErrorReasonGroups;
 using Deal.Domain.DomainObjects.ErrorReasons;
+using Deal.Domain.DomainObjects.Organisers;
 using Deal.Domain.DomainObjects.Owners;
 using Deal.Domain.DomainObjects.PackColours;
 using Deal.Domain.DomainObjects.Ranks;
@@ -68,6 +69,19 @@ namespace Deal.Data.Crud
         {
             ErrorReasonGroupDto errorReasonGroupDto = ErrorReasonGroupDto.ToDto(errorReasonGroup);
             this.Context.ErrorReasonGroups.Add(errorReasonGroupDto);
+            int count = this.Context.SaveChanges();
+
+            if (count != 1)
+            {
+                throw new ApplicationException($"Unexpectedly created {count} rows");
+            }
+        }
+
+        /// <inheritdoc/>
+        public void CreateOrganiser(IOrganiser organiser)
+        {
+            OrganiserDto organiserDto = OrganiserDto.ToDto(organiser);
+            this.Context.Organisers.Add(organiserDto);
             int count = this.Context.SaveChanges();
 
             if (count != 1)

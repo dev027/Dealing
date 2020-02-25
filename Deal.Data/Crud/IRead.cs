@@ -5,6 +5,7 @@
 using System.Collections.Generic;
 using Deal.Domain.DomainObjects.Dealers;
 using Deal.Domain.DomainObjects.ErrorReasonGroups;
+using Deal.Domain.DomainObjects.Organisers;
 using Deal.Domain.DomainObjects.Owners;
 using Deal.Domain.DomainObjects.Ranks;
 using Deal.Domain.DomainObjects.SetColours;
@@ -30,6 +31,12 @@ namespace Deal.Data.Crud
         /// </summary>
         /// <returns>List of Error Reason Groups.</returns>
         IList<IErrorReasonGroup> ReadAllErrorReasonGroups();
+
+        /// <summary>
+        /// Reads all Organisers.
+        /// </summary>
+        /// <returns>List of Organisers.</returns>
+        IList<IOrganiser> ReadAllOrganisers();
 
         /// <summary>
         /// Reads all Owners.

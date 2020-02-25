@@ -6,6 +6,7 @@ using Deal.Domain.DomainObjects.Cards;
 using Deal.Domain.DomainObjects.Dealers;
 using Deal.Domain.DomainObjects.ErrorReasonGroups;
 using Deal.Domain.DomainObjects.ErrorReasons;
+using Deal.Domain.DomainObjects.Organisers;
 using Deal.Domain.DomainObjects.Owners;
 using Deal.Domain.DomainObjects.PackColours;
 using Deal.Domain.DomainObjects.Ranks;
@@ -44,6 +45,12 @@ namespace Deal.Data.Crud
         /// </summary>
         /// <param name="errorReasonGroup">Error Reason Group.</param>
         void CreateErrorReasonGroup(IErrorReasonGroup errorReasonGroup);
+
+        /// <summary>
+        /// Creates the Organiser.
+        /// </summary>
+        /// <param name="organiser">Organiser.</param>
+        void CreateOrganiser(IOrganiser organiser);
 
         /// <summary>
         /// Creates the Owner.

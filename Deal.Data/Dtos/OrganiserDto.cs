@@ -6,6 +6,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Deal.Data.DbContexts;
+using Deal.Domain.DomainObjects.Organisers;
 
 namespace Deal.Data.Dtos
 {
@@ -62,5 +63,39 @@ namespace Deal.Data.Dtos
         public string Name { get; private set; } = null!;
 
         #endregion Properties
+
+        #region Public Properties
+
+        /// <summary>
+        /// Converts domain object to DTO.
+        /// </summary>
+        /// <param name="organiser">The organiser.</param>
+        /// <returns>Organiser DTO.</returns>
+        public static OrganiserDto ToDto(IOrganiser organiser)
+        {
+            if (organiser == null)
+            {
+                throw new ArgumentNullException(nameof(organiser));
+            }
+
+            return new OrganiserDto(
+                id: organiser.Id,
+                code: organiser.Code,
+                name: organiser.Name);
+        }
+
+        /// <summary>
+        /// Converts instance to domain object.
+        /// </summary>
+        /// <returns>Organiser.</returns>
+        public IOrganiser ToDomain()
+        {
+            return new Organiser(
+                this.Id,
+                this.Code,
+                this.Name);
+        }
+
+        #endregion
     }
 }
