@@ -11,6 +11,7 @@ using Deal.Domain.DomainObjects.Cards;
 using Deal.Domain.DomainObjects.Dealers;
 using Deal.Domain.DomainObjects.ErrorReasonGroups;
 using Deal.Domain.DomainObjects.ErrorReasons;
+using Deal.Domain.DomainObjects.Organisers;
 using Deal.Domain.DomainObjects.Owners;
 using Deal.Domain.DomainObjects.PackColours;
 using Deal.Domain.DomainObjects.Ranks;
@@ -121,6 +122,39 @@ namespace Deal.Service.SeedServices
         }
 
         /// <inheritdoc/>
+        public void Organisers()
+        {
+            using IDealData data = InstanceFactory.GetInstance<IDealData>();
+
+            IList<IOrganiser> existingOrganisers = data.ReadAllOrganisers();
+
+            IDictionary<string, string> organiserDetails = new Dictionary<string, string>
+            {
+                { "LCBA", "LCBA" },
+                { "CBC", "County Bridge Club" },
+                { "BRADGATE", "Bradgate Bridge Club" },
+                { "GLENFIELD", "Glenfield Bridge Club" },
+                { "CBT", "Charnwood Bridge Teachers" }
+            };
+
+            foreach (KeyValuePair<string, string> organiserDetail in organiserDetails)
+            {
+                if (existingOrganisers.Any(o => o.Code == organiserDetail.Key))
+                {
+                    continue;
+                }
+
+                IOrganiser organiser = new Organiser(
+                    id: Guid.NewGuid(),
+                    code: organiserDetail.Key,
+                    name: organiserDetail.Value);
+
+                data.CreateOrganiser(organiser);
+                Console.WriteLine($@"Seeding Dealer: {organiser.Name}.");
+            }
+        }
+
+        /// <inheritdoc/>
         public void Owners()
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
@@ -136,7 +170,7 @@ namespace Deal.Service.SeedServices
                 { "CBC", "County Bridge Club" },
                 { "BRADGATE", "Bradgate Bridge Club" },
                 { "GLENFIELD", "Glenfield Bridge Club" },
-                { "CBT", "Charwood Bridge Teachers" }
+                { "CBT", "Charnwood Bridge Teachers" }
             };
 
             foreach (KeyValuePair<string, string> ownerDetail in ownerDetails)

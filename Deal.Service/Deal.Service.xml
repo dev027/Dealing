@@ -55,6 +55,11 @@
             Seeds the Error Reason Groups.
             </summary>
         </member>
+        <member name="M:Deal.Service.SeedServices.ISeedService.Organisers">
+            <summary>
+            Seeds the Organisers.
+            </summary>
+        </member>
         <member name="M:Deal.Service.SeedServices.ISeedService.Owners">
             <summary>
             Seeds the Owners.
@@ -104,6 +109,9 @@
         </member>
         <member name="M:Deal.Service.SeedServices.SeedService.ErrorReasonGroups">
             <inheritdoc />
+        </member>
+        <member name="M:Deal.Service.SeedServices.SeedService.Organisers">
+            <inheritdoc/>
         </member>
         <member name="M:Deal.Service.SeedServices.SeedService.Owners">
             <inheritdoc/>
