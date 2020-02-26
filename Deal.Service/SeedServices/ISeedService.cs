@@ -2,6 +2,8 @@
 // Copyright (c) Do It Wright. All rights reserved.
 // </copyright>
 
+using DoItWright.Library.Logging;
+
 namespace Deal.Service.SeedServices
 {
     /// <summary>
@@ -12,61 +14,73 @@ namespace Deal.Service.SeedServices
         /// <summary>
         /// Seeds the Cards.
         /// </summary>
-        void Cards();
+        /// <param name="caller">Caller.</param>
+        void Cards(ICaller caller);
 
         /// <summary>
         /// Seeds the Dealers.
         /// </summary>
-        void Dealers();
+        /// <param name="caller">Caller.</param>
+        void Dealers(ICaller caller);
 
         /// <summary>
         /// Seeds the Error Reasons.
         /// </summary>
-        void ErrorReasons();
+        /// <param name="caller">Caller.</param>
+        void ErrorReasons(ICaller caller);
 
         /// <summary>
         /// Seeds the Error Reason Groups.
         /// </summary>
-        void ErrorReasonGroups();
+        /// <param name="caller">Caller.</param>
+        void ErrorReasonGroups(ICaller caller);
 
         /// <summary>
         /// Seeds the Organisers.
         /// </summary>
-        void Organisers();
+        /// <param name="caller">Caller.</param>
+        void Organisers(ICaller caller);
 
         /// <summary>
         /// Seeds the Owners.
         /// </summary>
-        void Owners();
+        /// <param name="caller">Caller.</param>
+        void Owners(ICaller caller);
 
         /// <summary>
         /// Seeds the Pack Colours.
         /// </summary>
-        void PackColours();
+        /// <param name="caller">Caller.</param>
+        void PackColours(ICaller caller);
 
         /// <summary>
         /// Seed the Ranks.
         /// </summary>
-        void Ranks();
+        /// <param name="caller">Caller.</param>
+        void Ranks(ICaller caller);
 
         /// <summary>
         /// Seeds the Sets.
         /// </summary>
-        void Sets();
+        /// <param name="caller">Caller.</param>
+        void Sets(ICaller caller);
 
         /// <summary>
         /// Seed the Set Colours.
         /// </summary>
-        void SetColours();
+        /// <param name="caller">Caller.</param>
+        void SetColours(ICaller caller);
 
         /// <summary>
         /// Seed the Set Purposes.
         /// </summary>
-        void SetPurposes();
+        /// <param name="caller">Caller.</param>
+        void SetPurposes(ICaller caller);
 
         /// <summary>
         /// Seed the Suits.
         /// </summary>
-        void Suits();
+        /// <param name="caller">Caller.</param>
+        void Suits(ICaller caller);
     }
 }

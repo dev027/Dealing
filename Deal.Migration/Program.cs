@@ -1,6 +1,7 @@
 ﻿using Deal.Data.Crud;
 using Deal.Service.SeedServices;
 using DoItWright.Library.DependencyInjection;
+using DoItWright.Library.Logging;
 
 namespace Deal.Migration
 {
@@ -11,20 +12,21 @@ namespace Deal.Migration
         /// </summary>
         public static void Main(/*string[] args*/)
         {
+            ICaller caller = new Caller("Seeder");
             DependencyInjection();
             ISeedService seedService = InstanceFactory.GetInstance<ISeedService>();
-            seedService.Suits();
-            seedService.Ranks();
-            seedService.Cards();
-            seedService.PackColours();
-            seedService.SetColours();
-            seedService.ErrorReasonGroups();
-            seedService.ErrorReasons();
-            seedService.SetPurposes();
-            seedService.Owners();
-            seedService.Sets();
-            seedService.Dealers();
-            seedService.Organisers();
+            seedService.Suits(caller);
+            seedService.Ranks(caller);
+            seedService.Cards(caller);
+            seedService.PackColours(caller);
+            seedService.SetColours(caller);
+            seedService.ErrorReasonGroups(caller);
+            seedService.ErrorReasons(caller);
+            seedService.SetPurposes(caller);
+            seedService.Owners(caller);
+            seedService.Sets(caller);
+            seedService.Dealers(caller);
+            seedService.Organisers(caller);
         }
 
         private static void DependencyInjection()

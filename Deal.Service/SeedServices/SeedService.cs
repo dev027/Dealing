@@ -21,6 +21,7 @@ using Deal.Domain.DomainObjects.Sets;
 using Deal.Domain.DomainObjects.Suits;
 using Deal.Service.Resources;
 using DoItWright.Library.DependencyInjection;
+using DoItWright.Library.Logging;
 
 namespace Deal.Service.SeedServices
 {
@@ -31,7 +32,7 @@ namespace Deal.Service.SeedServices
     public class SeedService : ISeedService
     {
         /// <inheritdoc/>
-        public void Cards()
+        public void Cards(ICaller caller)
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
 
@@ -67,7 +68,7 @@ namespace Deal.Service.SeedServices
         }
 
         /// <inheritdoc/>
-        public void Dealers()
+        public void Dealers(ICaller caller)
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
 
@@ -96,7 +97,7 @@ namespace Deal.Service.SeedServices
         }
 
         /// <inheritdoc />
-        public void ErrorReasonGroups()
+        public void ErrorReasonGroups(ICaller caller)
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
 
@@ -122,7 +123,7 @@ namespace Deal.Service.SeedServices
         }
 
         /// <inheritdoc/>
-        public void Organisers()
+        public void Organisers(ICaller caller)
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
 
@@ -155,7 +156,7 @@ namespace Deal.Service.SeedServices
         }
 
         /// <inheritdoc/>
-        public void Owners()
+        public void Owners(ICaller caller)
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
 
@@ -200,7 +201,7 @@ namespace Deal.Service.SeedServices
         }
 
         /// <inheritdoc/>
-        public void ErrorReasons()
+        public void ErrorReasons(ICaller caller)
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
 
@@ -253,7 +254,7 @@ namespace Deal.Service.SeedServices
         }
 
         /// <inheritdoc/>
-        public void PackColours()
+        public void PackColours(ICaller caller)
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
 
@@ -278,7 +279,7 @@ namespace Deal.Service.SeedServices
         }
 
         /// <inheritdoc/>
-        public void Ranks()
+        public void Ranks(ICaller caller)
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
 
@@ -317,7 +318,7 @@ namespace Deal.Service.SeedServices
         }
 
         /// <inheritdoc />
-        public void Sets()
+        public void Sets(ICaller caller)
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
 
@@ -361,7 +362,7 @@ namespace Deal.Service.SeedServices
         }
 
         /// <inheritdoc/>
-        public void SetColours()
+        public void SetColours(ICaller caller)
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
 
@@ -395,7 +396,7 @@ namespace Deal.Service.SeedServices
         }
 
         /// <inheritdoc/>
-        public void SetPurposes()
+        public void SetPurposes(ICaller caller)
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
 
@@ -421,7 +422,7 @@ namespace Deal.Service.SeedServices
         }
 
         /// <inheritdoc/>
-        public void Suits()
+        public void Suits(ICaller caller)
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
 
