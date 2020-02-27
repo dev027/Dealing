@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <copyright file="StartDateAfterEndDateException.cs" company="Do It Wright">
+// Copyright (c) Do It Wright. All rights reserved.
+// </copyright>
+
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Serialization;
 

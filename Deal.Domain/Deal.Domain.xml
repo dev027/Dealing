@@ -400,6 +400,57 @@
         <member name="P:Deal.Domain.DomainObjects.Ranks.Rank.SortOrder">
             <inheritdoc/>
         </member>
+        <member name="T:Deal.Domain.DomainObjects.Seasons.ISeason">
+            <summary>
+            Season.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Seasons.ISeason.Id">
+            <summary>
+            Gets the Season Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Seasons.ISeason.Organiser">
+            <summary>
+            Gets the Organiser.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Seasons.ISeason.StartDate">
+            <summary>
+            Gets the Start Date.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Seasons.ISeason.EndDate">
+            <summary>
+            Gets the End Date.
+            </summary>
+        </member>
+        <member name="T:Deal.Domain.DomainObjects.Seasons.Season">
+            <summary>
+            Season.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.DomainObjects.Seasons.Season.#ctor(System.Guid,Deal.Domain.DomainObjects.Organisers.IOrganiser,System.DateTime,System.DateTime)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Domain.DomainObjects.Seasons.Season"/> class.
+            </summary>
+            <param name="id">Season Id.</param>
+            <param name="organiser">Organiser.</param>
+            <param name="startDate">Start Date.</param>
+            <param name="endDate">End Date.</param>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Seasons.Season.Id">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Seasons.Season.Organiser">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Seasons.Season.StartDate">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Seasons.Season.EndDate">
+            <inheritdoc/>
+        </member>
         <member name="T:Deal.Domain.DomainObjects.SetColours.ISetColour">
             <summary>
             Set Colour.
@@ -642,6 +693,43 @@
         <member name="M:Deal.Domain.Exceptions.SetFactoryException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
             <summary>
             Initializes a new instance of the <see cref="T:Deal.Domain.Exceptions.SetFactoryException"/> class.
+            </summary>
+            <param name="info">Serialization Info.</param>
+            <param name="context">Streaming Context.</param>
+        </member>
+        <member name="T:Deal.Domain.Exceptions.StartDateAfterEndDateException">
+            <summary>
+            StartDateAfterEndDateException.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Exceptions.StartDateAfterEndDateException.#ctor(System.DateTime,System.DateTime)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Domain.Exceptions.StartDateAfterEndDateException"/> class.
+            </summary>
+            <param name="startDate">Start date.</param>
+            <param name="endDate">End date.</param>
+        </member>
+        <member name="M:Deal.Domain.Exceptions.StartDateAfterEndDateException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Domain.Exceptions.StartDateAfterEndDateException"/> class.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Exceptions.StartDateAfterEndDateException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Domain.Exceptions.StartDateAfterEndDateException"/> class.
+            </summary>
+            <param name="message">Message.</param>
+        </member>
+        <member name="M:Deal.Domain.Exceptions.StartDateAfterEndDateException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Domain.Exceptions.StartDateAfterEndDateException"/> class.
+            </summary>
+            <param name="message">Message.</param>
+            <param name="innerException">InnerException.</param>
+        </member>
+        <member name="M:Deal.Domain.Exceptions.StartDateAfterEndDateException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Domain.Exceptions.StartDateAfterEndDateException"/> class.
             </summary>
             <param name="info">Serialization Info.</param>
             <param name="context">Streaming Context.</param>
