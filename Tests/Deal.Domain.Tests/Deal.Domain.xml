@@ -249,9 +249,14 @@
             Tests the basic constructor.
             </summary>
         </member>
-        <member name="M:Deal.Domain.Tests.DomainObjects.Seasons.SeasonTests.ConstructorTests.Test_Constructor_Null_Code_Throws_Exception">
+        <member name="M:Deal.Domain.Tests.DomainObjects.Seasons.SeasonTests.ConstructorTests.Test_Constructor_Null_Organiser_Throws_Exception">
             <summary>
-            Tests the constructor Organiser code throws exception.
+            Tests the constructor null Organiser throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Seasons.SeasonTests.ConstructorTests.Test_Constructor_Null_Description_Throws_Exception">
+            <summary>
+            Tests the constructor null description code throws exception.
             </summary>
         </member>
         <member name="M:Deal.Domain.Tests.DomainObjects.Seasons.SeasonTests.ConstructorTests.Test_Constructor_Start_Date_After_End_Date_Throws_Exception">
@@ -262,6 +267,26 @@
         <member name="M:Deal.Domain.Tests.DomainObjects.Seasons.SeasonTests.ConstructorTests.Test_Constructor_Start_Date_Equals_End_Date">
             <summary>
             Tests the constructor when start date equals end date.
+            </summary>
+        </member>
+        <member name="T:Deal.Domain.Tests.DomainObjects.Seasons.SeasonTests.SetDatesTests">
+            <summary>
+            Tests the method <see cref="M:Deal.Domain.DomainObjects.Seasons.Season.SetDates(System.DateTime,System.DateTime)"/>.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Seasons.SeasonTests.SetDatesTests.Test_SetDates_With_Valid_Dates">
+            <summary>
+            Tests SetDates() with valid dates.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Seasons.SeasonTests.SetDatesTests.Test_SetDates_Start_Date_After_End_Date_Throws_Exception">
+            <summary>
+            Tests the SetDates() start date after end date throw exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Seasons.SeasonTests.SetDatesTests.Test_SetDates_Start_Date_Equals_End_Date">
+            <summary>
+            Tests SetDates() when start date equals end date.
             </summary>
         </member>
         <member name="T:Deal.Domain.Tests.DomainObjects.SetColours.SetColourTests.ConstructorTests">

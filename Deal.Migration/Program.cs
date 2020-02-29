@@ -27,6 +27,7 @@ namespace Deal.Migration
             seedService.Sets(caller);
             seedService.Dealers(caller);
             seedService.Organisers(caller);
+            seedService.Seasons(caller);
         }
 
         private static void DependencyInjection()

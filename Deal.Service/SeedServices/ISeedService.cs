@@ -60,6 +60,12 @@ namespace Deal.Service.SeedServices
         void Ranks(ICaller caller);
 
         /// <summary>
+        /// Seeds the Seasons.
+        /// </summary>
+        /// <param name="caller">Caller.</param>
+        void Seasons(ICaller caller);
+
+        /// <summary>
         /// Seeds the Sets.
         /// </summary>
         /// <param name="caller">Caller.</param>

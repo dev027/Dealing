@@ -415,6 +415,11 @@
             Gets the Organiser.
             </summary>
         </member>
+        <member name="P:Deal.Domain.DomainObjects.Seasons.ISeason.Description">
+            <summary>
+            Gets the Season Description.
+            </summary>
+        </member>
         <member name="P:Deal.Domain.DomainObjects.Seasons.ISeason.StartDate">
             <summary>
             Gets the Start Date.
@@ -425,17 +430,25 @@
             Gets the End Date.
             </summary>
         </member>
+        <member name="M:Deal.Domain.DomainObjects.Seasons.ISeason.SetDates(System.DateTime,System.DateTime)">
+            <summary>
+            Sets the Start and End Dates.
+            </summary>
+            <param name="startDate">Start Date.</param>
+            <param name="endDate">End Date.</param>
+        </member>
         <member name="T:Deal.Domain.DomainObjects.Seasons.Season">
             <summary>
             Season.
             </summary>
         </member>
-        <member name="M:Deal.Domain.DomainObjects.Seasons.Season.#ctor(System.Guid,Deal.Domain.DomainObjects.Organisers.IOrganiser,System.DateTime,System.DateTime)">
+        <member name="M:Deal.Domain.DomainObjects.Seasons.Season.#ctor(System.Guid,Deal.Domain.DomainObjects.Organisers.IOrganiser,System.String,System.DateTime,System.DateTime)">
             <summary>
             Initializes a new instance of the <see cref="T:Deal.Domain.DomainObjects.Seasons.Season"/> class.
             </summary>
             <param name="id">Season Id.</param>
             <param name="organiser">Organiser.</param>
+            <param name="description">Season Description.</param>
             <param name="startDate">Start Date.</param>
             <param name="endDate">End Date.</param>
         </member>
@@ -445,10 +458,16 @@
         <member name="P:Deal.Domain.DomainObjects.Seasons.Season.Organiser">
             <inheritdoc/>
         </member>
+        <member name="P:Deal.Domain.DomainObjects.Seasons.Season.Description">
+            <inheritdoc/>
+        </member>
         <member name="P:Deal.Domain.DomainObjects.Seasons.Season.StartDate">
             <inheritdoc/>
         </member>
         <member name="P:Deal.Domain.DomainObjects.Seasons.Season.EndDate">
+            <inheritdoc/>
+        </member>
+        <member name="M:Deal.Domain.DomainObjects.Seasons.Season.SetDates(System.DateTime,System.DateTime)">
             <inheritdoc/>
         </member>
         <member name="T:Deal.Domain.DomainObjects.SetColours.ISetColour">

@@ -18,16 +18,19 @@ namespace Deal.Domain.DomainObjects.Seasons
         /// </summary>
         /// <param name="id">Season Id.</param>
         /// <param name="organiser">Organiser.</param>
+        /// <param name="description">Season Description.</param>
         /// <param name="startDate">Start Date.</param>
         /// <param name="endDate">End Date.</param>
         public Season(
             Guid id,
             IOrganiser organiser,
+            string description,
             DateTime startDate,
             DateTime endDate)
         {
             this.Id = id;
             this.Organiser = organiser ?? throw new ArgumentNullException(nameof(organiser));
+            this.Description = description ?? throw new ArgumentNullException(nameof(description));
 
             if (startDate > endDate)
             {
@@ -45,9 +48,24 @@ namespace Deal.Domain.DomainObjects.Seasons
         public IOrganiser Organiser { get; }
 
         /// <inheritdoc/>
-        public DateTime StartDate { get; }
+        public string Description { get; }
 
         /// <inheritdoc/>
-        public DateTime EndDate { get; }
+        public DateTime StartDate { get; private set; }
+
+        /// <inheritdoc/>
+        public DateTime EndDate { get; private set; }
+
+        /// <inheritdoc/>
+        public void SetDates(DateTime startDate, DateTime endDate)
+        {
+            if (startDate > endDate)
+            {
+                throw new StartDateAfterEndDateException(startDate, endDate);
+            }
+
+            this.StartDate = startDate;
+            this.EndDate = endDate;
+        }
     }
 }

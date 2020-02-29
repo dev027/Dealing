@@ -21,6 +21,10 @@
             Data access layer - Read methods.
             </summary>
             <seealso cref="T:Deal.Data.Crud.IDealData" />
+            <summary>
+            Data access layer.
+            </summary>
+            <seealso cref="T:Deal.Data.Crud.IDealData" />
         </member>
         <member name="M:Deal.Data.Crud.DealData.CreateCard(Deal.Domain.DomainObjects.Cards.ICard)">
             <inheritdoc/>
@@ -45,6 +49,9 @@
         </member>
         <member name="M:Deal.Data.Crud.DealData.CreateRank(Deal.Domain.DomainObjects.Ranks.IRank)">
             <inheritdoc/>
+        </member>
+        <member name="M:Deal.Data.Crud.DealData.CreateSeason(Deal.Domain.DomainObjects.Seasons.ISeason)">
+            <inheritdoc />
         </member>
         <member name="M:Deal.Data.Crud.DealData.CreateSet(Deal.Domain.DomainObjects.Sets.ISet)">
             <inheritdoc/>
@@ -132,6 +139,9 @@
         <member name="M:Deal.Data.Crud.DealData.ReadAllRanks">
             <inheritdoc/>
         </member>
+        <member name="M:Deal.Data.Crud.DealData.ReadAllSeasons">
+            <inheritdoc/>
+        </member>
         <member name="M:Deal.Data.Crud.DealData.ReadAllSets">
             <inheritdoc/>
         </member>
@@ -142,6 +152,9 @@
             <inheritdoc/>
         </member>
         <member name="M:Deal.Data.Crud.DealData.ReadAllSuits">
+            <inheritdoc/>
+        </member>
+        <member name="M:Deal.Data.Crud.DealData.UpdateSeason(Deal.Domain.DomainObjects.Seasons.ISeason)">
             <inheritdoc/>
         </member>
         <member name="T:Deal.Data.Crud.ICreate">
@@ -197,6 +210,12 @@
             </summary>
             <param name="rank">Rank.</param>
         </member>
+        <member name="M:Deal.Data.Crud.ICreate.CreateSeason(Deal.Domain.DomainObjects.Seasons.ISeason)">
+            <summary>
+            Creates the Season.
+            </summary>
+            <param name="season">Season.</param>
+        </member>
         <member name="M:Deal.Data.Crud.ICreate.CreateSet(Deal.Domain.DomainObjects.Sets.ISet)">
             <summary>
             Creates the Set.
@@ -228,6 +247,7 @@
             <seealso cref="T:Deal.Data.Crud.ICreate" />
             <seealso cref="T:Deal.Data.Crud.IReadAny" />
             <seealso cref="T:Deal.Data.Crud.IRead" />
+            <seealso cref="T:Deal.Data.Crud.IUpdate" />
             <seealso cref="T:System.IDisposable" />
         </member>
         <member name="T:Deal.Data.Crud.IRead">
@@ -264,6 +284,12 @@
             Reads all Ranks.
             </summary>
             <returns>List of Ranks.</returns>
+        </member>
+        <member name="M:Deal.Data.Crud.IRead.ReadAllSeasons">
+            <summary>
+            Reads all Seasons.
+            </summary>
+            <returns>List of Seasons.</returns>
         </member>
         <member name="M:Deal.Data.Crud.IRead.ReadAllSets">
             <summary>
@@ -353,6 +379,17 @@
             Check if Suits has any rows.
             </summary>
             <returns>True if Suits has rows; otherwise False.</returns>
+        </member>
+        <member name="T:Deal.Data.Crud.IUpdate">
+            <summary>
+            Update methods.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Crud.IUpdate.UpdateSeason(Deal.Domain.DomainObjects.Seasons.ISeason)">
+            <summary>
+            Updates the season.
+            </summary>
+            <param name="season">Season.</param>
         </member>
         <member name="T:Deal.Data.DbContexts.DataContext">
             <summary>
@@ -1181,6 +1218,19 @@
             <summary>
             Gets the Organiser.
             </summary>
+        </member>
+        <member name="M:Deal.Data.Dtos.SeasonDto.ToDto(Deal.Domain.DomainObjects.Seasons.ISeason)">
+            <summary>
+            Converts domain object to DTO.
+            </summary>
+            <param name="season">Season.</param>
+            <returns>Season DTO.</returns>
+        </member>
+        <member name="M:Deal.Data.Dtos.SeasonDto.ToDomain">
+            <summary>
+            Converts instance to domain object.
+            </summary>
+            <returns>Season.</returns>
         </member>
         <member name="T:Deal.Data.Dtos.SetColourDto">
             <summary>

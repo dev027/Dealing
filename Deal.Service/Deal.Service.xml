@@ -35,65 +35,83 @@
             Seed Service.
             </summary>
         </member>
-        <member name="M:Deal.Service.SeedServices.ISeedService.Cards">
+        <member name="M:Deal.Service.SeedServices.ISeedService.Cards(DoItWright.Library.Logging.ICaller)">
             <summary>
             Seeds the Cards.
             </summary>
+            <param name="caller">Caller.</param>
         </member>
-        <member name="M:Deal.Service.SeedServices.ISeedService.Dealers">
+        <member name="M:Deal.Service.SeedServices.ISeedService.Dealers(DoItWright.Library.Logging.ICaller)">
             <summary>
             Seeds the Dealers.
             </summary>
+            <param name="caller">Caller.</param>
         </member>
-        <member name="M:Deal.Service.SeedServices.ISeedService.ErrorReasons">
+        <member name="M:Deal.Service.SeedServices.ISeedService.ErrorReasons(DoItWright.Library.Logging.ICaller)">
             <summary>
             Seeds the Error Reasons.
             </summary>
+            <param name="caller">Caller.</param>
         </member>
-        <member name="M:Deal.Service.SeedServices.ISeedService.ErrorReasonGroups">
+        <member name="M:Deal.Service.SeedServices.ISeedService.ErrorReasonGroups(DoItWright.Library.Logging.ICaller)">
             <summary>
             Seeds the Error Reason Groups.
             </summary>
+            <param name="caller">Caller.</param>
         </member>
-        <member name="M:Deal.Service.SeedServices.ISeedService.Organisers">
+        <member name="M:Deal.Service.SeedServices.ISeedService.Organisers(DoItWright.Library.Logging.ICaller)">
             <summary>
             Seeds the Organisers.
             </summary>
+            <param name="caller">Caller.</param>
         </member>
-        <member name="M:Deal.Service.SeedServices.ISeedService.Owners">
+        <member name="M:Deal.Service.SeedServices.ISeedService.Owners(DoItWright.Library.Logging.ICaller)">
             <summary>
             Seeds the Owners.
             </summary>
+            <param name="caller">Caller.</param>
         </member>
-        <member name="M:Deal.Service.SeedServices.ISeedService.PackColours">
+        <member name="M:Deal.Service.SeedServices.ISeedService.PackColours(DoItWright.Library.Logging.ICaller)">
             <summary>
             Seeds the Pack Colours.
             </summary>
+            <param name="caller">Caller.</param>
         </member>
-        <member name="M:Deal.Service.SeedServices.ISeedService.Ranks">
+        <member name="M:Deal.Service.SeedServices.ISeedService.Ranks(DoItWright.Library.Logging.ICaller)">
             <summary>
             Seed the Ranks.
             </summary>
+            <param name="caller">Caller.</param>
         </member>
-        <member name="M:Deal.Service.SeedServices.ISeedService.Sets">
+        <member name="M:Deal.Service.SeedServices.ISeedService.Seasons(DoItWright.Library.Logging.ICaller)">
+            <summary>
+            Seeds the Seasons.
+            </summary>
+            <param name="caller">Caller.</param>
+        </member>
+        <member name="M:Deal.Service.SeedServices.ISeedService.Sets(DoItWright.Library.Logging.ICaller)">
             <summary>
             Seeds the Sets.
             </summary>
+            <param name="caller">Caller.</param>
         </member>
-        <member name="M:Deal.Service.SeedServices.ISeedService.SetColours">
+        <member name="M:Deal.Service.SeedServices.ISeedService.SetColours(DoItWright.Library.Logging.ICaller)">
             <summary>
             Seed the Set Colours.
             </summary>
+            <param name="caller">Caller.</param>
         </member>
-        <member name="M:Deal.Service.SeedServices.ISeedService.SetPurposes">
+        <member name="M:Deal.Service.SeedServices.ISeedService.SetPurposes(DoItWright.Library.Logging.ICaller)">
             <summary>
             Seed the Set Purposes.
             </summary>
+            <param name="caller">Caller.</param>
         </member>
-        <member name="M:Deal.Service.SeedServices.ISeedService.Suits">
+        <member name="M:Deal.Service.SeedServices.ISeedService.Suits(DoItWright.Library.Logging.ICaller)">
             <summary>
             Seed the Suits.
             </summary>
+            <param name="caller">Caller.</param>
         </member>
         <member name="T:Deal.Service.SeedServices.SeedService">
             <summary>
@@ -101,40 +119,43 @@
             </summary>
             <seealso cref="T:Deal.Service.SeedServices.ISeedService" />
         </member>
-        <member name="M:Deal.Service.SeedServices.SeedService.Cards">
+        <member name="M:Deal.Service.SeedServices.SeedService.Cards(DoItWright.Library.Logging.ICaller)">
             <inheritdoc/>
         </member>
-        <member name="M:Deal.Service.SeedServices.SeedService.Dealers">
+        <member name="M:Deal.Service.SeedServices.SeedService.Dealers(DoItWright.Library.Logging.ICaller)">
             <inheritdoc/>
         </member>
-        <member name="M:Deal.Service.SeedServices.SeedService.ErrorReasonGroups">
+        <member name="M:Deal.Service.SeedServices.SeedService.ErrorReasonGroups(DoItWright.Library.Logging.ICaller)">
             <inheritdoc />
         </member>
-        <member name="M:Deal.Service.SeedServices.SeedService.Organisers">
+        <member name="M:Deal.Service.SeedServices.SeedService.Organisers(DoItWright.Library.Logging.ICaller)">
             <inheritdoc/>
         </member>
-        <member name="M:Deal.Service.SeedServices.SeedService.Owners">
+        <member name="M:Deal.Service.SeedServices.SeedService.Owners(DoItWright.Library.Logging.ICaller)">
             <inheritdoc/>
         </member>
-        <member name="M:Deal.Service.SeedServices.SeedService.ErrorReasons">
+        <member name="M:Deal.Service.SeedServices.SeedService.ErrorReasons(DoItWright.Library.Logging.ICaller)">
             <inheritdoc/>
         </member>
-        <member name="M:Deal.Service.SeedServices.SeedService.PackColours">
+        <member name="M:Deal.Service.SeedServices.SeedService.PackColours(DoItWright.Library.Logging.ICaller)">
             <inheritdoc/>
         </member>
-        <member name="M:Deal.Service.SeedServices.SeedService.Ranks">
+        <member name="M:Deal.Service.SeedServices.SeedService.Ranks(DoItWright.Library.Logging.ICaller)">
             <inheritdoc/>
         </member>
-        <member name="M:Deal.Service.SeedServices.SeedService.Sets">
+        <member name="M:Deal.Service.SeedServices.SeedService.Seasons(DoItWright.Library.Logging.ICaller)">
             <inheritdoc />
         </member>
-        <member name="M:Deal.Service.SeedServices.SeedService.SetColours">
+        <member name="M:Deal.Service.SeedServices.SeedService.Sets(DoItWright.Library.Logging.ICaller)">
+            <inheritdoc />
+        </member>
+        <member name="M:Deal.Service.SeedServices.SeedService.SetColours(DoItWright.Library.Logging.ICaller)">
             <inheritdoc/>
         </member>
-        <member name="M:Deal.Service.SeedServices.SeedService.SetPurposes">
+        <member name="M:Deal.Service.SeedServices.SeedService.SetPurposes(DoItWright.Library.Logging.ICaller)">
             <inheritdoc/>
         </member>
-        <member name="M:Deal.Service.SeedServices.SeedService.Suits">
+        <member name="M:Deal.Service.SeedServices.SeedService.Suits(DoItWright.Library.Logging.ICaller)">
             <inheritdoc/>
         </member>
     </members>

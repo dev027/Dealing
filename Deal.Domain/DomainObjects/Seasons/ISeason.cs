@@ -12,6 +12,8 @@ namespace Deal.Domain.DomainObjects.Seasons
     /// </summary>
     public interface ISeason
     {
+        #region Public Properties
+
         /// <summary>
         /// Gets the Season Id.
         /// </summary>
@@ -23,6 +25,11 @@ namespace Deal.Domain.DomainObjects.Seasons
         IOrganiser Organiser { get; }
 
         /// <summary>
+        /// Gets the Season Description.
+        /// </summary>
+        string Description { get; }
+
+        /// <summary>
         /// Gets the Start Date.
         /// </summary>
         DateTime StartDate { get; }
@@ -31,5 +38,20 @@ namespace Deal.Domain.DomainObjects.Seasons
         /// Gets the End Date.
         /// </summary>
         DateTime EndDate { get; }
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// Sets the Start and End Dates.
+        /// </summary>
+        /// <param name="startDate">Start Date.</param>
+        /// <param name="endDate">End Date.</param>
+        void SetDates(
+            DateTime startDate,
+            DateTime endDate);
+
+        #endregion
     }
 }
