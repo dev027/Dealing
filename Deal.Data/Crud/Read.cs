@@ -9,6 +9,7 @@ using Deal.Domain.DomainObjects.ErrorReasonGroups;
 using Deal.Domain.DomainObjects.Organisers;
 using Deal.Domain.DomainObjects.Owners;
 using Deal.Domain.DomainObjects.Ranks;
+using Deal.Domain.DomainObjects.Seasons;
 using Deal.Domain.DomainObjects.SetColours;
 using Deal.Domain.DomainObjects.SetPurposes;
 using Deal.Domain.DomainObjects.Sets;
@@ -70,6 +71,16 @@ namespace Deal.Data.Crud
                 .AsNoTracking()
                 .ToList()
                 .Select(r => r.ToDomain())
+                .ToList();
+        }
+
+        /// <inheritdoc/>
+        public IList<ISeason> ReadAllSeasons()
+        {
+            return this.Context.Seasons
+                .AsNoTracking()
+                .ToList()
+                .Select(s => s.ToDomain())
                 .ToList();
         }
 

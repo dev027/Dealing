@@ -12,9 +12,10 @@ namespace Deal.Data.Crud
     /// <seealso cref="ICreate" />
     /// <seealso cref="IReadAny" />
     /// <seealso cref="IRead" />
+    /// <seealso cref="IUpdate" />
     /// <seealso cref="IDisposable" />
     public interface IDealData
-        : ICreate, IReadAny, IRead, IDisposable
+        : ICreate, IReadAny, IRead, IUpdate, IDisposable
     {
     }
 }

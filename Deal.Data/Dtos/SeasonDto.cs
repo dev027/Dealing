@@ -5,7 +5,10 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 using Deal.Data.DbContexts;
+using Deal.Data.Resources;
+using Deal.Domain.DomainObjects.Seasons;
 
 namespace Deal.Data.Dtos
 {
@@ -87,5 +90,53 @@ namespace Deal.Data.Dtos
         public OrganiserDto? Organiser { get; private set; }
 
         #endregion Parent Properties
+
+        #region Public Methods
+
+        /// <summary>
+        /// Converts domain object to DTO.
+        /// </summary>
+        /// <param name="season">Season.</param>
+        /// <returns>Season DTO.</returns>
+        public static SeasonDto ToDto(ISeason season)
+        {
+            if (season == null)
+            {
+                throw new ArgumentNullException(nameof(season));
+            }
+
+            return new SeasonDto(
+                id: season.Id,
+                organiserId: season.Organiser.Id,
+                description: season.Description,
+                startDate: season.StartDate,
+                endDate: season.EndDate);
+        }
+
+        /// <summary>
+        /// Converts instance to domain object.
+        /// </summary>
+        /// <returns>Season.</returns>
+        public ISeason ToDomain()
+        {
+            if (this.Organiser == null)
+            {
+                throw new InvalidOperationException(
+                    string.Format(
+                        CultureInfo.InvariantCulture,
+                        ExceptionResource.CannotConvertTo___If___IsNull,
+                        nameof(ISeason),
+                        nameof(this.Organiser)));
+            }
+
+            return new Season(
+                id: this.Id,
+                organiser: this.Organiser.ToDomain(),
+                description: this.Description,
+                startDate: this.StartDate,
+                endDate: this.EndDate);
+        }
+
+        #endregion
     }
 }

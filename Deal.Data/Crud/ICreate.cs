@@ -10,6 +10,7 @@ using Deal.Domain.DomainObjects.Organisers;
 using Deal.Domain.DomainObjects.Owners;
 using Deal.Domain.DomainObjects.PackColours;
 using Deal.Domain.DomainObjects.Ranks;
+using Deal.Domain.DomainObjects.Seasons;
 using Deal.Domain.DomainObjects.SetColours;
 using Deal.Domain.DomainObjects.SetPurposes;
 using Deal.Domain.DomainObjects.Sets;
@@ -69,6 +70,12 @@ namespace Deal.Data.Crud
         /// </summary>
         /// <param name="rank">Rank.</param>
         void CreateRank(IRank rank);
+
+        /// <summary>
+        /// Creates the Season.
+        /// </summary>
+        /// <param name="season">Season.</param>
+        void CreateSeason(ISeason season);
 
         /// <summary>
         /// Creates the Set.

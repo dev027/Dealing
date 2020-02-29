@@ -8,6 +8,7 @@ using Deal.Domain.DomainObjects.ErrorReasonGroups;
 using Deal.Domain.DomainObjects.Organisers;
 using Deal.Domain.DomainObjects.Owners;
 using Deal.Domain.DomainObjects.Ranks;
+using Deal.Domain.DomainObjects.Seasons;
 using Deal.Domain.DomainObjects.SetColours;
 using Deal.Domain.DomainObjects.SetPurposes;
 using Deal.Domain.DomainObjects.Sets;
@@ -49,6 +50,12 @@ namespace Deal.Data.Crud
         /// </summary>
         /// <returns>List of Ranks.</returns>
         IList<IRank> ReadAllRanks();
+
+        /// <summary>
+        /// Reads all Seasons.
+        /// </summary>
+        /// <returns>List of Seasons.</returns>
+        IList<ISeason> ReadAllSeasons();
 
         /// <summary>
         /// Reads all Sets.

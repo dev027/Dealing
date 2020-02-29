@@ -15,12 +15,14 @@ using Deal.Domain.DomainObjects.Organisers;
 using Deal.Domain.DomainObjects.Owners;
 using Deal.Domain.DomainObjects.PackColours;
 using Deal.Domain.DomainObjects.Ranks;
+using Deal.Domain.DomainObjects.Seasons;
 using Deal.Domain.DomainObjects.SetColours;
 using Deal.Domain.DomainObjects.SetPurposes;
 using Deal.Domain.DomainObjects.Sets;
 using Deal.Domain.DomainObjects.Suits;
 using Deal.Service.Resources;
 using DoItWright.Library.DependencyInjection;
+using DoItWright.Library.Logging;
 
 namespace Deal.Service.SeedServices
 {
@@ -31,7 +33,7 @@ namespace Deal.Service.SeedServices
     public class SeedService : ISeedService
     {
         /// <inheritdoc/>
-        public void Cards()
+        public void Cards(ICaller caller)
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
 
@@ -67,7 +69,7 @@ namespace Deal.Service.SeedServices
         }
 
         /// <inheritdoc/>
-        public void Dealers()
+        public void Dealers(ICaller caller)
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
 
@@ -96,7 +98,7 @@ namespace Deal.Service.SeedServices
         }
 
         /// <inheritdoc />
-        public void ErrorReasonGroups()
+        public void ErrorReasonGroups(ICaller caller)
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
 
@@ -122,7 +124,7 @@ namespace Deal.Service.SeedServices
         }
 
         /// <inheritdoc/>
-        public void Organisers()
+        public void Organisers(ICaller caller)
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
 
@@ -155,7 +157,7 @@ namespace Deal.Service.SeedServices
         }
 
         /// <inheritdoc/>
-        public void Owners()
+        public void Owners(ICaller caller)
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
 
@@ -200,7 +202,7 @@ namespace Deal.Service.SeedServices
         }
 
         /// <inheritdoc/>
-        public void ErrorReasons()
+        public void ErrorReasons(ICaller caller)
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
 
@@ -253,7 +255,7 @@ namespace Deal.Service.SeedServices
         }
 
         /// <inheritdoc/>
-        public void PackColours()
+        public void PackColours(ICaller caller)
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
 
@@ -278,7 +280,7 @@ namespace Deal.Service.SeedServices
         }
 
         /// <inheritdoc/>
-        public void Ranks()
+        public void Ranks(ICaller caller)
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
 
@@ -317,7 +319,77 @@ namespace Deal.Service.SeedServices
         }
 
         /// <inheritdoc />
-        public void Sets()
+        public void Seasons(ICaller caller)
+        {
+            using IDealData data = InstanceFactory.GetInstance<IDealData>();
+
+            IList<ISeason> existingSeasons = data.ReadAllSeasons();
+
+            IList<IOrganiser> existingOrganisers = data.ReadAllOrganisers();
+
+            IList<ISeason> seasons = new List<ISeason>
+            {
+                new Season(
+                    id: Guid.NewGuid(),
+                    organiser: existingOrganisers.Single(o => o.Code == "BRADGATE"),
+                    description: "2019/20",
+                    startDate: new DateTime(2019, 11, 01),
+                    endDate: new DateTime(2020, 10, 31)),
+                new Season(
+                    id: Guid.NewGuid(),
+                    organiser: existingOrganisers.Single(o => o.Code == "GLENFIELD"),
+                    description: "2019/20",
+                    startDate: new DateTime(2019, 05, 23),
+                    endDate: new DateTime(2020, 05, 20)),
+                new Season(
+                    id: Guid.NewGuid(),
+                    organiser: existingOrganisers.Single(o => o.Code == "CBC"),
+                    description: "2019/20",
+                    startDate: new DateTime(2019, 06, 01),
+                    endDate: new DateTime(2020, 05, 31)),
+                new Season(
+                    id: Guid.NewGuid(),
+                    organiser: existingOrganisers.Single(o => o.Code == "CBT"),
+                    description: "2019/20",
+                    startDate: new DateTime(2019, 06, 01),
+                    endDate: new DateTime(2020, 05, 31)),
+                new Season(
+                    id: Guid.NewGuid(),
+                    organiser: existingOrganisers.Single(o => o.Code == "LCBA"),
+                    description: "2019/20",
+                    startDate: new DateTime(2019, 06, 01),
+                    endDate: new DateTime(2020, 05, 31))
+            };
+
+            foreach (ISeason season in seasons)
+            {
+                ISeason existingSeason = existingSeasons
+                    .Where(es => es.Organiser.Code == season.Organiser.Code)
+                    .SingleOrDefault(es => es.Description == season.Description);
+
+                if (existingSeason == null)
+                {
+                    data.CreateSeason(season);
+                    Console.WriteLine($@"Seeding Season: {season.Organiser.Code} {season.Description}.");
+                }
+                else
+                {
+                    if (existingSeason.StartDate == season.StartDate &&
+                        existingSeason.EndDate == season.EndDate)
+                    {
+                        continue;
+                    }
+
+                    existingSeason.SetDates(season.StartDate, season.EndDate);
+                    data.UpdateSeason(existingSeason);
+
+                    Console.WriteLine($@"Updating Season: {season.Organiser.Code} {season.Description}.");
+                }
+            }
+        }
+
+        /// <inheritdoc />
+        public void Sets(ICaller caller)
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
 
@@ -361,7 +433,7 @@ namespace Deal.Service.SeedServices
         }
 
         /// <inheritdoc/>
-        public void SetColours()
+        public void SetColours(ICaller caller)
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
 
@@ -395,7 +467,7 @@ namespace Deal.Service.SeedServices
         }
 
         /// <inheritdoc/>
-        public void SetPurposes()
+        public void SetPurposes(ICaller caller)
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
 
@@ -421,7 +493,7 @@ namespace Deal.Service.SeedServices
         }
 
         /// <inheritdoc/>
-        public void Suits()
+        public void Suits(ICaller caller)
         {
             using IDealData data = InstanceFactory.GetInstance<IDealData>();
 
