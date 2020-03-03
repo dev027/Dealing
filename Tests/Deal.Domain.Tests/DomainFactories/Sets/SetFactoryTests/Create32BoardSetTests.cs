@@ -289,11 +289,11 @@ namespace Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests
             {
                 new PackColour(
                     id: Guid.NewGuid(),
-                    code: "RED",
+                    code: "R",
                     colour: "Red"),
                 new PackColour(
                     id: Guid.NewGuid(),
-                    code: "BLUE",
+                    code: "B",
                     colour: "Blue")
             };
         }
