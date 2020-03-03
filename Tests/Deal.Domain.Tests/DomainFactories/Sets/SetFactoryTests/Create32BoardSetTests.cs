@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using Deal.Domain.DomainFactories.Sets;
 using Deal.Domain.DomainObjects.Owners;
+using Deal.Domain.DomainObjects.PackColours;
 using Deal.Domain.DomainObjects.SetColours;
 using Deal.Domain.DomainObjects.SetPurposes;
 using Deal.Domain.DomainObjects.Sets;
@@ -15,7 +16,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests
 {
     /// <summary>
-    /// Test for <see cref="SetFactory.Create32BoardSet"/>.
+    /// Test for <see cref="SetWithPacksFactory.Create32BoardSet"/>.
     /// </summary>
     [TestClass]
     public class Create32BoardSetTests
@@ -31,7 +32,7 @@ namespace Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests
             const string paramSetPurposeCode = "SET_PURPOSE2";
             const string paramSetColourCode = "SET_COLOUR2";
             const string paramDescription = "My Description";
-            ISetFactory setFactory = CreateSetFactory();
+            ISetWithPacksFactory setFactory = CreateSetFactory();
 
             // ACT
             ISet set = setFactory.Create32BoardSet(
@@ -63,7 +64,7 @@ namespace Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests
             const string paramSetPurposeCode = "SET_PURPOSE2";
             const string paramSetColourCode = "SET_COLOUR2";
             const string paramDescription = "My Description";
-            ISetFactory setFactory = CreateSetFactory();
+            ISetWithPacksFactory setFactory = CreateSetFactory();
 
             // ACT
             _ = setFactory.Create32BoardSet(
@@ -88,7 +89,7 @@ namespace Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests
             const string paramSetPurposeCode = "UNKNOWN";
             const string paramSetColourCode = "SET_COLOUR2";
             const string paramDescription = "My Description";
-            ISetFactory setFactory = CreateSetFactory();
+            ISetWithPacksFactory setFactory = CreateSetFactory();
 
             // ACT
             _ = setFactory.Create32BoardSet(
@@ -113,7 +114,7 @@ namespace Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests
             const string paramSetPurposeCode = "SET_PURPOSE2";
             const string paramSetColourCode = "UNKNOWN";
             const string paramDescription = "My Description";
-            ISetFactory setFactory = CreateSetFactory();
+            ISetWithPacksFactory setFactory = CreateSetFactory();
 
             // ACT
             _ = setFactory.Create32BoardSet(
@@ -137,7 +138,7 @@ namespace Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests
             const string paramOwnerCode = "OWNER2";
             const string paramSetPurposeCode = "SET_PURPOSE2";
             const string paramSetColourCode = "SET_COLOUR2";
-            ISetFactory setFactory = CreateSetFactory();
+            ISetWithPacksFactory setFactory = CreateSetFactory();
 
             // ACT
             _ = setFactory.Create32BoardSet(
@@ -161,7 +162,7 @@ namespace Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests
             const string paramOwnerCode = "OWNER2";
             const string paramSetPurposeCode = "SET_PURPOSE2";
             const string paramSetColourCode = "SET_COLOUR2";
-            ISetFactory setFactory = CreateSetFactory();
+            ISetWithPacksFactory setFactory = CreateSetFactory();
 
             // ACT
             _ = setFactory.Create32BoardSet(
@@ -185,7 +186,7 @@ namespace Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests
             const string paramSetPurposeCode = "SET_PURPOSE2";
             const string paramSetColourCode = "SET_COLOUR2";
             const string paramDescription = "My Description";
-            ISetFactory setFactory = CreateSetFactory();
+            ISetWithPacksFactory setFactory = CreateSetFactory();
 
             // ACT
             _ = setFactory.Create32BoardSet(
@@ -209,7 +210,7 @@ namespace Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests
             const string paramOwnerCode = "OWNER2";
             const string paramSetColourCode = "SET_COLOUR2";
             const string paramDescription = "My Description";
-            ISetFactory setFactory = CreateSetFactory();
+            ISetWithPacksFactory setFactory = CreateSetFactory();
 
             // ACT
             _ = setFactory.Create32BoardSet(
@@ -233,7 +234,7 @@ namespace Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests
             const string paramOwnerCode = "OWNER2";
             const string paramSetPurposeCode = "SET_PURPOSE2";
             const string paramDescription = "My Description";
-            ISetFactory setFactory = CreateSetFactory();
+            ISetWithPacksFactory setFactory = CreateSetFactory();
 
             // ACT
             _ = setFactory.Create32BoardSet(
@@ -246,14 +247,16 @@ namespace Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests
             Assert.Fail();
         }
 
-        private static ISetFactory CreateSetFactory()
+        private static ISetWithPacksFactory CreateSetFactory()
         {
             IList<IOwner> owners = CreateOwners();
+            IList<IPackColour> packColours = CreatePackColours();
             IList<ISetPurpose> setPurposes = CreateSetPurposes();
             IList<ISetColour> setColours = CreateSetColours();
 
-            return new SetFactory(
+            return new SetWithPacksFactory(
                 owners: owners,
+                packColours: packColours,
                 setPurposes: setPurposes,
                 setColours: setColours);
         }
@@ -277,6 +280,21 @@ namespace Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests
                     code: "OWNER3",
                     name: "Owner 3",
                     isClub: true)
+            };
+        }
+
+        private static IList<IPackColour> CreatePackColours()
+        {
+            return new List<IPackColour>
+            {
+                new PackColour(
+                    id: Guid.NewGuid(),
+                    code: "RED",
+                    colour: "Red"),
+                new PackColour(
+                    id: Guid.NewGuid(),
+                    code: "BLUE",
+                    colour: "Blue")
             };
         }
 

@@ -6,7 +6,7 @@
     <members>
         <member name="T:Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests.ConstructorTests">
             <summary>
-            Test the constructor for <see cref="T:Deal.Domain.DomainFactories.Sets.SetFactory"/>.
+            Test the constructor for <see cref="T:Deal.Domain.DomainFactories.Sets.SetWithPacksFactory"/>.
             </summary>
         </member>
         <member name="M:Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests.ConstructorTests.Test_Basic_Constructor">
@@ -17,6 +17,11 @@
         <member name="M:Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests.ConstructorTests.Test_Constructor_Null_Owners_Throws_Exception">
             <summary>
             Tests the constructor null owners throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests.ConstructorTests.Test_Constructor_Null_PackColours_Throws_Exception">
+            <summary>
+            Tests the constructor null pack colours throws exception.
             </summary>
         </member>
         <member name="M:Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests.ConstructorTests.Test_Constructor_Null_SetPurposes_Throws_Exception">
@@ -31,7 +36,7 @@
         </member>
         <member name="T:Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests.Create32BoardSetTests">
             <summary>
-            Test for <see cref="M:Deal.Domain.DomainFactories.Sets.SetFactory.Create32BoardSet(System.String,System.String,System.String,System.String)"/>.
+            Test for <see cref="M:Deal.Domain.DomainFactories.Sets.SetWithPacksFactory.Create32BoardSet(System.String,System.String,System.String,System.String)"/>.
             </summary>
         </member>
         <member name="M:Deal.Domain.Tests.DomainFactories.Sets.SetFactoryTests.Create32BoardSetTests.Test_Create_Set_With_Valid_Details">
@@ -219,6 +224,36 @@
             Tests the constructor null colour throws exception.
             </summary>
         </member>
+        <member name="T:Deal.Domain.Tests.DomainObjects.Packs.PackTests.ConstructorTests">
+            <summary>
+            Test the constructor for <see cref="T:Deal.Domain.DomainObjects.Packs.Pack"/>.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Packs.PackTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Packs.PackTests.ConstructorTests.Test_Constructor_Null_Pack_Colour_Throws_Exception">
+            <summary>
+            Tests the constructor null pack colour throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Packs.PackTests.ConstructorTests.Test_Constructor_Null_Set_Throws_Exception">
+            <summary>
+            Tests the constructor null set throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Packs.PackTests.ConstructorTests.Test_Constructor_Low_Board_Number_Throws_Exception">
+            <summary>
+            Tests the constructor low board number throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Packs.PackTests.ConstructorTests.Test_Constructor_High_Board_Number_Throws_Exception">
+            <summary>
+            Tests the constructor high board number throws exception.
+            </summary>
+        </member>
         <member name="T:Deal.Domain.Tests.DomainObjects.Ranks.RankTests.ConstructorTests">
             <summary>
             Test the constructor for <see cref="T:Deal.Domain.DomainObjects.Ranks.Rank"/>.
@@ -372,6 +407,36 @@
         <member name="M:Deal.Domain.Tests.DomainObjects.Sets.SetTests.ConstructorTests.Test_Constructor_Null_Set_Colour_Throws_Exception">
             <summary>
             Tests the constructor null set colour throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Sets.SetTests.ConstructorTests.Test_Set_Constructor">
+            <summary>
+            Tests the set constructor.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Sets.SetTests.ConstructorTests.Test_Set_Constructor_Null_Set_Throws_Exception">
+            <summary>
+            Tests the set constructor null set throws exception.
+            </summary>
+        </member>
+        <member name="T:Deal.Domain.Tests.DomainObjects.Sets.SetWithPacksTests.ConstructorTests">
+            <summary>
+            Test the constructor for <see cref="T:Deal.Domain.DomainObjects.Sets.SetWithPacks"/>.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Sets.SetWithPacksTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Sets.SetWithPacksTests.ConstructorTests.Test_Constructor_Null_Set_Throws_Exception">
+            <summary>
+            Tests the constructor with null set throws exception.
+            </summary>
+        </member>
+        <member name="M:Deal.Domain.Tests.DomainObjects.Sets.SetWithPacksTests.ConstructorTests.Test_Constructor_Null_Packs_Throws_Exception">
+            <summary>
+            Tests the constructor with null packs throws exception.
             </summary>
         </member>
         <member name="T:Deal.Domain.Tests.DomainObjects.Suits.SuitTests.ConstructorTests">

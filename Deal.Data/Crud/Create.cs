@@ -11,6 +11,7 @@ using Deal.Domain.DomainObjects.ErrorReasons;
 using Deal.Domain.DomainObjects.Organisers;
 using Deal.Domain.DomainObjects.Owners;
 using Deal.Domain.DomainObjects.PackColours;
+using Deal.Domain.DomainObjects.Packs;
 using Deal.Domain.DomainObjects.Ranks;
 using Deal.Domain.DomainObjects.Seasons;
 using Deal.Domain.DomainObjects.SetColours;
@@ -96,6 +97,19 @@ namespace Deal.Data.Crud
         {
             OwnerDto ownerDto = OwnerDto.ToDto(owner);
             this.Context.Owners.Add(ownerDto);
+            int count = this.Context.SaveChanges();
+
+            if (count != 1)
+            {
+                throw new ApplicationException($"Unexpectedly created {count} rows");
+            }
+        }
+
+        /// <inheritdoc />
+        public void CreatePack(IPack pack)
+        {
+            PackDto packDto = PackDto.ToDto(pack);
+            this.Context.Packs.Add(packDto);
             int count = this.Context.SaveChanges();
 
             if (count != 1)

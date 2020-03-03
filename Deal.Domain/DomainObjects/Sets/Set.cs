@@ -16,6 +16,28 @@ namespace Deal.Domain.DomainObjects.Sets
     /// <seealso cref="ISet" />
     public class Set : ISet
     {
+        #region Constructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Set"/> class.
+        /// </summary>
+        /// <param name="set">Set.</param>
+        public Set(ISet set)
+        {
+            if (set == null)
+            {
+                throw new ArgumentNullException(nameof(set));
+            }
+
+            this.Id = set.Id;
+            this.LowBoardNumber = set.LowBoardNumber;
+            this.HighBoardNumber = set.HighBoardNumber;
+            this.Description = set.Description;
+            this.Owner = set.Owner;
+            this.SetPurpose = set.SetPurpose;
+            this.SetColour = set.SetColour;
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Set"/> class.
         /// </summary>
@@ -62,6 +84,8 @@ namespace Deal.Domain.DomainObjects.Sets
             this.SetPurpose = setPurpose ?? throw new ArgumentNullException(nameof(setPurpose));
             this.SetColour = setColour ?? throw new ArgumentNullException(nameof(setColour));
         }
+
+        #endregion Constructors
 
         /// <inheritdoc/>
         public Guid Id { get; }
