@@ -332,5 +332,70 @@ namespace Deal.Domain.Tests.DomainObjects.Sets.SetTests
                 setPurpose: paramSetPurpose,
                 setColour: null);
         }
+
+        /// <summary>
+        /// Tests the set constructor.
+        /// </summary>
+        [TestMethod]
+        public void Test_Set_Constructor()
+        {
+            // ARRANGE
+            Guid paramGuid = Guid.NewGuid();
+            const int paramLowBoardNumber = 1;
+            const int paramHighBoardNumber = 32;
+            const string paramDescription = "Blue";
+
+            IOwner paramOwner = new Owner(
+                id: Guid.NewGuid(),
+                code: "BRADGATE",
+                name: "Bradgate",
+                isClub: true);
+
+            ISetPurpose paramSetPurpose = new SetPurpose(
+                id: Guid.NewGuid(),
+                code: "EVENT",
+                name: "Events");
+
+            ISetColour paramSetColour = new SetColour(
+                id: Guid.NewGuid(),
+                code: "LT-BLUE",
+                name: "Light Blue");
+
+            ISet set = new Set(
+                id: paramGuid,
+                lowBoardNumber: paramLowBoardNumber,
+                highBoardNumber: paramHighBoardNumber,
+                description: paramDescription,
+                owner: paramOwner,
+                setPurpose: paramSetPurpose,
+                setColour: paramSetColour);
+
+            // ACT
+            ISet newSet = new Set(set);
+
+            // ASSERT
+            Assert.AreEqual(set.Id, newSet.Id);
+            Assert.AreEqual(set.LowBoardNumber, newSet.LowBoardNumber);
+            Assert.AreEqual(set.HighBoardNumber, newSet.HighBoardNumber);
+            Assert.AreEqual(set.Description, newSet.Description);
+            Assert.AreSame(set.Owner, newSet.Owner);
+            Assert.AreSame(set.SetPurpose, newSet.SetPurpose);
+            Assert.AreSame(set.SetColour, newSet.SetColour);
+        }
+
+        /// <summary>
+        /// Tests the set constructor null set throws exception.
+        /// </summary>
+        [ExpectedException(typeof(ArgumentNullException))]
+        [TestMethod]
+        public void Test_Set_Constructor_Null_Set_Throws_Exception()
+        {
+            // ACT
+            _ = new Set(
+                set: null);
+
+            // ASSERT
+            Assert.Fail();
+        }
     }
 }

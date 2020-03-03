@@ -9,6 +9,7 @@ using Deal.Domain.DomainObjects.ErrorReasons;
 using Deal.Domain.DomainObjects.Organisers;
 using Deal.Domain.DomainObjects.Owners;
 using Deal.Domain.DomainObjects.PackColours;
+using Deal.Domain.DomainObjects.Packs;
 using Deal.Domain.DomainObjects.Ranks;
 using Deal.Domain.DomainObjects.Seasons;
 using Deal.Domain.DomainObjects.SetColours;
@@ -58,6 +59,12 @@ namespace Deal.Data.Crud
         /// </summary>
         /// <param name="owner">Owner.</param>
         void CreateOwner(IOwner owner);
+
+        /// <summary>
+        /// Creates the Pack.
+        /// </summary>
+        /// <param name="pack">Pack.</param>
+        void CreatePack(IPack pack);
 
         /// <summary>
         /// Creates the Pack Colour.

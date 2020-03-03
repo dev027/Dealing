@@ -44,6 +44,9 @@
         <member name="M:Deal.Data.Crud.DealData.CreateOwner(Deal.Domain.DomainObjects.Owners.IOwner)">
             <inheritdoc />
         </member>
+        <member name="M:Deal.Data.Crud.DealData.CreatePack(Deal.Domain.DomainObjects.Packs.IPack)">
+            <inheritdoc />
+        </member>
         <member name="M:Deal.Data.Crud.DealData.CreatePackColour(Deal.Domain.DomainObjects.PackColours.IPackColour)">
             <inheritdoc/>
         </member>
@@ -136,6 +139,9 @@
         <member name="M:Deal.Data.Crud.DealData.ReadAllOwners">
             <inheritdoc/>
         </member>
+        <member name="M:Deal.Data.Crud.DealData.ReadAllPackColours">
+            <inheritdoc/>
+        </member>
         <member name="M:Deal.Data.Crud.DealData.ReadAllRanks">
             <inheritdoc/>
         </member>
@@ -197,6 +203,12 @@
             Creates the Owner.
             </summary>
             <param name="owner">Owner.</param>
+        </member>
+        <member name="M:Deal.Data.Crud.ICreate.CreatePack(Deal.Domain.DomainObjects.Packs.IPack)">
+            <summary>
+            Creates the Pack.
+            </summary>
+            <param name="pack">Pack.</param>
         </member>
         <member name="M:Deal.Data.Crud.ICreate.CreatePackColour(Deal.Domain.DomainObjects.PackColours.IPackColour)">
             <summary>
@@ -278,6 +290,12 @@
             Reads all Owners.
             </summary>
             <returns>List of Owners.</returns>
+        </member>
+        <member name="M:Deal.Data.Crud.IRead.ReadAllPackColours">
+            <summary>
+            Reads all Pack Colours.
+            </summary>
+            <returns>List of Pack Colours.</returns>
         </member>
         <member name="M:Deal.Data.Crud.IRead.ReadAllRanks">
             <summary>
@@ -1117,6 +1135,19 @@
             Gets the Set.
             </summary>
         </member>
+        <member name="M:Deal.Data.Dtos.PackDto.ToDto(Deal.Domain.DomainObjects.Packs.IPack)">
+            <summary>
+            Convert domain object to DTO.
+            </summary>
+            <param name="pack">Pack.</param>
+            <returns>Pack DTO.</returns>
+        </member>
+        <member name="M:Deal.Data.Dtos.PackDto.ToDomain">
+            <summary>
+            Convert instance to domain object.
+            </summary>
+            <returns>PAck.</returns>
+        </member>
         <member name="T:Deal.Data.Dtos.RankDto">
             <summary>
             Rank DTO.
@@ -1415,6 +1446,11 @@
         <member name="P:Deal.Data.Dtos.SetDto.SetColour">
             <summary>
             Gets the Set Colour.
+            </summary>
+        </member>
+        <member name="P:Deal.Data.Dtos.SetDto.Packs">
+            <summary>
+            Gets Packs.
             </summary>
         </member>
         <member name="M:Deal.Data.Dtos.SetDto.ToDto(Deal.Domain.DomainObjects.Sets.ISet)">

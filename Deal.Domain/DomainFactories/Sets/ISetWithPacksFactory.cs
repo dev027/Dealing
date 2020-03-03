@@ -1,4 +1,4 @@
-﻿// <copyright file="ISetFactory.cs" company="Do It Wright">
+﻿// <copyright file="ISetWithPacksFactory.cs" company="Do It Wright">
 // Copyright (c) Do It Wright. All rights reserved.
 // </copyright>
 
@@ -9,7 +9,7 @@ namespace Deal.Domain.DomainFactories.Sets
     /// <summary>
     /// Set Factory.
     /// </summary>
-    public interface ISetFactory
+    public interface ISetWithPacksFactory
     {
         /// <summary>
         /// Create a set of 32 boards, number 1 to 32.
@@ -19,7 +19,7 @@ namespace Deal.Domain.DomainFactories.Sets
         /// <param name="setColourCode">Set Colour Code.</param>
         /// <param name="description">Set Description.</param>
         /// <returns>Set.</returns>
-        ISet Create32BoardSet(
+        ISetWithPacks Create32BoardSet(
             string ownerCode,
             string setPurposeCode,
             string setColourCode,

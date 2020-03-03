@@ -14,6 +14,7 @@ using Deal.Domain.DomainObjects.ErrorReasons;
 using Deal.Domain.DomainObjects.Organisers;
 using Deal.Domain.DomainObjects.Owners;
 using Deal.Domain.DomainObjects.PackColours;
+using Deal.Domain.DomainObjects.Packs;
 using Deal.Domain.DomainObjects.Ranks;
 using Deal.Domain.DomainObjects.Seasons;
 using Deal.Domain.DomainObjects.SetColours;
@@ -395,12 +396,13 @@ namespace Deal.Service.SeedServices
 
             IList<ISet> existingSets = data.ReadAllSets();
 
-            ISetFactory setFactory = new SetFactory(
+            ISetWithPacksFactory setFactory = new SetWithPacksFactory(
                 owners: data.ReadAllOwners(),
+                packColours: data.ReadAllPackColours(),
                 setPurposes: data.ReadAllSetPurposes(),
                 setColours: data.ReadAllSetColours());
 
-            IList<ISet> sets = new List<ISet>
+            IList<ISetWithPacks> setsWithPacks = new List<ISetWithPacks>
             {
                 setFactory.Create32BoardSet("BRADGATE", "EVENTS", "LT-BLUE", "Blue"),
                 setFactory.Create32BoardSet("BRADGATE", "EVENTS", "PINK", "Pink"),
@@ -417,18 +419,23 @@ namespace Deal.Service.SeedServices
                 setFactory.Create32BoardSet("WRIGHT", "EVENTS", "YELLOW", "Yellow"),
             };
 
-            foreach (ISet set in sets)
+            foreach (ISetWithPacks setWithPacks in setsWithPacks)
             {
-                if (existingSets.Where(es => es.Owner.Code == set.Owner.Code)
-                    .Where(es => es.SetPurpose.Code == set.SetPurpose.Code)
-                    .Where(es => es.SetColour.Code == set.SetColour.Code)
-                    .Any(es => es.Description == set.Description))
+                if (existingSets.Where(es => es.Owner.Code == setWithPacks.Owner.Code)
+                    .Where(es => es.SetPurpose.Code == setWithPacks.SetPurpose.Code)
+                    .Where(es => es.SetColour.Code == setWithPacks.SetColour.Code)
+                    .Any(es => es.Description == setWithPacks.Description))
                 {
                     continue;
                 }
 
-                data.CreateSet(set);
-                Console.WriteLine($@"Seeding Set: {set.Owner.Code} {set.Description}.");
+                data.CreateSet(setWithPacks);
+                foreach (IPack pack in setWithPacks.Packs)
+                {
+                    data.CreatePack(pack);
+                }
+
+                Console.WriteLine($@"Seeding Set: {setWithPacks.Owner.Code} {setWithPacks.Description}.");
             }
         }
 

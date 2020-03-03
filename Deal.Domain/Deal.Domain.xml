@@ -4,12 +4,12 @@
         <name>Deal.Domain</name>
     </assembly>
     <members>
-        <member name="T:Deal.Domain.DomainFactories.Sets.ISetFactory">
+        <member name="T:Deal.Domain.DomainFactories.Sets.ISetWithPacksFactory">
             <summary>
             Set Factory.
             </summary>
         </member>
-        <member name="M:Deal.Domain.DomainFactories.Sets.ISetFactory.Create32BoardSet(System.String,System.String,System.String,System.String)">
+        <member name="M:Deal.Domain.DomainFactories.Sets.ISetWithPacksFactory.Create32BoardSet(System.String,System.String,System.String,System.String)">
             <summary>
             Create a set of 32 boards, number 1 to 32.
             </summary>
@@ -19,21 +19,22 @@
             <param name="description">Set Description.</param>
             <returns>Set.</returns>
         </member>
-        <member name="T:Deal.Domain.DomainFactories.Sets.SetFactory">
+        <member name="T:Deal.Domain.DomainFactories.Sets.SetWithPacksFactory">
             <summary>
             Factory for creating Sets.
             </summary>
-            <seealso cref="T:Deal.Domain.DomainFactories.Sets.ISetFactory" />
+            <seealso cref="T:Deal.Domain.DomainFactories.Sets.ISetWithPacksFactory" />
         </member>
-        <member name="M:Deal.Domain.DomainFactories.Sets.SetFactory.#ctor(System.Collections.Generic.IList{Deal.Domain.DomainObjects.Owners.IOwner},System.Collections.Generic.IList{Deal.Domain.DomainObjects.SetPurposes.ISetPurpose},System.Collections.Generic.IList{Deal.Domain.DomainObjects.SetColours.ISetColour})">
+        <member name="M:Deal.Domain.DomainFactories.Sets.SetWithPacksFactory.#ctor(System.Collections.Generic.IList{Deal.Domain.DomainObjects.Owners.IOwner},System.Collections.Generic.IList{Deal.Domain.DomainObjects.PackColours.IPackColour},System.Collections.Generic.IList{Deal.Domain.DomainObjects.SetPurposes.ISetPurpose},System.Collections.Generic.IList{Deal.Domain.DomainObjects.SetColours.ISetColour})">
             <summary>
-            Initializes a new instance of the <see cref="T:Deal.Domain.DomainFactories.Sets.SetFactory"/> class.
+            Initializes a new instance of the <see cref="T:Deal.Domain.DomainFactories.Sets.SetWithPacksFactory"/> class.
             </summary>
             <param name="owners">Owners.</param>
+            <param name="packColours">Pack Colours.</param>
             <param name="setPurposes">Set Purposes.</param>
             <param name="setColours">Set Colours.</param>
         </member>
-        <member name="M:Deal.Domain.DomainFactories.Sets.SetFactory.Create32BoardSet(System.String,System.String,System.String,System.String)">
+        <member name="M:Deal.Domain.DomainFactories.Sets.SetWithPacksFactory.Create32BoardSet(System.String,System.String,System.String,System.String)">
             <inheritdoc/>
         </member>
         <member name="T:Deal.Domain.DomainObjects.Cards.Card">
@@ -349,6 +350,67 @@
         <member name="P:Deal.Domain.DomainObjects.PackColours.PackColour.Colour">
             <inheritdoc/>
         </member>
+        <member name="T:Deal.Domain.DomainObjects.Packs.IPack">
+            <summary>
+            Pack.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Packs.IPack.Id">
+            <summary>
+            Gets the Pack Id.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Packs.IPack.PackColour">
+            <summary>
+            Gets the Pack Colour.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Packs.IPack.Set">
+            <summary>
+            Gets the Set.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Packs.IPack.EnteredService">
+            <summary>
+            Gets the Date the Pack Entered Service.
+            </summary>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Packs.IPack.BoardNumber">
+            <summary>
+            Gets the Board Number.
+            </summary>
+        </member>
+        <member name="T:Deal.Domain.DomainObjects.Packs.Pack">
+            <summary>
+            Pack.
+            </summary>
+            <seealso cref="T:Deal.Domain.DomainObjects.Packs.IPack" />
+        </member>
+        <member name="M:Deal.Domain.DomainObjects.Packs.Pack.#ctor(System.Guid,Deal.Domain.DomainObjects.PackColours.IPackColour,Deal.Domain.DomainObjects.Sets.ISet,System.DateTime,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Domain.DomainObjects.Packs.Pack"/> class.
+            </summary>
+            <param name="id">Pack Id.</param>
+            <param name="packColour">Pack Colour.</param>
+            <param name="set">Set.</param>
+            <param name="enteredService">Date the Pack Entered Service.</param>
+            <param name="boardNumber">Board Number.</param>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Packs.Pack.Id">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Packs.Pack.PackColour">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Packs.Pack.Set">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Packs.Pack.EnteredService">
+            <inheritdoc/>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Packs.Pack.BoardNumber">
+            <inheritdoc/>
+        </member>
         <member name="T:Deal.Domain.DomainObjects.Ranks.IRank">
             <summary>
             Rank of a Suit.
@@ -596,11 +658,28 @@
             Gets the Set Colour.
             </summary>
         </member>
+        <member name="T:Deal.Domain.DomainObjects.Sets.ISetWithPacks">
+            <summary>
+            Set with associated Packs.
+            </summary>
+            <seealso cref="T:Deal.Domain.DomainObjects.Sets.ISet" />
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Sets.ISetWithPacks.Packs">
+            <summary>
+            Gets the Packs associated with this Set.
+            </summary>
+        </member>
         <member name="T:Deal.Domain.DomainObjects.Sets.Set">
             <summary>
             Set.
             </summary>
             <seealso cref="T:Deal.Domain.DomainObjects.Sets.ISet" />
+        </member>
+        <member name="M:Deal.Domain.DomainObjects.Sets.Set.#ctor(Deal.Domain.DomainObjects.Sets.ISet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Domain.DomainObjects.Sets.Set"/> class.
+            </summary>
+            <param name="set">Set.</param>
         </member>
         <member name="M:Deal.Domain.DomainObjects.Sets.Set.#ctor(System.Guid,System.Int32,System.Int32,System.String,Deal.Domain.DomainObjects.Owners.IOwner,Deal.Domain.DomainObjects.SetPurposes.ISetPurpose,Deal.Domain.DomainObjects.SetColours.ISetColour)">
             <summary>
@@ -634,6 +713,23 @@
         </member>
         <member name="P:Deal.Domain.DomainObjects.Sets.Set.SetColour">
             <inheritdoc/>
+        </member>
+        <member name="T:Deal.Domain.DomainObjects.Sets.SetWithPacks">
+            <summary>
+            Set with associated Packs.
+            </summary>
+            <seealso cref="T:Deal.Domain.DomainObjects.Sets.Set" />
+            <seealso cref="T:Deal.Domain.DomainObjects.Sets.ISetWithPacks" />
+        </member>
+        <member name="M:Deal.Domain.DomainObjects.Sets.SetWithPacks.#ctor(Deal.Domain.DomainObjects.Sets.ISet,System.Collections.Generic.IList{Deal.Domain.DomainObjects.Packs.IPack})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Domain.DomainObjects.Sets.SetWithPacks"/> class.
+            </summary>
+            <param name="set">Set.</param>
+            <param name="packs">List of Packs.</param>
+        </member>
+        <member name="P:Deal.Domain.DomainObjects.Sets.SetWithPacks.Packs">
+            <inheritdoc />
         </member>
         <member name="T:Deal.Domain.DomainObjects.Suits.ISuit">
             <summary>

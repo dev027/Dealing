@@ -4,7 +4,10 @@
 
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 using Deal.Data.DbContexts;
+using Deal.Data.Resources;
+using Deal.Domain.DomainObjects.Packs;
 
 namespace Deal.Data.Dtos
 {
@@ -91,5 +94,63 @@ namespace Deal.Data.Dtos
         public SetDto? Set { get; private set; }
 
         #endregion Parent Properties
+
+        #region Public Properties
+
+        /// <summary>
+        /// Convert domain object to DTO.
+        /// </summary>
+        /// <param name="pack">Pack.</param>
+        /// <returns>Pack DTO.</returns>
+        public static PackDto ToDto(IPack pack)
+        {
+            if (pack == null)
+            {
+                throw new ArgumentNullException(nameof(pack));
+            }
+
+            return new PackDto(
+                id: pack.Id,
+                packColourId: pack.PackColour.Id,
+                setId: pack.Set.Id,
+                enteredService: pack.EnteredService,
+                boardNumber: pack.BoardNumber);
+        }
+
+        /// <summary>
+        /// Convert instance to domain object.
+        /// </summary>
+        /// <returns>PAck.</returns>
+        public IPack ToDomain()
+        {
+            if (this.PackColour == null)
+            {
+                throw new InvalidOperationException(
+                    string.Format(
+                        CultureInfo.InvariantCulture,
+                        ExceptionResource.CannotConvertTo___If___IsNull,
+                        nameof(IPack),
+                        nameof(this.PackColour)));
+            }
+
+            if (this.Set == null)
+            {
+                throw new InvalidOperationException(
+                    string.Format(
+                        CultureInfo.InvariantCulture,
+                        ExceptionResource.CannotConvertTo___If___IsNull,
+                        nameof(IPack),
+                        nameof(this.Set)));
+            }
+
+            return new Pack(
+                id: this.Id,
+                packColour: this.PackColour.ToDomain(),
+                set: this.Set.ToDomain(),
+                enteredService: this.EnteredService,
+                boardNumber: this.BoardNumber);
+        }
+
+        #endregion Public Properties
     }
 }

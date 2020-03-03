@@ -3,6 +3,7 @@
 // </copyright>
 
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
@@ -119,6 +120,14 @@ namespace Deal.Data.Dtos
 
         #endregion Parent Properties
 
+        #region Child Properties
+
+        /// <summary>
+        /// Gets Packs.
+        /// </summary>
+        public IList<PackDto>? Packs { get; private set; }
+        #endregion
+
         #region Public Methods
 
         /// <summary>
@@ -177,6 +186,16 @@ namespace Deal.Data.Dtos
                         ExceptionResource.CannotConvertTo___If___IsNull,
                         nameof(ISet),
                         nameof(this.SetColour)));
+            }
+
+            if (this.SetColour == null)
+            {
+                throw new InvalidOperationException(
+                    string.Format(
+                        CultureInfo.InvariantCulture,
+                        ExceptionResource.CannotConvertTo___If___IsNull,
+                        nameof(ISet),
+                        nameof(this.Packs)));
             }
 
             return new Set(

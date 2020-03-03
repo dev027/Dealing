@@ -8,6 +8,7 @@ using Deal.Domain.DomainObjects.Dealers;
 using Deal.Domain.DomainObjects.ErrorReasonGroups;
 using Deal.Domain.DomainObjects.Organisers;
 using Deal.Domain.DomainObjects.Owners;
+using Deal.Domain.DomainObjects.PackColours;
 using Deal.Domain.DomainObjects.Ranks;
 using Deal.Domain.DomainObjects.Seasons;
 using Deal.Domain.DomainObjects.SetColours;
@@ -61,6 +62,16 @@ namespace Deal.Data.Crud
                 .AsNoTracking()
                 .ToList()
                 .Select(o => o.ToDomain())
+                .ToList();
+        }
+
+        /// <inheritdoc/>
+        public IList<IPackColour> ReadAllPackColours()
+        {
+            return this.Context.PackColours
+                .AsNoTracking()
+                .ToList()
+                .Select(pc => pc.ToDomain())
                 .ToList();
         }
 
