@@ -4,6 +4,7 @@
 
 using System;
 using System.Linq;
+using DoItWright.Library.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -15,6 +16,22 @@ namespace Deal.Data.DbContexts
     /// <seealso cref="DbContext" />
     public partial class DataContext : DbContext
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DataContext"/> class.
+        /// </summary>
+        public DataContext()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DataContext"/> class.
+        /// </summary>
+        /// <param name="options">Database Context Options.</param>
+        public DataContext(DbContextOptions options)
+        : base(options)
+        {
+        }
+
         /// <inheritdoc/>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

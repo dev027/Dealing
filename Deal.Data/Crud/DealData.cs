@@ -4,6 +4,7 @@
 
 using System;
 using Deal.Data.DbContexts;
+using Microsoft.EntityFrameworkCore;
 
 namespace Deal.Data.Crud
 {
@@ -24,6 +25,20 @@ namespace Deal.Data.Crud
         public DealData()
         {
             this.Context = new DataContext();
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DealData"/> class.
+        /// </summary>
+        /// <param name="options">Database context options.</param>
+        public DealData(DbContextOptions<DataContext> options)
+        {
+            if (options == null)
+            {
+                throw new ArgumentNullException(nameof(options));
+            }
+
+            this.Context = new DataContext(options);
         }
 
         /// <summary>
