@@ -78,6 +78,12 @@
             Initializes a new instance of the <see cref="T:Deal.Data.Crud.DealData"/> class.
             </summary>
         </member>
+        <member name="M:Deal.Data.Crud.DealData.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{Deal.Data.DbContexts.DataContext})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.Crud.DealData"/> class.
+            </summary>
+            <param name="options">Database context options.</param>
+        </member>
         <member name="M:Deal.Data.Crud.DealData.Finalize">
             <summary>
             Finalizes an instance of the <see cref="T:Deal.Data.Crud.DealData"/> class.
@@ -418,6 +424,17 @@
             Database Context - DB Sets.
             </summary>
             <seealso cref="T:Microsoft.EntityFrameworkCore.DbContext" />
+        </member>
+        <member name="M:Deal.Data.DbContexts.DataContext.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.DbContexts.DataContext"/> class.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.DbContexts.DataContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Deal.Data.DbContexts.DataContext"/> class.
+            </summary>
+            <param name="options">Database Context Options.</param>
         </member>
         <member name="M:Deal.Data.DbContexts.DataContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
             <inheritdoc/>

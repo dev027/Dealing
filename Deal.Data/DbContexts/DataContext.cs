@@ -4,7 +4,6 @@
 
 using System;
 using System.Linq;
-using DoItWright.Library.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
