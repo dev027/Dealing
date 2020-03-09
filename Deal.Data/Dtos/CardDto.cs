@@ -4,6 +4,7 @@
 
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using Deal.Data.DbContexts;
 using Deal.Data.Resources;
@@ -22,6 +23,7 @@ namespace Deal.Data.Dtos
         /// <summary>
         /// Initializes a new instance of the <see cref="CardDto"/> class.
         /// </summary>
+        [ExcludeFromCodeCoverage]
         public CardDto()
         {
         }

@@ -4,5 +4,200 @@
         <name>Deal.Data.Tests</name>
     </assembly>
     <members>
+        <member name="T:Deal.Data.Tests.Dtos.CardDtoTests.ConstructorTests">
+            <summary>
+            Test constructor for <see cref="T:Deal.Data.Dtos.CardDto" />.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Tests.Dtos.CardDtoTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Tests.Dtos.CardDtoTests.ToDtoTests">
+            <summary>
+            Test <see cref="M:Deal.Data.Dtos.CardDto.ToDto(Deal.Domain.DomainObjects.Cards.ICard)"/>.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Tests.Dtos.CardDtoTests.ToDtoTests.Test_Passing_Valid_Values">
+            <summary>
+            Tests method with valid values.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Tests.Dtos.CardDtoTests.ToDtoTests.Test_Passing_Null_Card_Throws_Exception">
+            <summary>
+            Tests passing null card throws exception.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Tests.Dtos.DealerDtoTests.ConstructorTests">
+            <summary>
+            Test constructor for <see cref="T:Deal.Data.Dtos.DealerDto" />.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Tests.Dtos.DealerDtoTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Tests.Dtos.ErrorReasonDtoTests.ConstructorTests">
+            <summary>
+            Test constructor for <see cref="T:Deal.Data.Dtos.ErrorReasonDto" />.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Tests.Dtos.ErrorReasonDtoTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Tests.Dtos.ErrorReasonGroupDtoTests.ConstructorTests">
+            <summary>
+            Test constructor for <see cref="T:Deal.Data.Dtos.ErrorReasonGroupDto" />.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Tests.Dtos.ErrorReasonGroupDtoTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Tests.Dtos.EventDtoTests.ConstructorTests">
+            <summary>
+            Test constructor for <see cref="T:Deal.Data.Dtos.EventDto" />.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Tests.Dtos.EventDtoTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Tests.Dtos.EventSetDtoTests.ConstructorTests">
+            <summary>
+            Test constructor for <see cref="T:Deal.Data.Dtos.EventSetDto" />.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Tests.Dtos.EventSetDtoTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Tests.Dtos.OrganiserDtoTests.ConstructorTests">
+            <summary>
+            Test constructor for <see cref="T:Deal.Data.Dtos.OrganiserDto" />.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Tests.Dtos.OrganiserDtoTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Tests.Dtos.OwnerDtoTests.ConstructorTests">
+            <summary>
+            Test constructor for <see cref="T:Deal.Data.Dtos.OwnerDto" />.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Tests.Dtos.OwnerDtoTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Tests.Dtos.PackColourDtoTests.ConstructorTests">
+            <summary>
+            Test constructor for <see cref="T:Deal.Data.Dtos.PackColourDto" />.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Tests.Dtos.PackColourDtoTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Tests.Dtos.PackDealErrorDtoTests.ConstructorTests">
+            <summary>
+            Test constructor for <see cref="T:Deal.Data.Dtos.PackDealErrorDto" />.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Tests.Dtos.PackDealErrorDtoTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Tests.Dtos.PackDtoTests.ConstructorTests">
+            <summary>
+            Test constructor for <see cref="T:Deal.Data.Dtos.PackDto" />.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Tests.Dtos.PackDtoTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Tests.Dtos.RankDtoTests.ConstructorTests">
+            <summary>
+            Test constructor for <see cref="T:Deal.Data.Dtos.RankDto" />.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Tests.Dtos.RankDtoTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Tests.Dtos.SeasonDtoTests.ConstructorTests">
+            <summary>
+            Test constructor for <see cref="T:Deal.Data.Dtos.SeasonDto" />.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Tests.Dtos.SeasonDtoTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Tests.Dtos.SetColourDtoTests.ConstructorTests">
+            <summary>
+            Test constructor for <see cref="T:Deal.Data.Dtos.SetColourDto" />.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Tests.Dtos.SetColourDtoTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Tests.Dtos.SetDealErrorDtoTests.ConstructorTests">
+            <summary>
+            Test constructor for <see cref="T:Deal.Data.Dtos.SetDealErrorDto" />.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Tests.Dtos.SetDealErrorDtoTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Tests.Dtos.SetDtoTests.ConstructorTests">
+            <summary>
+            Test constructor for <see cref="T:Deal.Data.Dtos.SetDto" />.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Tests.Dtos.SetDtoTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Tests.Dtos.SetPurposeDtoTests.ConstructorTests">
+            <summary>
+            Test constructor for <see cref="T:Deal.Data.Dtos.SetPurposeDto" />.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Tests.Dtos.SetPurposeDtoTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="T:Deal.Data.Tests.Dtos.SuitDtoTests.ConstructorTests">
+            <summary>
+            Test constructor for <see cref="T:Deal.Data.Dtos.SuitDto" />.
+            </summary>
+        </member>
+        <member name="M:Deal.Data.Tests.Dtos.SuitDtoTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
     </members>
 </doc>
